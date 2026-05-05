@@ -1,0 +1,168 @@
+@prefix cmk: <https://knowledge.semanticscore.net/knowledge/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cmk:amsterdam a skos:Concept,
+        schema:City ;
+    owl:sameAs <http://www.wikidata.org/entity/Q727> ;
+    skos:broader cmk:netherlands ;
+    skos:inScheme cmk:geo-scheme ;
+    skos:prefLabel "Amsterdam"@en ;
+    schema:containedInPlace cmk:netherlands ;
+    schema:name "Amsterdam" .
+
+cmk:athens a skos:Concept,
+        schema:City ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1524> ;
+    skos:broader cmk:greece ;
+    skos:inScheme cmk:geo-scheme ;
+    skos:prefLabel "Athens"@en ;
+    schema:containedInPlace cmk:greece ;
+    schema:name "Athens" .
+
+cmk:basingstoke a skos:Concept,
+        schema:City ;
+    owl:sameAs <http://www.wikidata.org/entity/Q810196> ;
+    skos:broader cmk:united-kingdom ;
+    skos:inScheme cmk:geo-scheme ;
+    skos:prefLabel "Basingstoke"@en ;
+    schema:containedInPlace cmk:united-kingdom ;
+    schema:name "Basingstoke" .
+
+cmk:brighton-and-hove a skos:Concept,
+        schema:City ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1022488> ;
+    skos:broader cmk:united-kingdom ;
+    skos:inScheme cmk:geo-scheme ;
+    skos:prefLabel "Brighton and Hove"@en ;
+    schema:containedInPlace cmk:united-kingdom ;
+    schema:name "Brighton and Hove" .
+
+cmk:canterbury a skos:Concept,
+        schema:City ;
+    owl:sameAs <http://www.wikidata.org/entity/Q29303> ;
+    skos:broader cmk:united-kingdom ;
+    skos:inScheme cmk:geo-scheme ;
+    skos:prefLabel "Canterbury"@en ;
+    schema:containedInPlace cmk:united-kingdom ;
+    schema:name "Canterbury" .
+
+cmk:city-of-westminster a skos:Concept,
+        schema:AdministrativeArea ;
+    owl:sameAs <http://www.wikidata.org/entity/Q179351> ;
+    skos:broader cmk:greater-london ;
+    skos:inScheme cmk:geo-scheme ;
+    skos:prefLabel "City of Westminster"@en ;
+    schema:containedInPlace cmk:greater-london ;
+    schema:name "City of Westminster" .
+
+cmk:friedrichshain-kreuzberg a skos:Concept,
+        schema:AdministrativeArea ;
+    owl:sameAs <http://www.wikidata.org/entity/Q158893> ;
+    skos:broader cmk:berlin ;
+    skos:inScheme cmk:geo-scheme ;
+    skos:prefLabel "Friedrichshain-Kreuzberg"@en ;
+    schema:containedInPlace cmk:berlin ;
+    schema:name "Friedrichshain-Kreuzberg" .
+
+cmk:helsinki a skos:Concept,
+        schema:City ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1757> ;
+    skos:broader cmk:finland ;
+    skos:inScheme cmk:geo-scheme ;
+    skos:prefLabel "Helsinki"@en ;
+    schema:containedInPlace cmk:finland ;
+    schema:name "Helsinki" .
+
+cmk:london a skos:Concept,
+        schema:City ;
+    owl:sameAs <http://www.wikidata.org/entity/Q84> ;
+    skos:broader cmk:united-kingdom ;
+    skos:inScheme cmk:geo-scheme ;
+    skos:prefLabel "London"@en ;
+    schema:containedInPlace cmk:united-kingdom ;
+    schema:name "London" .
+
+cmk:london-borough-of-lambeth a skos:Concept,
+        schema:AdministrativeArea ;
+    owl:sameAs <http://www.wikidata.org/entity/Q202059> ;
+    skos:broader cmk:greater-london ;
+    skos:inScheme cmk:geo-scheme ;
+    skos:prefLabel "London Borough of Lambeth"@en ;
+    schema:containedInPlace cmk:greater-london ;
+    schema:name "London Borough of Lambeth" .
+
+cmk:finland a skos:Concept,
+        schema:Country ;
+    owl:sameAs <http://www.wikidata.org/entity/Q33> ;
+    skos:inScheme cmk:geo-scheme ;
+    skos:narrower cmk:helsinki ;
+    skos:prefLabel "Finland"@en ;
+    skos:topConceptOf cmk:geo-scheme ;
+    schema:name "Finland" .
+
+cmk:germany a skos:Concept,
+        schema:Country ;
+    owl:sameAs <http://www.wikidata.org/entity/Q183> ;
+    skos:inScheme cmk:geo-scheme ;
+    skos:narrower cmk:berlin ;
+    skos:prefLabel "Germany"@en ;
+    skos:topConceptOf cmk:geo-scheme ;
+    schema:name "Germany" .
+
+cmk:greece a skos:Concept,
+        schema:Country ;
+    owl:sameAs <http://www.wikidata.org/entity/Q41> ;
+    skos:inScheme cmk:geo-scheme ;
+    skos:narrower cmk:athens ;
+    skos:prefLabel "Greece"@en ;
+    skos:topConceptOf cmk:geo-scheme ;
+    schema:name "Greece" .
+
+cmk:netherlands a skos:Concept,
+        schema:Country ;
+    owl:sameAs <http://www.wikidata.org/entity/Q55> ;
+    skos:inScheme cmk:geo-scheme ;
+    skos:narrower cmk:amsterdam ;
+    skos:prefLabel "Netherlands"@en ;
+    skos:topConceptOf cmk:geo-scheme ;
+    schema:name "Netherlands" .
+
+cmk:berlin a skos:Concept,
+        schema:City ;
+    owl:sameAs <http://www.wikidata.org/entity/Q64> ;
+    skos:broader cmk:germany ;
+    skos:inScheme cmk:geo-scheme ;
+    skos:narrower cmk:friedrichshain-kreuzberg ;
+    skos:prefLabel "Berlin"@en ;
+    schema:containedInPlace cmk:germany ;
+    schema:name "Berlin" .
+
+cmk:greater-london a skos:Concept,
+        schema:City ;
+    owl:sameAs <http://www.wikidata.org/entity/Q23306> ;
+    skos:broader cmk:united-kingdom ;
+    skos:inScheme cmk:geo-scheme ;
+    skos:narrower cmk:city-of-westminster,
+        cmk:london-borough-of-lambeth ;
+    skos:prefLabel "Greater London"@en ;
+    schema:containedInPlace cmk:united-kingdom ;
+    schema:name "Greater London" .
+
+cmk:united-kingdom a skos:Concept,
+        schema:Country ;
+    owl:sameAs <http://www.wikidata.org/entity/Q145> ;
+    skos:inScheme cmk:geo-scheme ;
+    skos:narrower cmk:basingstoke,
+        cmk:brighton-and-hove,
+        cmk:canterbury,
+        cmk:greater-london,
+        cmk:london ;
+    skos:prefLabel "United Kingdom"@en ;
+    skos:topConceptOf cmk:geo-scheme ;
+    schema:name "United Kingdom" .
+
+cmk:geo-scheme a skos:ConceptScheme ;
+    schema:name "Geo Locations" .
+

@@ -1,0 +1,15 @@
+PREFIX cmo: <https://knowledge.semanticscore.net/ontology/>
+PREFIX mo: <http://purl.org/ontology/mo/>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX schema: <https://schema.org/>
+
+CONSTRUCT {
+    ?composer cmo:featured-at ?event 
+}
+WHERE {
+    ?programme cmo:contains-music-by ?composer ;
+        cmo:is-performed-at ?event .
+    ?event schema:startDate ?time .
+    FILTER(?time > xsd:dateTime(SUBSTR(STR(NOW()), 1, 19)))
+}

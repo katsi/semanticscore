@@ -1,0 +1,113 @@
+@prefix cmo:    <https://knowledge.semanticscore.net/ontology/> .
+@prefix mo:     <http://purl.org/ontology/mo/> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <https://schema.org/> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+<https://knowledge.semanticscore.net/ontology>
+    a owl:Ontology ;
+    owl:imports <http://purl.org/ontology/mo/> ;
+    owl:imports <http://xmlns.com/foaf/0.1/> .
+
+
+# =============================================================================
+# Classes
+# =============================================================================
+
+cmo:Programme a owl:Class ;
+    rdfs:label   "Programme"@en ;
+    rdfs:comment "A concert programme listing the musical works to be performed at a performance."@en .
+
+cmo:Venue a owl:Class ;
+    rdfs:subClassOf schema:Place ;
+    rdfs:label      "Venue"@en ;
+    rdfs:comment    "A physical building or complex that hosts concerts, which may contain one or more concert halls."@en .
+
+cmo:ConcertHall a owl:Class ;
+    rdfs:subClassOf schema:Place ;
+    rdfs:label      "Concert hall"@en ;
+    rdfs:comment    "A specific auditorium or performance space, typically contained within a venue. Address is inherited from the containing venue."@en .
+
+cmo:musical-identity a owl:Class ;
+    rdfs:label   "Musical identity"@en ;
+    rdfs:comment "The musical role or identity of a person, such as conductor, singer, or instrumentalist."@en .
+
+cmo:voice-range a owl:Class ;
+    rdfs:subClassOf cmo:musical-identity ;
+    rdfs:label      "Voice range"@en ;
+    rdfs:comment    "A vocal musical identity categorised by voice type, such as soprano, tenor, or bass."@en .
+
+cmo:instrumentalist-identity a owl:Class ;
+    rdfs:subClassOf cmo:musical-identity ;
+    rdfs:label      "Instrumentalist identity"@en ;
+    rdfs:comment    "A musical identity of a person who plays an instrument, such as pianist or violinist."@en .
+
+cmo:ensemble-identity a owl:Class ;
+    rdfs:subClassOf cmo:musical-identity ;
+    rdfs:label      "Ensemble identity"@en ;
+    rdfs:comment    "A musical identity of a person who performs as part of an ensemble."@en .
+
+
+# =============================================================================
+# Object properties
+# =============================================================================
+
+cmo:performs-in a owl:ObjectProperty ;
+    rdfs:label   "performs in"@en ;
+    rdfs:comment "Connects a person to a performance in which they participate in any musical role. Super-property of all role-specific participation properties."@en .
+
+cmo:conducts-in a owl:ObjectProperty ;
+    rdfs:subPropertyOf cmo:performs-in ;
+    rdfs:label         "conducts in"@en ;
+    rdfs:comment       "Connects a conductor to a performance they conduct."@en .
+
+cmo:sings-in a owl:ObjectProperty ;
+    rdfs:subPropertyOf cmo:performs-in ;
+    rdfs:label         "sings in"@en ;
+    rdfs:comment       "Connects a singer to a performance in which they sing."@en .
+
+cmo:plays-in a owl:ObjectProperty ;
+    rdfs:subPropertyOf cmo:performs-in ;
+    rdfs:label         "plays in"@en ;
+    rdfs:comment       "Connects an instrumentalist to a performance in which they play."@en .
+
+cmo:narrates-in a owl:ObjectProperty ;
+    rdfs:subPropertyOf cmo:performs-in ;
+    rdfs:label         "narrates in"@en ;
+    rdfs:comment       "Connects a narrator to a performance in which they narrate."@en .
+
+cmo:known-as-a a owl:ObjectProperty ;
+    rdfs:domain  foaf:Agent ;
+    rdfs:range   cmo:musical-identity ;
+    rdfs:label   "known as a"@en ;
+    rdfs:comment "Connects a person to the musical identity or role they are known for, such as conductor or pianist."@en .
+
+cmo:is-performed-at a owl:ObjectProperty ;
+    rdfs:domain  cmo:Programme ;
+    rdfs:range   mo:Performance ;
+    rdfs:label   "is performed at"@en ;
+    rdfs:comment "Connects a concert programme to the performance event at which it is performed."@en .
+
+cmo:contains-music-by a owl:ObjectProperty ;
+    rdfs:domain  cmo:Programme ;
+    rdfs:range   schema:Person ;
+    rdfs:label   "contains music by"@en ;
+    rdfs:comment "Connects a concert programme to the composers of the musical works it contains."@en .
+
+# =============================================================================
+# Datatype properties
+# =============================================================================
+
+cmo:acronym a owl:DatatypeProperty ;
+    rdfs:domain  schema:Organization ;
+    rdfs:range   xsd:string ;
+    rdfs:label   "acronym"@en ;
+    rdfs:comment "A short identifying code or abbreviation for an organisation, used for file naming and display."@en .
+
+cmo:musical-content a owl:DatatypeProperty ;
+    rdfs:domain  mo:Programme ;
+    rdfs:range   xsd:string ;
+    rdfs:label   "musical content"@en ;
+    rdfs:comment "The musical content of a programme performed at a performance, represented as a string of text."@en .

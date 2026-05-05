@@ -1,0 +1,86 @@
+@prefix cmk: <https://knowledge.semanticscore.net/knowledge/> .
+@prefix cmo: <https://knowledge.semanticscore.net/ontology/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cmk:andrew-hamilton a foaf:Person ;
+    foaf:familyName "Hamilton" ;
+    foaf:firstName "Andrew" ;
+    cmo:known-as-a cmk:baritone ;
+    cmo:sings-in cmk:maida-vale-studios-1736429400 .
+
+cmk:barbican-london a cmo:ConcertHall ;
+    rdfs:label "Barbican, London" .
+
+cmk:clemens-schuldt a foaf:Person ;
+    foaf:familyName "Schuldt" ;
+    foaf:firstName "Clemens" ;
+    cmo:conducts-in cmk:barbican-london-1736967000 ;
+    cmo:known-as-a cmk:conductor .
+
+cmk:else-torp a foaf:Person ;
+    foaf:familyName "Torp" ;
+    foaf:firstName "Else" ;
+    cmo:known-as-a cmk:soprano ;
+    cmo:sings-in cmk:barbican-london-1737744600 .
+
+cmk:guy-johnston a foaf:Person ;
+    foaf:familyName "Johnston" ;
+    foaf:firstName "Guy" ;
+    cmo:known-as-a cmk:cellist ;
+    cmo:plays-in cmk:barbican-london-1736967000 .
+
+cmk:martyn-brabbins a foaf:Person ;
+    foaf:familyName "Brabbins" ;
+    foaf:firstName "Martyn" ;
+    cmo:conducts-in cmk:maida-vale-studios-1736688600 ;
+    cmo:known-as-a cmk:conductor .
+
+cmk:nuno-coelho a foaf:Person ;
+    foaf:familyName "Coelho" ;
+    foaf:firstName "Nuno" ;
+    cmo:conducts-in cmk:maida-vale-studios-1736429400 ;
+    cmo:known-as-a cmk:conductor .
+
+cmk:barbican-london-1737744600 a mo:Performance ;
+    schema:location cmk:barbican ;
+    schema:name "Julia Wolfe: unEarth" ;
+    schema:organizer cmk:bbc-symphony-orchestra ;
+    schema:startDate "2026-01-25T19:30:00"^^xsd:dateTime ;
+    schema:url "https://www.bbc.co.uk/events/ew5fbp"^^xsd:anyURI .
+
+cmk:baritone a cmo:voice-range .
+
+cmk:cellist a cmo:instrumentalist-identity .
+
+cmk:maida-vale-studios-1736688600 a mo:Performance ;
+    schema:location cmk:maida-vale-studios ;
+    schema:name "Martyn Brabbins conducts Liadov & Tchaikovsky" ;
+    schema:organizer cmk:bbc-symphony-orchestra ;
+    schema:startDate "2026-01-13T14:30:00"^^xsd:dateTime ;
+    schema:url "https://www.bbc.co.uk/events/enwcd4"^^xsd:anyURI .
+
+cmk:soprano a cmo:voice-range .
+
+cmk:barbican-london-1736967000 a mo:Performance ;
+    schema:location cmk:barbican ;
+    schema:name "Clemens Schuldt conducts Strauss and Phibbs" ;
+    schema:organizer cmk:bbc-symphony-orchestra ;
+    schema:startDate "2026-01-16T19:30:00"^^xsd:dateTime ;
+    schema:url "https://www.bbc.co.uk/events/e35fbp"^^xsd:anyURI .
+
+cmk:maida-vale-studios a cmo:Venue ;
+    rdfs:label "Maida Vale Studios" .
+
+cmk:maida-vale-studios-1736429400 a mo:Performance ;
+    schema:location cmk:maida-vale-studios ;
+    schema:name "Nuno Coelho conducts Albéniz, Mahler & Ives" ;
+    schema:organizer cmk:bbc-symphony-orchestra ;
+    schema:startDate "2026-01-09T14:30:00"^^xsd:dateTime ;
+    schema:url "https://www.bbc.co.uk/events/epm5q9"^^xsd:anyURI .
+
+cmk:conductor a cmo:musical-identity .
+

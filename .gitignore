@@ -1,0 +1,26 @@
+# --- Generated output (rebuilt on every deploy) ---
+frontend/output/
+frontend/home.md
+
+# --- Private: pipeline tooling ---
+xclam-pipeline/
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.egg-info/
+
+# --- Environment / secrets ---
+.env
+*.env
+
+# --- Private: agents and Claude config ---
+knowledge/agents/
+.claude/
+
+# --- IDE / OS ---
+.DS_Store
+.vscode/
+.idea/

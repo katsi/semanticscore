@@ -1,0 +1,117 @@
+@prefix cmk: <https://knowledge.semanticscore.net/knowledge/> .
+@prefix cmo: <https://knowledge.semanticscore.net/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <https://schema.org/> .
+
+cmk:barbican a cmo:Venue ;
+    owl:sameAs <https://musicbrainz.org/place/f819a3d3-11cb-41ed-874c-a7c8343ed9df> ;
+    schema:addressLocality cmk:london ;
+    schema:name "Barbican" ;
+    schema:streetAddress "Silk Street, London EC2Y 8DS, United Kingdom" .
+
+cmk:berlin-philharmonie a cmo:Venue ;
+    owl:sameAs <http://www.wikidata.org/entity/Q32653910>,
+        <https://musicbrainz.org/place/bea135c0-a32e-49be-85fd-9234c73fa0a8> ;
+    schema:addressLocality cmk:berlin ;
+    schema:name "Berlin Philharmonie" ;
+    schema:streetAddress "Herbert-von-Karajan-Straße 1, 10785 Berlin, Germany" .
+
+cmk:brighton-dome a cmo:Venue ;
+    owl:sameAs <http://www.wikidata.org/entity/Q915814> ;
+    schema:addressLocality cmk:brighton-and-hove ;
+    schema:name "Brighton Dome" ;
+    schema:streetAddress "Church Street and New Road, Brighton, East Sussex, BN1 1EE, England" .
+
+cmk:choir-hall a cmo:ConcertHall ;
+    schema:containedInPlace cmk:concertgebouw ;
+    schema:name "Choir Hall" .
+
+cmk:concert-hall a cmo:ConcertHall ;
+    schema:containedInPlace cmk:helsinki-music-centre ;
+    schema:name "Concert Hall" .
+
+cmk:de-montfort-hall a cmo:ConcertHall ;
+    schema:name "De Montfort Hall" .
+
+cmk:hall-c a cmo:ConcertHall ;
+    schema:name "Hall C" .
+
+cmk:jerwood-hall a cmo:ConcertHall ;
+    schema:containedInPlace cmk:lso-st-lukes ;
+    schema:name "Jerwood Hall" .
+
+cmk:maida-vale-studios a cmo:Venue ;
+    owl:sameAs <http://www.wikidata.org/entity/Q127603> ;
+    schema:addressLocality cmk:city-of-westminster ;
+    schema:name "Maida Vale Studios" .
+
+cmk:main-foyer a cmo:ConcertHall ;
+    schema:containedInPlace cmk:helsinki-music-centre ;
+    schema:name "Main Foyer" .
+
+cmk:main-hall a cmo:ConcertHall ;
+    schema:containedInPlace cmk:concertgebouw ;
+    schema:name "Main Hall" .
+
+cmk:marlowe-theatre a cmo:Venue ;
+    owl:sameAs <http://www.wikidata.org/entity/Q6772005> ;
+    schema:addressLocality cmk:canterbury ;
+    schema:name "Marlowe Theatre" ;
+    schema:streetAddress "The Friars, Canterbury, Kent, CT1 2AS, England" .
+
+cmk:megaron-athens-concert-hall a cmo:Venue ;
+    owl:sameAs <https://musicbrainz.org/place/173f740d-4bfb-4a39-b426-3c712d872ae7> ;
+    schema:addressLocality cmk:athens ;
+    schema:name "Megaron – Athens Concert Hall" ;
+    schema:streetAddress "Vas. Sofias, Athens 115 21" .
+
+cmk:paavo-hall a cmo:ConcertHall ;
+    schema:containedInPlace cmk:helsinki-music-centre ;
+    schema:name "Paavo Hall" .
+
+cmk:recital-hall a cmo:ConcertHall ;
+    schema:containedInPlace cmk:concertgebouw ;
+    schema:name "Recital Hall" .
+
+cmk:royal-festival-hall a cmo:ConcertHall ;
+    schema:containedInPlace cmk:southbank-centre ;
+    schema:name "Royal Festival Hall" .
+
+cmk:saffron-hall a cmo:ConcertHall ;
+    schema:name "Saffron Hall" .
+
+cmk:tempodrom a cmo:Venue ;
+    owl:sameAs <http://www.wikidata.org/entity/Q896180> ;
+    schema:addressLocality cmk:friedrichshain-kreuzberg ;
+    schema:name "Tempodrom" .
+
+cmk:the-anvil a cmo:Venue ;
+    owl:sameAs <https://musicbrainz.org/place/70927aff-84da-4005-9337-f306a1fb16bf> ;
+    schema:addressLocality cmk:basingstoke ;
+    schema:name "The Anvil" .
+
+cmk:wilhelm-studios a cmo:ConcertHall ;
+    schema:name "Wilhelm Studios" .
+
+cmk:lso-st-lukes a cmo:Venue ;
+    owl:sameAs <https://musicbrainz.org/place/463f85c3-5a0b-4115-a751-579cf9c29c22> ;
+    schema:addressLocality cmk:london ;
+    schema:name "LSO St Luke's" .
+
+cmk:southbank-centre a cmo:Venue ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2339207> ;
+    schema:addressLocality cmk:london-borough-of-lambeth ;
+    schema:name "Southbank Centre" .
+
+cmk:concertgebouw a cmo:Venue ;
+    owl:sameAs <http://www.wikidata.org/entity/Q849957> ;
+    schema:addressLocality cmk:amsterdam ;
+    schema:name "Concertgebouw" ;
+    schema:streetAddress "Concertgebouwplein 10" .
+
+cmk:helsinki-music-centre a cmo:Venue ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1888459> ;
+    schema:addressLocality cmk:helsinki ;
+    schema:name "Helsinki Music Centre" ;
+    schema:streetAddress "Mannerheimintie 13a" .
+

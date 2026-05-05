@@ -1,0 +1,219 @@
+@prefix cmk: <https://knowledge.semanticscore.net/knowledge/> .
+@prefix cmo: <https://knowledge.semanticscore.net/ontology/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cmk:augustin-hadelich a foaf:Person ;
+    foaf:familyName "Hadelich" ;
+    foaf:firstName "Augustin" ;
+    cmo:known-as-a cmk:violinist ;
+    cmo:performs-in cmk:concertgebouw-amsterdam-1777737300,
+        cmk:concertgebouw-amsterdam-1778000100 .
+
+cmk:fabio-luisi a foaf:Person ;
+    foaf:familyName "Luisi" ;
+    foaf:firstName "Fabio" ;
+    cmo:conducts-in cmk:nationale-opera-ballet-amsterdam-1780149000,
+        cmk:nationale-opera-ballet-amsterdam-1780408800 ;
+    cmo:known-as-a cmk:conductor .
+
+cmk:kleine-zaal-het-concertgebouw-amsterdam-1780581300 a mo:Performance ;
+    schema:location cmk:kleine-zaal-het-concertgebouw-amsterdam ;
+    schema:name "Close-up: USA 250" ;
+    schema:organizer cmk:royal-concertgebouw-orchestra ;
+    schema:startDate "2026-06-09T20:15:00"^^xsd:dateTime .
+
+cmk:nathalie-stutzmann a foaf:Person ;
+    foaf:familyName "Stutzmann" ;
+    foaf:firstName "Nathalie" ;
+    cmo:conducts-in cmk:concertgebouw-amsterdam-1777737300,
+        cmk:concertgebouw-amsterdam-1777824000,
+        cmk:concertgebouw-amsterdam-1778000100 ;
+    cmo:known-as-a cmk:conductor .
+
+cmk:rijksmuseum-1778620200 a mo:Performance ;
+    schema:location cmk:rijksmuseum ;
+    schema:name "Metamorphoses in the Rijksmuseum" ;
+    schema:organizer cmk:royal-concertgebouw-orchestra ;
+    schema:startDate "2026-05-17T15:30:00"^^xsd:dateTime .
+
+cmk:santtu-matias-rouvali a foaf:Person ;
+    foaf:familyName "Rouvali" ;
+    foaf:firstName "Santtu-Matias" ;
+    cmo:conducts-in cmk:concertgebouw-amsterdam-1778296500,
+        cmk:concertgebouw-amsterdam-1778469300,
+        cmk:palais-des-beaux-arts-brussels-1778547600 ;
+    cmo:known-as-a cmk:conductor .
+
+cmk:sol-gabetta a foaf:Person ;
+    foaf:familyName "Gabetta" ;
+    foaf:firstName "Sol" ;
+    cmo:known-as-a cmk:cellist ;
+    cmo:performs-in cmk:concertgebouw-amsterdam-1778296500,
+        cmk:concertgebouw-amsterdam-1778469300,
+        cmk:palais-des-beaux-arts-brussels-1778547600 .
+
+<https://knowledge.semanticscore.net/ontology> a owl:Ontology ;
+    owl:imports mo:,
+        foaf: .
+
+cmo:acronym a owl:DatatypeProperty ;
+    rdfs:label "acronym"@en ;
+    rdfs:comment "A short identifying code or abbreviation for an organisation, used for file naming and display."@en ;
+    rdfs:domain schema:Organization ;
+    rdfs:range xsd:string .
+
+cmo:conducts-in a owl:ObjectProperty ;
+    rdfs:label "conducts in"@en ;
+    rdfs:comment "Connects a conductor to a performance they conduct."@en ;
+    rdfs:subPropertyOf cmo:performs-in .
+
+cmo:contains-music-by a owl:ObjectProperty ;
+    rdfs:label "contains music by"@en ;
+    rdfs:comment "Connects a concert programme to the composers of the musical works it contains."@en ;
+    rdfs:domain cmo:Programme ;
+    rdfs:range schema:Person .
+
+cmo:ensemble-identity a owl:Class ;
+    rdfs:label "Ensemble identity"@en ;
+    rdfs:comment "A musical identity of a person who performs as part of an ensemble."@en ;
+    rdfs:subClassOf cmo:musical-identity .
+
+cmo:is-performed-at a owl:ObjectProperty ;
+    rdfs:label "is performed at"@en ;
+    rdfs:comment "Connects a concert programme to the performance event at which it is performed."@en ;
+    rdfs:domain cmo:Programme ;
+    rdfs:range mo:Performance .
+
+cmo:known-as-a a owl:ObjectProperty ;
+    rdfs:label "known as a"@en ;
+    rdfs:comment "Connects a person to the musical identity or role they are known for, such as conductor or pianist."@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:range cmo:musical-identity .
+
+cmo:musical-content a owl:DatatypeProperty ;
+    rdfs:label "musical content"@en ;
+    rdfs:comment "The musical content of a programme performed at a performance, represented as a string of text."@en ;
+    rdfs:domain mo:Programme ;
+    rdfs:range xsd:string .
+
+cmo:narrates-in a owl:ObjectProperty ;
+    rdfs:label "narrates in"@en ;
+    rdfs:comment "Connects a narrator to a performance in which they narrate."@en ;
+    rdfs:subPropertyOf cmo:performs-in .
+
+cmo:plays-in a owl:ObjectProperty ;
+    rdfs:label "plays in"@en ;
+    rdfs:comment "Connects an instrumentalist to a performance in which they play."@en ;
+    rdfs:subPropertyOf cmo:performs-in .
+
+cmo:sings-in a owl:ObjectProperty ;
+    rdfs:label "sings in"@en ;
+    rdfs:comment "Connects a singer to a performance in which they sing."@en ;
+    rdfs:subPropertyOf cmo:performs-in .
+
+cmo:voice-range a owl:Class ;
+    rdfs:label "Voice range"@en ;
+    rdfs:comment "A vocal musical identity categorised by voice type, such as soprano, tenor, or bass."@en ;
+    rdfs:subClassOf cmo:musical-identity .
+
+cmk:cellist a cmo:instrumentalist-identity ;
+    schema:name "Cellist" .
+
+cmk:concertgebouw-amsterdam-1777824000 a mo:Performance ;
+    schema:location cmk:concertgebouw ;
+    schema:name "Essentials: Brahms' Symphony No. 4" ;
+    schema:organizer cmk:royal-concertgebouw-orchestra ;
+    schema:startDate "2026-05-08T21:00:00"^^xsd:dateTime .
+
+cmk:kleine-zaal-het-concertgebouw-amsterdam a cmo:ConcertHall ;
+    schema:name "Kleine Zaal - Het Concertgebouw" .
+
+cmk:nationale-opera-ballet-amsterdam-1780149000 a mo:Performance ;
+    schema:location cmk:nationale-opera-ballet-amsterdam ;
+    schema:name "Verdi's Simon Boccanegra" ;
+    schema:organizer cmk:royal-concertgebouw-orchestra ;
+    schema:startDate "2026-06-04T19:30:00"^^xsd:dateTime .
+
+cmk:nationale-opera-ballet-amsterdam-1780408800 a mo:Performance ;
+    schema:location cmk:nationale-opera-ballet-amsterdam ;
+    schema:name "Verdi's Simon Boccanegra" ;
+    schema:organizer cmk:royal-concertgebouw-orchestra ;
+    schema:startDate "2026-06-07T14:00:00"^^xsd:dateTime .
+
+cmk:palais-des-beaux-arts-brussels a cmo:ConcertHall ;
+    schema:name "Palais des Beaux-Arts" .
+
+cmk:rijksmuseum a cmo:Venue ;
+    schema:name "Rijksmuseum" .
+
+cmk:violinist a cmo:instrumentalist-identity ;
+    schema:name "Violinist" .
+
+cmk:concertgebouw-amsterdam-1777737300 a mo:Performance ;
+    schema:location cmk:concertgebouw ;
+    schema:name "Augustin Hadelich plays Tchaikovsky's Violin Concerto" ;
+    schema:organizer cmk:royal-concertgebouw-orchestra ;
+    schema:startDate "2026-05-07T20:15:00"^^xsd:dateTime .
+
+cmk:concertgebouw-amsterdam-1778000100 a mo:Performance ;
+    schema:location cmk:concertgebouw ;
+    schema:name "Augustin Hadelich plays Tchaikovsky's Violin Concerto" ;
+    schema:organizer cmk:royal-concertgebouw-orchestra ;
+    schema:startDate "2026-05-10T14:15:00"^^xsd:dateTime .
+
+cmk:concertgebouw-amsterdam-1778296500 a mo:Performance ;
+    schema:location cmk:concertgebouw ;
+    schema:name "Sol Gabetta plays Martinů's Cello Concerto No. 1" ;
+    schema:organizer cmk:royal-concertgebouw-orchestra ;
+    schema:startDate "2026-05-13T20:15:00"^^xsd:dateTime .
+
+cmk:concertgebouw-amsterdam-1778469300 a mo:Performance ;
+    schema:location cmk:concertgebouw ;
+    schema:name "Sol Gabetta plays Martinů's Cello Concerto No. 1" ;
+    schema:organizer cmk:royal-concertgebouw-orchestra ;
+    schema:startDate "2026-05-15T20:15:00"^^xsd:dateTime .
+
+cmk:nationale-opera-ballet-amsterdam a cmo:Venue ;
+    schema:name "Nationale Opera & Ballet" .
+
+cmk:palais-des-beaux-arts-brussels-1778547600 a mo:Performance ;
+    schema:location cmk:palais-des-beaux-arts-brussels ;
+    schema:name "On tour: Sol Gabetta plays Martinů's Cello Concerto No. 1" ;
+    schema:organizer cmk:royal-concertgebouw-orchestra ;
+    schema:startDate "2026-05-16T20:00:00"^^xsd:dateTime .
+
+cmo:ConcertHall a owl:Class ;
+    rdfs:label "Concert hall"@en ;
+    rdfs:comment "A specific auditorium or performance space, typically contained within a venue. Address is inherited from the containing venue."@en ;
+    rdfs:subClassOf schema:Place .
+
+cmo:Programme a owl:Class ;
+    rdfs:label "Programme"@en ;
+    rdfs:comment "A concert programme listing the musical works to be performed at a performance."@en .
+
+cmo:Venue a owl:Class ;
+    rdfs:label "Venue"@en ;
+    rdfs:comment "A physical building or complex that hosts concerts, which may contain one or more concert halls."@en ;
+    rdfs:subClassOf schema:Place .
+
+cmo:instrumentalist-identity a owl:Class ;
+    rdfs:label "Instrumentalist identity"@en ;
+    rdfs:comment "A musical identity of a person who plays an instrument, such as pianist or violinist."@en ;
+    rdfs:subClassOf cmo:musical-identity .
+
+cmk:conductor a cmo:musical-identity ;
+    schema:name "Conductor" .
+
+cmo:performs-in a owl:ObjectProperty ;
+    rdfs:label "performs in"@en ;
+    rdfs:comment "Connects a person to a performance in which they participate in any musical role. Super-property of all role-specific participation properties."@en .
+
+cmo:musical-identity a owl:Class ;
+    rdfs:label "Musical identity"@en ;
+    rdfs:comment "The musical role or identity of a person, such as conductor, singer, or instrumentalist."@en .
+

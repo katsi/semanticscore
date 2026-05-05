@@ -1,0 +1,11 @@
+PREFIX cmo:    <https://knowledge.semanticscore.net/ontology/>
+PREFIX schema: <https://schema.org/>
+
+CONSTRUCT {
+    ?place a schema:MusicVenue .
+}
+WHERE {
+    { ?place a cmo:Venue . }
+    UNION
+    { ?place a cmo:ConcertHall . }
+}

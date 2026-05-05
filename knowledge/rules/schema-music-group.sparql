@@ -1,0 +1,10 @@
+PREFIX mo:     <http://purl.org/ontology/mo/>
+PREFIX schema: <https://schema.org/>
+
+CONSTRUCT {
+    ?org a schema:MusicGroup .
+}
+WHERE {
+    ?performance a mo:Performance ;
+                 schema:organizer ?org .
+}

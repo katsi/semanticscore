@@ -1,0 +1,83 @@
+@prefix ui: <https://knowledge.semanticscore.net/ui-ontology/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+ui: a owl:Ontology ;
+  rdfs:label "UI Ontology" ;
+  rdfs:comment "Domain-agnostic annotations for driving UI rendering from SHACL shapes." .
+
+ui:cardPosition a owl:DatatypeProperty ;
+  rdfs:label "card position" ;
+  rdfs:comment "Declares whether a property appears on a card and at which tier." ;
+  rdfs:range ui:CardPosition .
+
+ui:CardPosition a owl:Class ;
+  rdfs:label "Card Position" .
+
+ui:primary a ui:CardPosition ;
+  rdfs:label "primary" .
+
+ui:secondary a ui:CardPosition ;
+  rdfs:label "secondary" .
+
+ui:facet a owl:DatatypeProperty ;
+  rdfs:label "facet" ;
+  rdfs:comment "Declares whether a property should appear as a facet in browse views." ;
+  rdfs:range xsd:boolean .
+
+ui:DisplayFormat a owl:Class ;
+  dct:title "Display Format" ;
+  dct:description "A named format for rendering date and time literals in the UI." .
+
+ui:displayFormat a owl:ObjectProperty ;
+  dct:title "display format" ;
+  dct:description "Connects a SHACL property shape to a display format that determines how its value is rendered in the UI." ;
+  rdfs:range ui:DisplayFormat .
+
+ui:formatPattern a owl:DatatypeProperty ;
+  dct:title "format pattern" ;
+  dct:description "A regex pattern describing the expected string output of this display format." ;
+  rdfs:domain ui:DisplayFormat ;
+  rdfs:range xsd:string .
+
+ui:dateShort a ui:DisplayFormat ;
+  dct:title "Date short" ;
+  dct:description "Renders a date as day, abbreviated month and year. Example: 15 Apr 2026." ;
+  ui:formatPattern "^\\d{1,2}\\s[A-Z][a-z]{2}\\s\\d{4}$" .
+
+ui:dateLong a ui:DisplayFormat ;
+  dct:title "Date long" ;
+  dct:description "Renders a date as day, full month name and year. Example: 15 April 2026." ;
+  ui:formatPattern "^\\d{1,2}\\s[A-Z][a-z]+\\s\\d{4}$" .
+
+ui:dateISO a ui:DisplayFormat ;
+  dct:title "Date ISO" ;
+  dct:description "Renders a date in ISO 8601 format. Example: 2026-04-15." ;
+  ui:formatPattern "^\\d{4}-\\d{2}-\\d{2}$" .
+
+ui:timeShort a ui:DisplayFormat ;
+  dct:title "Time short" ;
+  dct:description "Renders a time as hours and minutes. Example: 19:30." ;
+  ui:formatPattern "^\\d{2}:\\d{2}$" .
+
+ui:timeLong a ui:DisplayFormat ;
+  dct:title "Time long" ;
+  dct:description "Renders a time as hours, minutes and seconds. Example: 19:30:00." ;
+  ui:formatPattern "^\\d{2}:\\d{2}:\\d{2}$" .
+
+ui:dateTimeShort a ui:DisplayFormat ;
+  dct:title "Date time short" ;
+  dct:description "Renders a datetime as abbreviated date followed by time. Example: 15 Apr 2026, 19:30." ;
+  ui:formatPattern "^\\d{1,2}\\s[A-Z][a-z]{2}\\s\\d{4},\\s\\d{2}:\\d{2}$" .
+
+ui:dateTimeLong a ui:DisplayFormat ;
+  dct:title "Date time long" ;
+  dct:description "Renders a datetime as full date followed by time. Example: 15 April 2026, 19:30." ;
+  ui:formatPattern "^\\d{1,2}\\s[A-Z][a-z]+\\s\\d{4},\\s\\d{2}:\\d{2}$" .
+
+ui:dateTimeISO a ui:DisplayFormat ;
+  dct:title "Date time ISO" ;
+  dct:description "Renders a datetime in ISO 8601 format. Example: 2026-04-15T19:30:00." ;
+  ui:formatPattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}$" .

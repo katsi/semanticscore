@@ -1,0 +1,13 @@
+PREFIX cmo: <https://knowledge.semanticscore.net/ontology/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX mo: <http://purl.org/ontology/mo/>
+PREFIX schema: <https://schema.org/>
+
+CONSTRUCT {
+    ?performance cmo:in-geo-location ?area .
+}
+WHERE {
+    ?performance a mo:Performance ;
+            schema:location ?location .
+    ?location schema:containedInPlace*/schema:addressLocality ?area .
+}

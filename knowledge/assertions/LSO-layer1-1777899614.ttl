@@ -1,0 +1,355 @@
+@prefix cmk: <https://knowledge.semanticscore.net/knowledge/> .
+@prefix cmo: <https://knowledge.semanticscore.net/ontology/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cmk:antonio-pappano a foaf:Person ;
+    foaf:familyName "Pappano" ;
+    foaf:firstName "Antonio" ;
+    cmo:conducts-in cmk:barbican-1746918000,
+        cmk:brighton-dome-1746745800,
+        cmk:saffron-hall-1746835200 ;
+    cmo:known-as-a cmk:conductor .
+
+cmk:callum-speirs a foaf:Person ;
+    foaf:familyName "Speirs" ;
+    foaf:firstName "Callum" ;
+    cmo:known-as-a cmk:percussionist ;
+    cmo:plays-in cmk:lso-st-lukes-1746720600 .
+
+cmk:charlie-cooper a foaf:Person ;
+    foaf:familyName "Cooper" ;
+    foaf:firstName "Charlie" ;
+    cmo:known-as-a cmk:trumpeter ;
+    cmo:plays-in cmk:lso-st-lukes-1746720600 .
+
+cmk:daisy-elliott a foaf:Person ;
+    foaf:familyName "Elliott" ;
+    foaf:firstName "Daisy" ;
+    cmo:known-as-a cmk:violinist ;
+    cmo:plays-in cmk:lso-st-lukes-1746720600 .
+
+cmk:denis-kozhukhin a foaf:Person ;
+    foaf:familyName "Kozhukhin" ;
+    foaf:firstName "Denis" ;
+    cmo:known-as-a cmk:pianist ;
+    cmo:plays-in cmk:barbican-1746918000,
+        cmk:brighton-dome-1746745800,
+        cmk:saffron-hall-1746835200 .
+
+cmk:giorgi-gigashvili a foaf:Person ;
+    foaf:familyName "Gigashvili" ;
+    foaf:firstName "Giorgi" ;
+    cmo:known-as-a cmk:pianist ;
+    cmo:plays-in cmk:lso-st-lukes-1747179600 .
+
+cmk:hania-wozniak a foaf:Person ;
+    foaf:familyName "Wozniak" ;
+    foaf:firstName "Hania" ;
+    cmo:known-as-a cmk:flautist ;
+    cmo:plays-in cmk:lso-st-lukes-1746720600 .
+
+cmk:helena-thomas a foaf:Person ;
+    foaf:familyName "Thomas" ;
+    foaf:firstName "Helena" ;
+    cmo:known-as-a cmk:violinist ;
+    cmo:plays-in cmk:lso-st-lukes-1746720600 .
+
+cmk:jess-mcnulty a foaf:Person ;
+    foaf:familyName "McNulty" ;
+    foaf:firstName "Jess" ;
+    cmo:known-as-a cmk:flautist ;
+    cmo:plays-in cmk:lso-st-lukes-1746720600 .
+
+cmk:josh-law a foaf:Person ;
+    foaf:familyName "Law" ;
+    foaf:firstName "Josh" ;
+    cmo:known-as-a cmk:violist ;
+    cmo:plays-in cmk:lso-st-lukes-1746720600 .
+
+cmk:julie-piggott a foaf:Person ;
+    foaf:familyName "Piggott" ;
+    foaf:firstName "Julie" ;
+    cmo:known-as-a cmk:violinist ;
+    cmo:plays-in cmk:lso-st-lukes-1746720600 .
+
+cmk:kathryn-titcomb a foaf:Person ;
+    foaf:familyName "Titcomb" ;
+    foaf:firstName "Kathryn" ;
+    cmo:known-as-a cmk:clarinetist ;
+    cmo:plays-in cmk:lso-st-lukes-1746720600 .
+
+cmk:leif-ove-andsnes a foaf:Person ;
+    foaf:familyName "Andsnes" ;
+    foaf:firstName "Leif Ove" ;
+    cmo:known-as-a cmk:pianist ;
+    cmo:plays-in cmk:barbican-1747504800 .
+
+cmk:lidia-moscoso-bernal a foaf:Person ;
+    foaf:familyName "Moscoso Bernal" ;
+    foaf:firstName "Lidia" ;
+    cmo:known-as-a cmk:oboist ;
+    cmo:plays-in cmk:lso-st-lukes-1746720600 .
+
+cmk:lso-st-lukes a cmo:Venue ;
+    schema:name "LSO St Luke's" .
+
+cmk:lso-st-lukes-1746799200 a mo:Performance ;
+    schema:location cmk:jerwood-hall ;
+    schema:name "LSO St Luke's Open Morning" ;
+    schema:organizer cmk:london-symphony-orchestra ;
+    schema:startDate "2026-05-09T10:00:00"^^xsd:dateTime ;
+    schema:url "https://www.lso.co.uk/whats-on/lso-st-lukes-open-morning-9-may-2026/"^^xsd:anyURI .
+
+cmk:lucy-crowe a foaf:Person ;
+    foaf:familyName "Crowe" ;
+    foaf:firstName "Lucy" ;
+    cmo:known-as-a cmk:soprano .
+
+cmk:maria-odea a foaf:Person ;
+    foaf:familyName "O'Dea" ;
+    foaf:firstName "Maria" ;
+    cmo:known-as-a cmk:bassoonist ;
+    cmo:plays-in cmk:lso-st-lukes-1746720600 .
+
+cmk:mark-withers a foaf:Person ;
+    foaf:familyName "Withers" ;
+    foaf:firstName "Mark" ;
+    cmo:known-as-a cmk:presenter ;
+    cmo:performs-in cmk:lso-st-lukes-1746720600 .
+
+cmk:milton-mermikides a foaf:Person ;
+    foaf:familyName "Mermikides" ;
+    foaf:firstName "Milton" ;
+    cmo:known-as-a cmk:presenter ;
+    cmo:performs-in cmk:lso-st-lukes-1747197600 .
+
+cmk:miriam-alperovich a foaf:Person ;
+    foaf:familyName "Alperovich" ;
+    foaf:firstName "Miriam" ;
+    cmo:known-as-a cmk:bassoonist ;
+    cmo:plays-in cmk:lso-st-lukes-1746720600 .
+
+cmk:nathalie-stutzmann a foaf:Person ;
+    foaf:familyName "Stutzmann" ;
+    foaf:firstName "Nathalie" ;
+    cmo:conducts-in cmk:barbican-1747504800 ;
+    cmo:known-as-a cmk:conductor .
+
+cmk:niamh-rodgers a foaf:Person ;
+    foaf:familyName "Rodgers" ;
+    foaf:firstName "Niamh" ;
+    cmo:known-as-a cmk:horn-player ;
+    cmo:plays-in cmk:lso-st-lukes-1746720600 .
+
+cmk:nina-garvey a foaf:Person ;
+    foaf:familyName "Garvey" ;
+    foaf:firstName "Nina" ;
+    cmo:known-as-a cmk:trumpeter ;
+    cmo:plays-in cmk:lso-st-lukes-1746720600 .
+
+cmk:rowena-taylor a foaf:Person ;
+    foaf:familyName "Taylor" ;
+    foaf:firstName "Rowena" ;
+    cmo:known-as-a cmk:cellist ;
+    cmo:plays-in cmk:lso-st-lukes-1746720600 .
+
+cmk:sean-hartman a foaf:Person ;
+    foaf:familyName "Hartman" ;
+    foaf:firstName "Sean" ;
+    cmo:known-as-a cmk:trumpeter ;
+    cmo:plays-in cmk:lso-st-lukes-1746720600 .
+
+cmk:simon-rattle a foaf:Person ;
+    foaf:familyName "Rattle" ;
+    foaf:firstName "Simon" ;
+    cmo:known-as-a cmk:conductor .
+
+cmk:vanessa-king a foaf:Person ;
+    foaf:familyName "King" ;
+    foaf:firstName "Vanessa" ;
+    cmo:known-as-a cmk:presenter ;
+    cmo:performs-in cmk:lso-st-lukes-1747630200,
+        cmk:lso-st-lukes-1747635600 .
+
+cmk:yuno-akiyama a foaf:Person ;
+    foaf:familyName "Akiyama" ;
+    foaf:firstName "Yuno" ;
+    cmo:known-as-a cmk:violinist ;
+    cmo:plays-in cmk:lso-st-lukes-1746720600 .
+
+<https://knowledge.semanticscore.net/ontology> a owl:Ontology ;
+    owl:imports mo:,
+        foaf: .
+
+cmo:acronym a owl:DatatypeProperty ;
+    rdfs:label "acronym"@en ;
+    rdfs:comment "A short identifying code or abbreviation for an organisation, used for file naming and display."@en ;
+    rdfs:domain schema:Organization ;
+    rdfs:range xsd:string .
+
+cmo:conducts-in a owl:ObjectProperty ;
+    rdfs:label "conducts in"@en ;
+    rdfs:comment "Connects a conductor to a performance they conduct."@en ;
+    rdfs:subPropertyOf cmo:performs-in .
+
+cmo:contains-music-by a owl:ObjectProperty ;
+    rdfs:label "contains music by"@en ;
+    rdfs:comment "Connects a concert programme to the composers of the musical works it contains."@en ;
+    rdfs:domain cmo:Programme ;
+    rdfs:range schema:Person .
+
+cmo:ensemble-identity a owl:Class ;
+    rdfs:label "Ensemble identity"@en ;
+    rdfs:comment "A musical identity of a person who performs as part of an ensemble."@en ;
+    rdfs:subClassOf cmo:musical-identity .
+
+cmo:is-performed-at a owl:ObjectProperty ;
+    rdfs:label "is performed at"@en ;
+    rdfs:comment "Connects a concert programme to the performance event at which it is performed."@en ;
+    rdfs:domain cmo:Programme ;
+    rdfs:range mo:Performance .
+
+cmo:known-as-a a owl:ObjectProperty ;
+    rdfs:label "known as a"@en ;
+    rdfs:comment "Connects a person to the musical identity or role they are known for, such as conductor or pianist."@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:range cmo:musical-identity .
+
+cmo:musical-content a owl:DatatypeProperty ;
+    rdfs:label "musical content"@en ;
+    rdfs:comment "The musical content of a programme performed at a performance, represented as a string of text."@en ;
+    rdfs:domain mo:Programme ;
+    rdfs:range xsd:string .
+
+cmo:narrates-in a owl:ObjectProperty ;
+    rdfs:label "narrates in"@en ;
+    rdfs:comment "Connects a narrator to a performance in which they narrate."@en ;
+    rdfs:subPropertyOf cmo:performs-in .
+
+cmo:plays-in a owl:ObjectProperty ;
+    rdfs:label "plays in"@en ;
+    rdfs:comment "Connects an instrumentalist to a performance in which they play."@en ;
+    rdfs:subPropertyOf cmo:performs-in .
+
+cmo:sings-in a owl:ObjectProperty ;
+    rdfs:label "sings in"@en ;
+    rdfs:comment "Connects a singer to a performance in which they sing."@en ;
+    rdfs:subPropertyOf cmo:performs-in .
+
+cmk:brighton-dome a cmo:Venue ;
+    schema:name "Brighton Dome" .
+
+cmk:lso-st-lukes-1747179600 a mo:Performance ;
+    schema:location cmk:jerwood-hall ;
+    schema:name "ECHO Rising Stars: Giorgi Gigashvili" ;
+    schema:organizer cmk:london-symphony-orchestra ;
+    schema:startDate "2026-05-13T13:00:00"^^xsd:dateTime ;
+    schema:url "https://www.lso.co.uk/whats-on/echo-rising-stars-giorgi-gigashvili/"^^xsd:anyURI .
+
+cmk:lso-st-lukes-1747197600 a mo:Performance ;
+    schema:location cmk:jerwood-hall ;
+    schema:name "Music of the Body" ;
+    schema:organizer cmk:london-symphony-orchestra ;
+    schema:startDate "2026-05-13T18:00:00"^^xsd:dateTime ;
+    schema:url "https://www.lso.co.uk/whats-on/music-of-the-body/"^^xsd:anyURI .
+
+cmk:lso-st-lukes-1747630200 a mo:Performance ;
+    schema:location cmk:jerwood-hall ;
+    schema:name "Musical Storytelling" ;
+    schema:organizer cmk:london-symphony-orchestra ;
+    schema:startDate "2026-05-16T10:30:00"^^xsd:dateTime ;
+    schema:url "https://www.lso.co.uk/whats-on/musical-storytelling-16-may-26-10-30am/"^^xsd:anyURI .
+
+cmk:lso-st-lukes-1747635600 a mo:Performance ;
+    schema:location cmk:jerwood-hall ;
+    schema:name "Musical Storytelling" ;
+    schema:organizer cmk:london-symphony-orchestra ;
+    schema:startDate "2026-05-16T12:00:00"^^xsd:dateTime ;
+    schema:url "https://www.lso.co.uk/whats-on/musical-storytelling-16-may-26-12pm/"^^xsd:anyURI .
+
+cmk:saffron-hall a cmo:Venue ;
+    schema:name "Saffron Hall" .
+
+cmk:soprano a cmo:voice-range .
+
+cmo:ConcertHall a owl:Class ;
+    rdfs:label "Concert hall"@en ;
+    rdfs:comment "A specific auditorium or performance space, typically contained within a venue. Address is inherited from the containing venue."@en ;
+    rdfs:subClassOf schema:Place .
+
+cmo:instrumentalist-identity a owl:Class ;
+    rdfs:label "Instrumentalist identity"@en ;
+    rdfs:comment "A musical identity of a person who plays an instrument, such as pianist or violinist."@en ;
+    rdfs:subClassOf cmo:musical-identity .
+
+cmo:voice-range a owl:Class ;
+    rdfs:label "Voice range"@en ;
+    rdfs:comment "A vocal musical identity categorised by voice type, such as soprano, tenor, or bass."@en ;
+    rdfs:subClassOf cmo:musical-identity .
+
+cmk:barbican a cmo:ConcertHall ;
+    schema:name "Barbican" .
+
+cmk:barbican-1746918000 a mo:Performance ;
+    schema:location cmk:barbican ;
+    schema:name "Britten, Bernstein and Tchaikovsky" ;
+    schema:organizer cmk:london-symphony-orchestra ;
+    schema:startDate "2026-05-10T19:00:00"^^xsd:dateTime ;
+    schema:url "https://www.lso.co.uk/whats-on/britten-bernstein-and-tchaikovsky-10-may-26/"^^xsd:anyURI .
+
+cmk:barbican-1747504800 a mo:Performance ;
+    schema:location cmk:barbican ;
+    schema:name "Beethoven, Wagner and Strauss" ;
+    schema:organizer cmk:london-symphony-orchestra ;
+    schema:startDate "2026-05-14T19:00:00"^^xsd:dateTime ;
+    schema:url "https://www.lso.co.uk/whats-on/beethoven-wagner-and-strauss-14-may-26/"^^xsd:anyURI .
+
+cmk:brighton-dome-1746745800 a mo:Performance ;
+    schema:location cmk:brighton-dome ;
+    schema:name "On Tour at the Brighton Festival" ;
+    schema:organizer cmk:london-symphony-orchestra ;
+    schema:startDate "2026-05-08T19:30:00"^^xsd:dateTime ;
+    schema:url "https://www.lso.co.uk/whats-on/on-tour-in-brighton-8-may-26/"^^xsd:anyURI .
+
+cmk:saffron-hall-1746835200 a mo:Performance ;
+    schema:location cmk:saffron-hall ;
+    schema:name "On Tour in Saffron Walden" ;
+    schema:organizer cmk:london-symphony-orchestra ;
+    schema:startDate "2026-05-09T19:00:00"^^xsd:dateTime ;
+    schema:url "https://www.lso.co.uk/whats-on/on-tour-in-saffron-walden-9-may-26/"^^xsd:anyURI .
+
+cmo:Programme a owl:Class ;
+    rdfs:label "Programme"@en ;
+    rdfs:comment "A concert programme listing the musical works to be performed at a performance."@en .
+
+cmk:conductor a cmo:musical-identity .
+
+cmk:pianist a cmo:instrumentalist-identity .
+
+cmk:presenter a cmo:musical-identity .
+
+cmo:Venue a owl:Class ;
+    rdfs:label "Venue"@en ;
+    rdfs:comment "A physical building or complex that hosts concerts, which may contain one or more concert halls."@en ;
+    rdfs:subClassOf schema:Place .
+
+cmo:performs-in a owl:ObjectProperty ;
+    rdfs:label "performs in"@en ;
+    rdfs:comment "Connects a person to a performance in which they participate in any musical role. Super-property of all role-specific participation properties."@en .
+
+cmo:musical-identity a owl:Class ;
+    rdfs:label "Musical identity"@en ;
+    rdfs:comment "The musical role or identity of a person, such as conductor, singer, or instrumentalist."@en .
+
+cmk:lso-st-lukes-1746720600 a mo:Performance ;
+    schema:location cmk:jerwood-hall ;
+    schema:name "Relaxed Free Friday Lunchtime Concert: Orchestral Artistry Showcase" ;
+    schema:organizer cmk:london-symphony-orchestra ;
+    schema:startDate "2026-05-08T12:30:00"^^xsd:dateTime ;
+    schema:url "https://www.lso.co.uk/whats-on/free-friday-lunchtime-concert-orchestral-artistry-showcase-8-may-26/"^^xsd:anyURI .
+

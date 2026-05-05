@@ -1,0 +1,12 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX schema: <https://schema.org/>
+
+CONSTRUCT {
+    ?person schema:name ?fullName .
+}
+WHERE {
+    ?person a foaf:Person ;
+            foaf:firstName ?first ;
+            foaf:familyName ?family .
+    BIND(CONCAT(?first, " ", ?family) AS ?fullName)
+}

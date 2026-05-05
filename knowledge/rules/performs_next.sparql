@@ -1,0 +1,20 @@
+PREFIX cmo: <https://knowledge.semanticscore.net/ontology/>
+PREFIX mo: <http://purl.org/ontology/mo/>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX schema: <https://schema.org/>
+
+CONSTRUCT {
+    ?person cmo:performs-next ?nextPerf 
+}
+WHERE {
+    ?person cmo:performs-in ?nextPerf .
+    ?nextPerf schema:startDate ?time .
+    FILTER(?time > xsd:dateTime(SUBSTR(STR(NOW()), 1, 19)))
+    FILTER NOT EXISTS {
+        ?person cmo:performs-in ?earlierPerf .
+        ?earlierPerf schema:startDate ?earlierTime .
+        FILTER(?earlierTime > xsd:dateTime(SUBSTR(STR(NOW()), 1, 19)))
+        FILTER(?earlierTime < ?time)
+    }
+}

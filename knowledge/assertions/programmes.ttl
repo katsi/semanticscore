@@ -1,0 +1,561 @@
+@prefix cmk: <https://knowledge.semanticscore.net/knowledge/> .
+@prefix cmo: <https://knowledge.semanticscore.net/ontology/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cmk:programme-barbican-1746918000 a cmo:Programme ;
+    cmo:contains-music-by cmk:benjamin-britten,
+        cmk:leonard-bernstein,
+        cmk:pyotr-tchaikovsky ;
+    cmo:is-performed-at cmk:barbican-1746918000 ;
+    cmo:musical-content """Benjamin Britten – Sinfonia da requiem
+Leonard Bernstein – The Age of Anxiety (Symphony No 2) for piano and orchestra
+Pyotr Ilyich Tchaikovsky – Symphony No 6, 'Pathétique'"""^^xsd:string .
+
+cmk:programme-barbican-1747504800 a cmo:Programme ;
+    cmo:contains-music-by cmk:ludwig-van-beethoven,
+        cmk:richard-strauss,
+        cmk:richard-wagner ;
+    cmo:is-performed-at cmk:barbican-1747504800 ;
+    cmo:musical-content """Ludwig van Beethoven - Piano Concerto No 3
+Richard Wagner - Overture: Rienzi
+Richard Strauss - Der Rosenkavalier – Suite"""^^xsd:string .
+
+cmk:programme-barbican-london-1736967000 a cmo:Programme ;
+    cmo:contains-music-by cmk:joseph-phibbs,
+        cmk:mélanie-bonis,
+        cmk:pyotr-tchaikovsky,
+        cmk:richard-strauss ;
+    cmo:is-performed-at cmk:barbican-london-1736967000 ;
+    cmo:musical-content """Pyotr Tchaikovsky - Fantasy-Overture 'Hamlet'
+Joseph Phibbs - Cello Concerto (BBC co-commission: world premiere)
+Mel Bonis - Ophelie
+Richard Strauss - Der Rosenkavalier – suite"""^^xsd:string .
+
+cmk:programme-barbican-london-1737744600 a cmo:Programme ;
+    cmo:contains-music-by cmk:aaron-copland,
+        cmk:julia-wolfe ;
+    cmo:is-performed-at cmk:barbican-london-1737744600 ;
+    cmo:musical-content """Aaron Copland: Appalachian Spring
+Julia Wolfe: unEarth"""^^xsd:string .
+
+cmk:programme-basingstoke-multiple-venues-1776614400 a cmo:Programme ;
+    cmo:contains-music-by cmk:edward-elgar ;
+    cmo:is-performed-at cmk:basingstoke-multiple-venues-1776614400 ;
+    cmo:musical-content "Elgar - Violin Concerto (performed by Nicola Benedetti)"^^xsd:string .
+
+cmk:programme-bohemian-american-concert-2027 a cmo:Programme ;
+    cmo:contains-music-by cmk:antonín-dvořák,
+        cmk:beatrice-price ;
+    cmo:is-performed-at cmk:bohemian-american-concert-2027 ;
+    cmo:musical-content """Florence Price – Symphony No. 1
+Antonín Dvořák – Cello Concerto (soloist: Pablo Ferrández)"""^^xsd:string .
+
+cmk:programme-brighton-dome-1746745800 a cmo:Programme ;
+    cmo:contains-music-by cmk:ludwig-van-beethoven,
+        cmk:pyotr-tchaikovsky ;
+    cmo:is-performed-at cmk:brighton-dome-1746745800 ;
+    cmo:musical-content """Ludwig van Beethoven - Piano Concerto No 3
+Pyotr Ilyich Tchaikovsky - Symphony No 6, 'Pathétique'"""^^xsd:string .
+
+cmk:programme-de-montfort-hall-1778368800 a cmo:Programme ;
+    cmo:contains-music-by cmk:alan-silvestri,
+        cmk:cristina-ortiz,
+        cmk:edward-elgar,
+        cmk:georges-bizet,
+        cmk:igor-stravinsky,
+        cmk:laura-shigihara,
+        cmk:ludwig-van-beethoven,
+        cmk:wolfgang-mozart ;
+    cmo:is-performed-at cmk:de-montfort-hall-1778368800 ;
+    cmo:musical-content """Mozart - Overture, Don Giovanni
+Beethoven - Symphony No 5 (1st movement)
+Stravinsky - The Firebird Suite (1919) (Finale)
+Elgar - Enigma Variations (Theme, IV, XI, VII)
+Ortiz - Papalotes
+Shigihara - Grasswalk from Plants vs. Zombies
+Silvestri - The Avengers (Theme)
+Bizet - Carmen Suite (Les Toreadors)"""^^xsd:string .
+
+cmk:programme-de-montfort-hall-1778389200 a cmo:Programme ;
+    cmo:contains-music-by cmk:antonín-dvořák,
+        cmk:johannes-brahms,
+        cmk:robert-schumann ;
+    cmo:is-performed-at cmk:de-montfort-hall-1778389200 ;
+    cmo:musical-content """Dvořák: Vanda Overture
+Schumann: Cello Concerto
+Brahms: Symphony No. 1"""^^xsd:string .
+
+cmk:programme-dream-requiem-concert-2027 a cmo:Programme ;
+    cmo:contains-music-by cmk:rufus-wainwright ;
+    cmo:is-performed-at cmk:dream-requiem-concert-2027 ;
+    cmo:musical-content "Rufus Wainwright – Dream Requiem"^^xsd:string .
+
+cmk:programme-emperor-and-jupiter a cmo:Programme ;
+    cmo:contains-music-by cmk:györgy-kurtág,
+        cmk:ludwig-van-beethoven,
+        cmk:wolfgang-mozart ;
+    cmo:is-performed-at cmk:emperor-and-jupiter ;
+    cmo:musical-content """György Kurtág: …quasi una fantasia… op. 27:1
+Ludwig van Beethoven: Piano Concerto no. 5 in E flat major 'Emperor'
+Wolfgang Amadeus Mozart: Symphony no. 41 in C major 'Jupiter'"""^^xsd:string .
+
+cmk:programme-encounters-club-string-crossings a cmo:Programme ;
+    cmo:contains-music-by cmk:astor-piazzolla,
+        cmk:hamza-el-din,
+        cmk:mari-sainio,
+        cmk:missy-mazzoli,
+        cmk:trad-traditional ;
+    cmo:is-performed-at cmk:encounters-club-string-crossings ;
+    cmo:musical-content """Trad. – Polska from Dorotea
+Hamza El Din – Escalay "Waterwheel"
+Trad. – Stædelil
+Missy Mazzoli – Quartet for Queen Mab
+Trad. – Shine you no more
+Mari Sainio – Through the waves
+Astor Piazzolla – Libertango"""^^xsd:string .
+
+cmk:programme-finale-concert-2027 a cmo:Programme ;
+    cmo:contains-music-by cmk:anna-clyne,
+        cmk:anton-bruckner,
+        cmk:antonín-dvořák,
+        cmk:arnold-schoenberg,
+        cmk:beatrice-price,
+        cmk:charles-ives,
+        cmk:claude-debussy,
+        cmk:edvard-grieg,
+        cmk:fazıl-say,
+        cmk:grażyna-bacewicz,
+        cmk:hector-berlioz,
+        cmk:henri-dutilleux,
+        cmk:kaija-saariaho,
+        cmk:richard-strauss,
+        cmk:rufus-wainwright,
+        cmk:sebastian-bach ;
+    cmo:is-performed-at cmk:finale-concert-2027 ;
+    cmo:musical-content """Charles Ives – The Unanswered Question
+Edvard Grieg – Piano Concerto
+Anna Clyne – Woman of the Mountain
+Claude Debussy – La mer
+Kaija Saariaho – La passion de Simone
+J.S. Bach – Chaconne (arr. Hideo Saitō for orchestra)
+Anton Bruckner – Symphony No. 9 (unfinished)
+Florence Price – Symphony No. 1
+Antonín Dvořák – Cello Concerto
+Rufus Wainwright – Dream Requiem
+Grażyna Bacewicz – Overture
+Henri Dutilleux – Cello Concerto 'Tout un monde lointain…'
+Hector Berlioz – Symphonie fantastique
+Arnold Schönberg – Verklärte Nacht
+Richard Strauss – Tod und Verklärung
+Fazıl Say – Cello Concerto 'Never Give Up'"""^^xsd:string .
+
+cmk:programme-great-greater-mahler a cmo:Programme ;
+    cmo:contains-music-by cmk:gustav-mahler ;
+    cmo:is-performed-at cmk:great-greater-mahler ;
+    cmo:musical-content "Gustav Mahler: Symphony no. 3 in D minor"^^xsd:string .
+
+cmk:programme-inaugural-concert-2026 a cmo:Programme ;
+    cmo:contains-music-by cmk:anna-clyne,
+        cmk:charles-ives,
+        cmk:claude-debussy,
+        cmk:edvard-grieg ;
+    cmo:is-performed-at cmk:inaugural-concert-2026 ;
+    cmo:musical-content """Charles Ives – The Unanswered Question
+Edvard Grieg – Piano Concerto
+Anna Clyne – Woman of the Mountain
+Claude Debussy – La mer"""^^xsd:string .
+
+cmk:programme-lso-st-lukes-1746720600 a cmo:Programme ;
+    cmo:contains-music-by cmk:benjamin-britten,
+        cmk:gene-koshinski,
+        cmk:grażyna-bacewicz,
+        cmk:heitor-lobos,
+        cmk:holly-harrison,
+        cmk:óscar-navarro ;
+    cmo:is-performed-at cmk:lso-st-lukes-1746720600 ;
+    cmo:musical-content """Benjamin Britten - Fanfare for St Edmundsbury
+Gene Koshinski - Get It!
+Grażyna Bacewicz - Duets on Folk Themes
+Oscar Navarro - Sevilla from Juego de Ladrones
+Villa-Lobos - Aria from Bachianas Brasileiras No 6 for flute and bassoon
+Holly Harrison - Swoop"""^^xsd:string .
+
+cmk:programme-lso-st-lukes-1747179600 a cmo:Programme ;
+    cmo:contains-music-by cmk:domenico-scarlatti,
+        cmk:fryderyk-chopin,
+        cmk:marie-boulanger,
+        cmk:maurice-ravel,
+        cmk:natalia-beridze ;
+    cmo:is-performed-at cmk:lso-st-lukes-1747179600 ;
+    cmo:musical-content """Domenico Scarlatti - Sonata in C major K 847
+Domenico Scarlatti - Sonata in A major K 113
+Frederic Chopin - Ballade No 4 in F minor
+Natalie Beridze - Holy Atoms for piano solo
+Lili Boulanger - D'un vieux jardin and D'un jardin clair from 'Trois Morceaux pour Piano'
+Maurice Ravel - Miroirs"""^^xsd:string .
+
+cmk:programme-lso-st-lukes-1747635600 a cmo:Programme ;
+    cmo:is-performed-at cmk:lso-st-lukes-1747635600 ;
+    cmo:musical-content "Full programme to be announced."^^xsd:string .
+
+cmk:programme-maida-vale-studios-1736429400 a cmo:Programme ;
+    cmo:contains-music-by cmk:charles-ives,
+        cmk:gustav-mahler,
+        cmk:isaac-albéniz ;
+    cmo:is-performed-at cmk:maida-vale-studios-1736429400 ;
+    cmo:musical-content """Isaac Albéniz – 'El Albaicín', from Iberia (arr. Francisco Guerrero)
+Gustav Mahler – Lieder eines fahrenden Gesellen
+Charles Ives – Symphony No. 2"""^^xsd:string .
+
+cmk:programme-maida-vale-studios-1736688600 a cmo:Programme ;
+    cmo:contains-music-by cmk:anatoly-lyadov,
+        cmk:pyotr-tchaikovsky ;
+    cmo:is-performed-at cmk:maida-vale-studios-1736688600 ;
+    cmo:musical-content """Anatoly Konstantinovich Lyadov - About Olden Times
+Pyotr Tchaikovsky - Symphony No 1 in G minor, 'Winter Daydreams'"""^^xsd:string .
+
+cmk:programme-main-hall-1745097300 a cmo:Programme ;
+    cmo:contains-music-by cmk:ludwig-van-beethoven,
+        cmk:pyotr-tchaikovsky,
+        cmk:vartan-adjemian ;
+    cmo:is-performed-at cmk:main-hall-1745097300 ;
+    cmo:musical-content """Adjemian: Concerto
+Tchaikovsky: Violin Concerto in D major, op. 35
+Beethoven: Symphony No. 5 in c minor, op. 67"""^^xsd:string .
+
+cmk:programme-main-hall-1745183700 a cmo:Programme ;
+    cmo:contains-music-by cmk:antonín-dvořák,
+        cmk:bedřich-smetana,
+        cmk:rob-zuidam ;
+    cmo:is-performed-at cmk:main-hall-1745183700 ;
+    cmo:musical-content """Smetana – Overture 'The Bartered Bride'
+Zuidam – Orewoet (Commissioned by the Concertgebouw Orchestra)
+Dvořák – Symphony No. 9 in e minor, op. 95 'From the New World'"""^^xsd:string .
+
+cmk:programme-main-hall-1745263800 a cmo:Programme ;
+    cmo:contains-music-by cmk:georg-friedrich-handel ;
+    cmo:is-performed-at cmk:main-hall-1745263800 ;
+    cmo:musical-content "Händel - Brockes Passion, HWV 48"^^xsd:string .
+
+cmk:programme-main-hall-1745270100 a cmo:Programme ;
+    cmo:contains-music-by cmk:igor-stravinsky,
+        cmk:ludwig-van-beethoven,
+        cmk:sebastian-bach ;
+    cmo:is-performed-at cmk:main-hall-1745270100 ;
+    cmo:musical-content """Beethoven: Ouverture 'Coriolan' in c minor
+Beethoven: Violin Concerto in D major, op. 61
+J.S. Bach: Allemande (from Partita No. 2 in d minor, BWV 1004) (encore)
+Stravinsky: The Rite of Spring, K 015"""^^xsd:string .
+
+cmk:programme-main-hall-1745348400 a cmo:Programme ;
+    cmo:contains-music-by cmk:johannes-brahms,
+        cmk:sergey-prokopievi ;
+    cmo:is-performed-at cmk:main-hall-1745348400 ;
+    cmo:musical-content """Prokofjev: Symphony No. 1 in D major, op. 25 'Classical'
+Brahms: Double Concerto in A minor, op. 102
+Podgaiskaja: Traffic Jam (encore)"""^^xsd:string .
+
+cmk:programme-main-hall-1745356500 a cmo:Programme ;
+    cmo:contains-music-by cmk:antonín-dvořák,
+        cmk:bedřich-smetana,
+        cmk:rob-zuidam ;
+    cmo:is-performed-at cmk:main-hall-1745356500 ;
+    cmo:musical-content """Smetana - Overture 'The Bartered Bride'
+Zuidam - Orewoet (Commissioned by the Concertgebouw Orchestra)
+Dvořák - Symphony No. 9 in e minor, op. 95 'From the New World'"""^^xsd:string .
+
+cmk:programme-main-hall-1745370900 a cmo:Programme ;
+    cmo:contains-music-by cmk:césar-franck,
+        cmk:fryderyk-chopin,
+        cmk:sergey-prokopievi ;
+    cmo:is-performed-at cmk:main-hall-1745370900 ;
+    cmo:musical-content """Chopin: Barcarolle in F-sharp major, op. 60
+Chopin: Sonate in b minor, op. 58
+Franck: Prélude, choral et fugue
+Prokofjev: Sonata No. 2 in d minor, op. 14"""^^xsd:string .
+
+cmk:programme-may-day-matinee-1 a cmo:Programme ;
+    cmo:contains-music-by cmk:friedrich-hollaender,
+        cmk:henri-content,
+        cmk:julian-weill,
+        cmk:ludwig-van-beethoven,
+        cmk:max-raabe,
+        cmk:monica-zetterlund,
+        cmk:norbert-glanzberg,
+        cmk:richard-wagner ;
+    cmo:is-performed-at cmk:may-day-matinee-1 ;
+    cmo:musical-content """Richard Wagner - Lohengrin, III näytöksen alkusoitto
+Kurt Weill (arr. Marzi Nyman) - Mack the Knife from Threepenny Opera
+Max Raabe (arr. Sampo Kasurinen) - Ein Tag wie Gold
+Monica Zetterlund (arr. Sampo Kasurinen) - Oodi Helsingille
+Friedrich Hollaender (arr. Marzi Nyman) - The Kleptomaniac
+Jaques Brel (arr. Marzi Nyman) - Ne me quitté pas
+Ricardo Mollá - Diamond hands
+Beethoven / Malgoni (arr. Timo Hietala) - Guarda che luna
+Glanzberg Norbert / Henri Content (arr. Marzi Nyman) - Padam, padam
+Trad. / Christian F. Kress - March of the Pori Regiment"""^^xsd:string .
+
+cmk:programme-may-day-matinee-2 a cmo:Programme ;
+    cmo:contains-music-by cmk:friedrich-hollaender,
+        cmk:henri-content,
+        cmk:julian-weill,
+        cmk:ludwig-van-beethoven,
+        cmk:max-raabe,
+        cmk:monica-zetterlund,
+        cmk:norbert-glanzberg,
+        cmk:richard-wagner ;
+    cmo:is-performed-at cmk:may-day-matinee-2 ;
+    cmo:musical-content """Richard Wagner - Lohengrin, III näytöksen alkusoitto
+Kurt Weill (arr. Marzi Nyman) - Mack the Knife from Threepenny Opera
+Max Raabe (arr. Sampo Kasurinen) - Ein Tag wie Gold
+Monica Zetterlund (arr. Sampo Kasurinen) - Oodi Helsingille
+Friedrich Hollaender (arr. Marzi Nyman) - The Kleptomaniac
+Jaques Brel (arr. Marzi Nyman) - Ne me quitté pas
+Ricardo Mollá - Diamond hands
+Beethoven / Malgoni (arr. Timo Hietala) - Guarda che luna
+Glanzberg Norbert / Henri Content (arr. Marzi Nyman) - Padam, padam
+Trad. / Christian F. Kress - March of the Pori Regiment"""^^xsd:string .
+
+cmk:programme-megaron-athens-concert-hall-1778648200 a cmo:Programme ;
+    cmo:contains-music-by cmk:antonín-dvořák,
+        cmk:johannes-brahms,
+        cmk:robert-schumann ;
+    cmo:is-performed-at cmk:megaron-athens-concert-hall-1778648200 ;
+    cmo:musical-content """Dvořák - Vanda Overture
+Schumann - Cello Concerto
+Brahms - Symphony No. 1"""^^xsd:string .
+
+cmk:programme-mother-earth a cmo:Programme ;
+    cmo:contains-music-by cmk:fazıl-say,
+        cmk:johannes-brahms ;
+    cmo:is-performed-at cmk:mother-earth ;
+    cmo:musical-content """Fazil Say: Mother Earth
+Johannes Brahms: Symphony No. 4 in E Minor, Op. 98"""^^xsd:string .
+
+cmk:programme-prague-evening a cmo:Programme ;
+    cmo:contains-music-by cmk:camille-saint-saëns,
+        cmk:erwin-schulhoff,
+        cmk:joseph-haydn,
+        cmk:wolfgang-mozart ;
+    cmo:is-performed-at cmk:prague-evening ;
+    cmo:musical-content """Wolfgang Amadeus Mozart: Overture to La clemenza di Tito
+Joseph Haydn: Symphony no. 93 in D major
+Camille Saint-Saëns: Violin Concerto (work title not fully specified)
+Erwin Schulhoff: Five Pieces"""^^xsd:string .
+
+cmk:programme-recital-hall-1745183700 a cmo:Programme ;
+    cmo:contains-music-by cmk:györgy-kurtág,
+        cmk:johannes-brahms,
+        cmk:joseph-haydn ;
+    cmo:is-performed-at cmk:recital-hall-1745183700 ;
+    cmo:musical-content """Kurtág: Twelve microludes, op. 13
+Haydn: String Quartet in F major, op. 77, nr. 2, Hob III: 82
+Brahms: String Quartet No. 1 in c minor, op. 51, nr. 1"""^^xsd:string .
+
+cmk:programme-recital-hall-1745270100 a cmo:Programme ;
+    cmo:contains-music-by cmk:györgy-kurtág,
+        cmk:johannes-brahms,
+        cmk:joseph-haydn ;
+    cmo:is-performed-at cmk:recital-hall-1745270100 ;
+    cmo:musical-content """Kurtág: Twelve microludes, op. 13
+Haydn: String Quartet in F major, op. 77, nr. 2, Hob III: 82
+Brahms: String Quartet No. 1 in c minor, op. 51, nr. 1"""^^xsd:string .
+
+cmk:programme-romantic-climax-concert-2027-may-7 a cmo:Programme ;
+    cmo:contains-music-by cmk:grażyna-bacewicz,
+        cmk:hector-berlioz,
+        cmk:henri-dutilleux ;
+    cmo:is-performed-at cmk:romantic-climax-concert-2027-may-7 ;
+    cmo:musical-content """Bacewicz - Overture
+Dutilleux - Cello Concerto 'Tout un monde lointain …'
+Berlioz - Symphonie fantastique"""^^xsd:string .
+
+cmk:programme-romantic-climax-concert-2027-may-8 a cmo:Programme ;
+    cmo:contains-music-by cmk:grażyna-bacewicz,
+        cmk:hector-berlioz,
+        cmk:henri-dutilleux ;
+    cmo:is-performed-at cmk:romantic-climax-concert-2027-may-8 ;
+    cmo:musical-content """Bacewicz - Overture
+Dutilleux - Cello Concerto 'Tout un monde lointain …'
+Berlioz - Symphonie fantastique"""^^xsd:string .
+
+cmk:programme-royal-festival-hall-1776689400 a cmo:Programme ;
+    cmo:contains-music-by cmk:claude-debussy,
+        cmk:cécile-chaminade,
+        cmk:edward-elgar ;
+    cmo:is-performed-at cmk:royal-festival-hall-1776689400 ;
+    cmo:musical-content """Elgar - Violin Concerto
+Chaminade - Callirhoë Suite
+Debussy - La Mer"""^^xsd:string .
+
+cmk:programme-royal-festival-hall-1776707400 a cmo:Programme ;
+    cmo:contains-music-by cmk:claude-debussy,
+        cmk:cécile-chaminade,
+        cmk:edward-elgar ;
+    cmo:is-performed-at cmk:royal-festival-hall-1776707400 ;
+    cmo:musical-content """Elgar - Violin Concerto
+Chaminade - Callirhoë Suite
+Debussy - La Mer"""^^xsd:string .
+
+cmk:programme-royal-festival-hall-1776906600 a cmo:Programme ;
+    cmo:contains-music-by cmk:aleksandr-mosolov,
+        cmk:antonio-coițe-de-porc,
+        cmk:camille-saint-saëns,
+        cmk:dmitry-shostakovich,
+        cmk:gustav-holst,
+        cmk:gustav-mahler,
+        cmk:led-zeppelin,
+        cmk:richard-wagner ;
+    cmo:is-performed-at cmk:royal-festival-hall-1776906600 ;
+    cmo:musical-content """Wagner – 'Ride of the Valkyries' from Die Walküre
+Metallica – Orion
+Mike Chapman & Nicky Chinn – Can the Can
+Shostakovich – Allegro from Symphony No. 10
+Metallica – Enter Sandman
+Nelson – Steampunk Blizzard
+The Kills – Doing it to Death
+Mosolov – The Iron Foundry
+Holst – Mars from 'The Planets'
+Motörhead – Ace of Spades
+Mahler – Adagietto from Symphony No. 5 [excerpt]
+Bob Dylan – Knockin' on Heaven's Door
+Led Zeppelin – Kashmir
+Vivaldi – 'Summer' from The Four Seasons
+Saint-Saëns – Excerpts from Symphony No. 3, 'Organ'
+Lordi – Hard Rock Hallelujah"""^^xsd:string .
+
+cmk:programme-royal-festival-hall-1778453400 a cmo:Programme ;
+    cmo:contains-music-by cmk:antonín-dvořák,
+        cmk:johannes-brahms,
+        cmk:robert-schumann ;
+    cmo:is-performed-at cmk:royal-festival-hall-1778453400 ;
+    cmo:musical-content """Dvořák - Vanda Overture
+Schumann - Cello Concerto
+Brahms - Symphony No. 1"""^^xsd:string .
+
+cmk:programme-royal-festival-hall-1778475001 a cmo:Programme ;
+    cmo:is-performed-at cmk:royal-festival-hall-1778475001 ;
+    cmo:musical-content """Cope - Cold Earth
+Rees - I Once Saw The Face Of God
+Drewe - Clap Your Hands"""^^xsd:string .
+
+cmk:programme-royal-festival-hall-1778481400 a cmo:Programme ;
+    cmo:contains-music-by cmk:antonín-dvořák,
+        cmk:johannes-brahms,
+        cmk:robert-schumann ;
+    cmo:is-performed-at cmk:royal-festival-hall-1778481400 ;
+    cmo:musical-content """Dvořák - Vanda Overture
+Schumann - Cello Concerto
+Brahms - Symphony No. 1"""^^xsd:string .
+
+cmk:programme-saffron-hall-1746835200 a cmo:Programme ;
+    cmo:contains-music-by cmk:ludwig-van-beethoven,
+        cmk:pyotr-tchaikovsky ;
+    cmo:is-performed-at cmk:saffron-hall-1746835200 ;
+    cmo:musical-content """Ludwig van Beethoven - Piano Concerto No 3
+Pyotr Ilyich Tchaikovsky - Symphony No 6, 'Pathétique'"""^^xsd:string .
+
+cmk:programme-spiritual-concert-2026 a cmo:Programme ;
+    cmo:contains-music-by cmk:anton-bruckner,
+        cmk:kaija-saariaho,
+        cmk:sebastian-bach ;
+    cmo:is-performed-at cmk:spiritual-concert-2026 ;
+    cmo:musical-content """Kaija Saariaho – La passion de Simone
+Johann Sebastian Bach – Chaconne (version for orchestra by Hideo Saitō)
+Anton Bruckner – Symphony No. 9 (unfinished)"""^^xsd:string .
+
+cmk:programme-spring-paris-0 a cmo:Programme ;
+    cmo:contains-music-by cmk:louise-farrenc,
+        cmk:maurice-ravel,
+        cmk:urbain-fauré ;
+    cmo:is-performed-at cmk:spring-paris-0 ;
+    cmo:musical-content """Louise Farrenc: Overture no. 1 in E minor op. 23
+Gabriel Fauré: Pelléas et Mélisande op. 80
+Maurice Ravel: Tzigane"""^^xsd:string .
+
+cmk:programme-swansong a cmo:Programme ;
+    cmo:contains-music-by cmk:arvo-pärt,
+        cmk:dmitry-shostakovich ;
+    cmo:is-performed-at cmk:swansong ;
+    cmo:musical-content """Arvo Pärt: Swansong
+Arvo Pärt: Adam's Lament
+Dmitri Shostakovich: Symphony No. 15"""^^xsd:string .
+
+cmk:programme-the-anvil-1776647800 a cmo:Programme ;
+    cmo:contains-music-by cmk:claude-debussy,
+        cmk:cécile-chaminade,
+        cmk:edward-elgar ;
+    cmo:is-performed-at cmk:the-anvil-1776647800 ;
+    cmo:musical-content """Elgar - Violin Concerto
+Chaminade - Callirhoë
+Debussy - La Mer"""^^xsd:string .
+
+cmk:programme-the-helsinki-music-centre-concert-hall-1747159200 a cmo:Programme ;
+    cmo:contains-music-by cmk:aleksandr-arutyunyan,
+        cmk:bruce-broughton,
+        cmk:charles-françois-gounod,
+        cmk:georges-hüe,
+        cmk:henryk-wieniawski,
+        cmk:louis-spohr,
+        cmk:marcel-bitsch,
+        cmk:sebastian-bach,
+        cmk:victor-herbert ;
+    cmo:is-performed-at cmk:the-helsinki-music-centre-concert-hall-1747159200 ;
+    cmo:musical-content """J.S. Bach: Concerto for two violins D Minor BWV 1043
+Louis Spohr: Clarinet Concerto No. 4 E Minor WoO 20
+Georges Hüe: Fantaisie for flute and orchestra
+Victor Herbert (arr. Jerome Cohen): Art Is Calling for Me (I Want to Be a Prima Donna)
+Bruce Broughton: Tuubakonsertto
+Marcel Bitsch: Concertino for bassoon and orchestra
+Alexander Arutjunjan: Trumpet Concerto E flat Major
+Henryk Wieniawski: Polonaise brillante D Major Op. 4
+Charles Gounod: "O Dieu! que de bijoux! .... Ah! je ris de me voir" from Faust"""^^xsd:string .
+
+cmk:programme-the-helsinki-music-centre-concert-hall-1747936800 a cmo:Programme ;
+    cmo:contains-music-by cmk:béla-bartók,
+        cmk:francis-poulenc,
+        cmk:hector-berlioz,
+        cmk:marie-boulanger ;
+    cmo:is-performed-at cmk:the-helsinki-music-centre-concert-hall-1747936800 ;
+    cmo:musical-content """Hector Berlioz: Extracts from the opera "The Damnation of Faust"
+Lili Boulanger: Faust and Hélène
+Béla Bartók: Concerto for Orchestra
+Francis Poulenc: Sextet for wind instruments and piano"""^^xsd:string .
+
+cmk:programme-the-helsinki-music-centre-concert-hall-1748368800 a cmo:Programme ;
+    cmo:contains-music-by cmk:betsy-jolas,
+        cmk:jean-sibelius,
+        cmk:pyotr-tchaikovsky ;
+    cmo:is-performed-at cmk:the-helsinki-music-centre-concert-hall-1748368800 ;
+    cmo:musical-content """Betsy Jolas: A Little Summer Suite, Finnish premiere
+Jean Sibelius: Violin Concerto D Minor Op. 47
+Pyotr Tchaikovsky: Symphony No. 6 B Minor Op. 74"""^^xsd:string .
+
+cmk:programme-the-helsinki-music-centre-concert-hall-1748455200 a cmo:Programme ;
+    cmo:contains-music-by cmk:betsy-jolas,
+        cmk:jean-sibelius,
+        cmk:pyotr-tchaikovsky ;
+    cmo:is-performed-at cmk:the-helsinki-music-centre-concert-hall-1748455200 ;
+    cmo:musical-content """Betsy Jolas: A Little Summer Suite, Finnish premiere
+Jean Sibelius: Violin Concerto D Minor Op. 47
+Pyotr Tchaikovsky: Symphony No. 6 B Minor Op. 74"""^^xsd:string .
+
+cmk:programme-the-helsinki-music-centre-concert-hall-1749146400 a cmo:Programme ;
+    cmo:contains-music-by cmk:anton-webern,
+        cmk:gustav-mahler,
+        cmk:hans-abrahamsen ;
+    cmo:is-performed-at cmk:the-helsinki-music-centre-concert-hall-1749146400 ;
+    cmo:musical-content """Anton Webern: Sechs Stücken Op. 6
+Hans Abrahamsen: Concerto for Horn and Orchestra
+Gustav Mahler: Symphony No. 1 D Major"""^^xsd:string .
+
+cmk:programme-the-helsinki-music-centre-paavo-hall-1748714400 a cmo:Programme ;
+    cmo:contains-music-by cmk:aram-khachatryan,
+        cmk:astor-piazzolla,
+        cmk:nathan-daughtrey ;
+    cmo:is-performed-at cmk:the-helsinki-music-centre-paavo-hall-1748714400 ;
+    cmo:musical-content """Nathan Daughtrey: Burn3
+Aram Khachaturian: Trio
+Astor Piazzolla: Histoire du Tango
+Tytti Arola: New work, world premiere"""^^xsd:string .
+

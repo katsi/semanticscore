@@ -1,0 +1,308 @@
+@prefix cmk: <https://knowledge.semanticscore.net/knowledge/> .
+@prefix cmo: <https://knowledge.semanticscore.net/ontology/> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cmk:director a skos:Concept,
+        cmo:musical-identity ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "director"@en .
+
+cmk:arranger a skos:Concept,
+        cmo:musical-identity ;
+    skos:broader cmk:producer ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "arranger"@en .
+
+cmk:artistic-director a skos:Concept,
+        cmo:musical-identity ;
+    skos:broader cmk:producer ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "artistic director"@en .
+
+cmk:baritone a skos:Concept,
+        cmo:voice-range ;
+    skos:broader cmk:vocalist ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "baritone"@en .
+
+cmk:bassist a skos:Concept,
+        cmo:instrumentalist-identity ;
+    skos:broader cmk:instrumentalist ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "bassist"@en .
+
+cmk:bassoonist a skos:Concept,
+        cmo:instrumentalist-identity ;
+    skos:altLabel "bassoon"@en ;
+    skos:broader cmk:instrumentalist ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "bassoonist"@en .
+
+cmk:cellist a skos:Concept,
+        cmo:instrumentalist-identity ;
+    skos:altLabel "cello"@en ;
+    skos:broader cmk:instrumentalist ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "cellist"@en .
+
+cmk:clarinetist a skos:Concept,
+        cmo:instrumentalist-identity ;
+    skos:altLabel "clarinet"@en ;
+    skos:broader cmk:instrumentalist ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "clarinetist"@en .
+
+cmk:composer a skos:Concept,
+        cmo:musical-identity ;
+    skos:broader cmk:producer ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "composer"@en .
+
+cmk:conductor a skos:Concept,
+        cmo:musical-identity ;
+    skos:broader cmk:performer ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "conductor"@en .
+
+cmk:countertenor a skos:Concept,
+        cmo:voice-range ;
+    skos:broader cmk:vocalist ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "countertenor"@en .
+
+cmk:drummer a skos:Concept,
+        cmo:instrumentalist-identity ;
+    skos:broader cmk:instrumentalist ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "drummer"@en .
+
+cmk:educator a skos:Concept,
+        cmo:musical-identity ;
+    skos:broader cmk:producer ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "educator"@en .
+
+cmk:flautist a skos:Concept,
+        cmo:instrumentalist-identity ;
+    skos:altLabel "flute"@en,
+        "flutist"@en ;
+    skos:broader cmk:instrumentalist ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "flautist"@en .
+
+cmk:guitarist a skos:Concept,
+        cmo:instrumentalist-identity ;
+    skos:broader cmk:instrumentalist ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "guitarist"@en .
+
+cmk:horn-player a skos:Concept,
+        cmo:instrumentalist-identity ;
+    skos:altLabel "french horn"@en,
+        "horn"@en ;
+    skos:broader cmk:instrumentalist ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "horn player"@en .
+
+cmk:host a skos:Concept,
+        cmo:musical-identity ;
+    skos:broader cmk:performer ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "host"@en .
+
+cmk:interpreter a skos:Concept,
+        cmo:musical-identity ;
+    skos:broader cmk:performer ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "interpreter"@en .
+
+cmk:journalist a skos:Concept,
+        cmo:musical-identity ;
+    skos:broader cmk:writer ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "journalist"@en .
+
+cmk:keyboardist a skos:Concept,
+        cmo:instrumentalist-identity ;
+    skos:broader cmk:instrumentalist ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "keyboardist"@en .
+
+cmk:mezzo-soprano a skos:Concept,
+        cmo:voice-range ;
+    skos:broader cmk:vocalist ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "mezzo-soprano"@en .
+
+cmk:narrator a skos:Concept,
+        cmo:musical-identity ;
+    skos:altLabel "speaker"@en ;
+    skos:broader cmk:performer ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "narrator"@en .
+
+cmk:oboist a skos:Concept,
+        cmo:instrumentalist-identity ;
+    skos:altLabel "oboe"@en ;
+    skos:broader cmk:instrumentalist ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "oboist"@en .
+
+cmk:organist a skos:Concept,
+        cmo:instrumentalist-identity ;
+    skos:broader cmk:instrumentalist ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "organist"@en .
+
+cmk:percussionist a skos:Concept,
+        cmo:instrumentalist-identity ;
+    skos:altLabel "percussion"@en ;
+    skos:broader cmk:instrumentalist ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "percussionist"@en .
+
+cmk:pianist a skos:Concept,
+        cmo:instrumentalist-identity ;
+    skos:altLabel "piano"@en ;
+    skos:broader cmk:instrumentalist ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "pianist"@en .
+
+cmk:presenter a skos:Concept,
+        cmo:musical-identity ;
+    skos:broader cmk:performer ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "presenter"@en .
+
+cmk:saxophonist a skos:Concept,
+        cmo:instrumentalist-identity ;
+    skos:broader cmk:instrumentalist ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "saxophonist"@en .
+
+cmk:soprano a skos:Concept,
+        cmo:voice-range ;
+    skos:broader cmk:vocalist ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "soprano"@en .
+
+cmk:tenor a skos:Concept,
+        cmo:voice-range ;
+    skos:broader cmk:vocalist ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "tenor"@en .
+
+cmk:trombonist a skos:Concept,
+        cmo:instrumentalist-identity ;
+    skos:broader cmk:instrumentalist ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "trombonist"@en .
+
+cmk:trumpeter a skos:Concept,
+        cmo:instrumentalist-identity ;
+    skos:altLabel "trumpet"@en ;
+    skos:broader cmk:instrumentalist ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "trumpeter"@en .
+
+cmk:tubist a skos:Concept,
+        cmo:instrumentalist-identity ;
+    skos:altLabel "tuba"@en ;
+    skos:broader cmk:instrumentalist ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "tubist"@en .
+
+cmk:violinist a skos:Concept,
+        cmo:instrumentalist-identity ;
+    skos:altLabel "violin"@en ;
+    skos:broader cmk:instrumentalist ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "violinist"@en .
+
+cmk:violist a skos:Concept,
+        cmo:instrumentalist-identity ;
+    skos:altLabel "viola"@en ;
+    skos:broader cmk:instrumentalist ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:prefLabel "violist"@en .
+
+cmk:writer a skos:Concept,
+        cmo:musical-identity ;
+    skos:altLabel "critic"@en ;
+    skos:broader cmk:producer ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:narrower cmk:journalist ;
+    skos:prefLabel "writer"@en .
+
+cmk:musician a skos:Concept,
+        cmo:musical-identity ;
+    skos:broader cmk:performer ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:narrower cmk:instrumentalist,
+        cmk:vocalist ;
+    skos:prefLabel "musician"@en .
+
+cmk:producer a skos:Concept,
+        cmo:musical-identity ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:narrower cmk:arranger,
+        cmk:artistic-director,
+        cmk:composer,
+        cmk:educator,
+        cmk:writer ;
+    skos:prefLabel "producer"@en ;
+    skos:topConceptOf cmk:musical-identity-scheme .
+
+cmk:performer a skos:Concept,
+        cmo:musical-identity ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:narrower cmk:conductor,
+        cmk:host,
+        cmk:interpreter,
+        cmk:musician,
+        cmk:narrator,
+        cmk:presenter ;
+    skos:prefLabel "performer"@en ;
+    skos:topConceptOf cmk:musical-identity-scheme .
+
+cmk:vocalist a skos:Concept,
+        cmo:musical-identity ;
+    skos:altLabel "singer"@en ;
+    skos:broader cmk:musician ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:narrower cmk:baritone,
+        cmk:countertenor,
+        cmk:mezzo-soprano,
+        cmk:soprano,
+        cmk:tenor ;
+    skos:prefLabel "vocalist"@en .
+
+cmk:instrumentalist a skos:Concept,
+        cmo:instrumentalist-identity ;
+    skos:broader cmk:musician ;
+    skos:inScheme cmk:musical-identity-scheme ;
+    skos:narrower cmk:bassist,
+        cmk:bassoonist,
+        cmk:cellist,
+        cmk:clarinetist,
+        cmk:drummer,
+        cmk:flautist,
+        cmk:guitarist,
+        cmk:horn-player,
+        cmk:keyboardist,
+        cmk:oboist,
+        cmk:organist,
+        cmk:percussionist,
+        cmk:pianist,
+        cmk:saxophonist,
+        cmk:trombonist,
+        cmk:trumpeter,
+        cmk:tubist,
+        cmk:violinist,
+        cmk:violist ;
+    skos:prefLabel "instrumentalist"@en .
+
+cmk:musical-identity-scheme a skos:ConceptScheme ;
+    schema:name "Musical Identities" .
+

@@ -1,0 +1,12 @@
+PREFIX cmo: <https://knowledge.semanticscore.net/ontology/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX schema: <https://schema.org/>
+
+CONSTRUCT{
+ ?person cmo:performs-with ?organizer 
+}
+WHERE {
+  ?person a foaf:Person ;
+    cmo:performs-in ?perf .
+?perf schema:organizer ?organizer
+}

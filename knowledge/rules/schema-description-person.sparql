@@ -1,0 +1,25 @@
+PREFIX foaf:   <http://xmlns.com/foaf/0.1/>
+PREFIX cmo:    <https://knowledge.semanticscore.net/ontology/>
+PREFIX schema: <https://schema.org/>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+    ?person schema:description ?desc .
+}
+WHERE {
+    ?person a foaf:Person ;
+            foaf:firstName  ?first ;
+            foaf:familyName ?last .
+    OPTIONAL {
+        ?person cmo:known-as-a ?identity .
+        OPTIONAL { ?identity rdfs:label ?roleLabel . }
+        BIND(COALESCE(?roleLabel,
+                      STRAFTER(STR(?identity), "/knowledge/")) AS ?role)
+    }
+    BIND(
+        IF(BOUND(?role),
+           CONCAT(STR(?role), " ", STR(?first), " ", STR(?last)),
+           CONCAT(STR(?first), " ", STR(?last))
+        )
+    AS ?desc)
+}

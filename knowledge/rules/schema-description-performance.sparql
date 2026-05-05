@@ -1,0 +1,24 @@
+PREFIX mo:     <http://purl.org/ontology/mo/>
+PREFIX schema: <https://schema.org/>
+
+CONSTRUCT {
+    ?performance schema:description ?desc .
+}
+WHERE {
+    ?performance a mo:Performance ;
+                 schema:name     ?name ;
+                 schema:startDate ?start ;
+                 schema:organizer ?org .
+    ?org schema:name ?orgName .
+    OPTIONAL {
+        ?performance schema:location ?loc .
+        ?loc schema:name ?locName .
+    }
+    BIND(SUBSTR(STR(?start), 1, 10) AS ?date)
+    BIND(
+        IF(BOUND(?locName),
+           CONCAT(STR(?name), " · ", STR(?orgName), " at ", STR(?locName), " (", STR(?date), ")"),
+           CONCAT(STR(?name), " · ", STR(?orgName), " (", STR(?date), ")")
+        )
+    AS ?desc)
+}

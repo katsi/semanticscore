@@ -1,0 +1,133 @@
+@prefix cmk: <https://knowledge.semanticscore.net/knowledge/> .
+@prefix cmo: <https://knowledge.semanticscore.net/ontology/> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cmk:bbc-symphony-orchestra a schema:Organization ;
+    cmo:acronym "BBCSO" ;
+    schema:name "BBC Symphony Orchestra"@en ;
+    schema:url "https://www.bbc.co.uk/symphonyorchestra/events/by/date/2026"^^xsd:anyURI .
+
+cmk:berliner-philharmoniker a schema:Organization ;
+    cmo:acronym "BPH" ;
+    schema:name "Berliner Philharmoniker" ;
+    schema:url "https://www.berliner-philharmoniker.de/en/concerts/calendar/"^^xsd:anyURI .
+
+cmk:boston-symphony-orchestra a schema:Organization ;
+    cmo:acronym "BSO" ;
+    schema:name "Boston Symphony Orchestra"@en ;
+    schema:url "https://www.bso.org/events?performances%5Brange%5D%5Bperformance_date%5D=1777970506%3A&"^^xsd:anyURI .
+
+cmk:chicago-symphony-orchestra a schema:Organization ;
+    cmo:acronym "CSO" ;
+    schema:name "Chicago Symphony Orchestra"@en ;
+    schema:url "https://cso.org/concerts-tickets/whats-on/"^^xsd:anyURI .
+
+cmk:cleveland-orchestra a schema:Organization ;
+    cmo:acronym "TCO" ;
+    schema:name "Cleveland Orchestra"@en ;
+    schema:url "https://www.clevelandorchestra.com/tickets/calendar"^^xsd:anyURI .
+
+cmk:deutsches-symphonie-orchester-berlin a schema:Organization ;
+    cmo:acronym "DSO" ;
+    schema:name "Deutsches Symphonie-Orchester Berlin" ;
+    schema:url "https://www.dso-berlin.de/en/concert/"^^xsd:anyURI .
+
+cmk:dresden-philharmonic a schema:Organization ;
+    cmo:acronym "DRP" ;
+    schema:name "Dresden Philharmonic"@en ;
+    schema:url "https://www.dresdnerphilharmonie.de/en/concerts-tickets/calendarschedule/"^^xsd:anyURI .
+
+cmk:finnish-radio-symphony-orchestra a schema:Organization ;
+    cmo:acronym "RSO" ;
+    cmo:concertLinkPattern "/aihe/a/" ;
+    schema:name "Finnish Radio Symphony Orchestra"@en,
+        "Radion sinfoniaorkesteri"@fi ;
+    schema:url "https://yle.fi/aihe/rso-in-english/concerts-season-2025-2026" .
+
+cmk:helsinki-philharmonic a schema:Organization ;
+    cmo:acronym "HKO" ;
+    schema:name "Helsinki Philharmonic Orchestra"@en,
+        "Helsingin kaupunginorkesteri"@fi ;
+    schema:url "https://helsinginkaupunginorkesteri.fi/en/konsertit" .
+
+cmk:konzerthaus-berlin a schema:Organization ;
+    cmo:acronym "KHB" ;
+    schema:name "Konzerthaus Berlin" ;
+    schema:url "https://www.konzerthaus.de/en/programm/24-04-2026"^^xsd:anyURI .
+
+cmk:leipzig-gewandhaus-orchestra a schema:Organization ;
+    cmo:acronym "LGO" ;
+    schema:name "Leipzig Gewandhaus Orchestra"@en ;
+    schema:url "https://www.gewandhausorchester.de/en/"^^xsd:anyURI .
+
+cmk:london-symphony-orchestra a schema:Organization ;
+    cmo:acronym "LSO" ;
+    schema:name "London Symphony Orchestra"@en ;
+    schema:url "https://www.lso.co.uk/whats-on/"^^xsd:anyURI .
+
+cmk:los-angeles-philharmonic a schema:Organization ;
+    cmo:acronym "LAP" ;
+    schema:name "Los Angeles Philharmonic"@en ;
+    schema:url "https://www.laphil.com/events/performances"^^xsd:anyURI .
+
+cmk:new-york-philharmonic a schema:Organization ;
+    cmo:acronym "NYP" ;
+    schema:name "New York Philharmonic"@en ;
+    schema:url "https://www.nyphil.org:443/concerts-tickets"^^xsd:anyURI .
+
+cmk:nhk-symphony-orchestra a schema:Organization ;
+    cmo:acronym "NHKSO" ;
+    schema:name "NHK Symphony Orchestra"@en ;
+    schema:url "https://www.nhkso.or.jp/en/concert/"^^xsd:anyURI .
+
+cmk:orchestre-de-paris a schema:Organization ;
+    cmo:acronym "ODP" ;
+    schema:name "Orchestre de Paris"@en ;
+    schema:url "https://philharmoniedeparis.fr/en/calendar?types=2"^^xsd:anyURI .
+
+cmk:philharmonia-orchestra a schema:Organization ;
+    cmo:acronym "PO" ;
+    schema:name "Philharmonia Orchestra"@en ;
+    schema:url "https://philharmonia.co.uk/whats-on/"^^xsd:anyURI .
+
+cmk:royal-concertgebouw-orchestra a schema:Organization ;
+    cmo:acronym "RCO" ;
+    schema:name "Royal Concertgebouw Orchestra"@en ;
+    schema:url "https://www.concertgebouworkest.nl/en/calendar/"^^xsd:anyURI .
+
+cmk:san-francisco-symphony a schema:Organization ;
+    cmo:acronym "SFS" ;
+    schema:name "San Francisco Symphony"@en ;
+    schema:url "https://www.sfsymphony.org/Calendar"^^xsd:anyURI .
+
+cmk:staatskapelle-berlin a schema:Organization ;
+    cmo:acronym "SKB" ;
+    schema:name "Staatskapelle Berlin" ;
+    schema:url "https://www.staatskapelle-berlin.de/en/concerts/"^^xsd:anyURI .
+
+cmk:staatsoper-unter-den-linden a schema:Organization ;
+    cmo:acronym "SUDL" ;
+    schema:name "Staatsoper Unter den Linden" ;
+    schema:url "https://www.staatsoper-berlin.de/de/spielplan/?showAll=1"^^xsd:anyURI .
+
+cmk:swedish-radio-symphony-orchestra a schema:Organization ;
+    cmo:acronym "SRSO" ;
+    schema:name "Swedish Radio Symphony Orchestra"@en ;
+    schema:url "https://sverigesradio.se/srso/konsertkalender"^^xsd:anyURI .
+
+cmk:symphonieorchester-des-bayerischen-rundfunks a schema:Organization ;
+    cmo:acronym "BRSO" ;
+    schema:name "Symphonieorchester des Bayerischen Rundfunks"@de, "Bavarian Radio Symphony Orchestra"@en ;
+    schema:url "https://www.brso.de/konzerte-tickets/"^^xsd:anyURI .
+
+cmk:tonhalle-orchester-zürich a schema:Organization ;
+    cmo:acronym "TOZ" ;
+    schema:name "Tonhalle-Orchester Zürich"@en ;
+    schema:url "https://www.tonhalle-orchester.ch/en/programme/"^^xsd:anyURI .
+
+cmk:vienna-philharmonic a schema:Organization ;
+    cmo:acronym "VPO" ;
+    schema:name "Vienna Philharmonic"@en ;
+    schema:url "https://www.wienerphilharmoniker.at/en/konzerte?v=04-05-2026&ia=f&iv=f&sm=f"^^xsd:anyURI .
+

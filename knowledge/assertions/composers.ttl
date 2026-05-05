@@ -1,0 +1,552 @@
+@prefix cmk: <https://knowledge.semanticscore.net/knowledge/> .
+@prefix cmo: <https://knowledge.semanticscore.net/ontology/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cmk:aaron-copland a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q192185> ;
+    foaf:familyName "Copland"^^xsd:string ;
+    foaf:firstName "Aaron"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:alan-silvestri a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q313537> ;
+    foaf:familyName "Silvestri"^^xsd:string ;
+    foaf:firstName "Alan"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:aleksandr-arutyunyan a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q463194> ;
+    foaf:familyName "Arutyunyan"^^xsd:string ;
+    foaf:firstName "Aleksandr"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:aleksandr-mosolov a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q918640> ;
+    foaf:familyName "Mosolov"^^xsd:string ;
+    foaf:firstName "Aleksandr"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:anatoly-lyadov a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q348282> ;
+    foaf:familyName "Lyadov"^^xsd:string ;
+    foaf:firstName "Anatoly"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:anna-clyne a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q4766925> ;
+    foaf:familyName "Clyne"^^xsd:string ;
+    foaf:firstName "Anna"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:anton-bruckner a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q81752> ;
+    foaf:familyName "Bruckner"^^xsd:string ;
+    foaf:firstName "Anton"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:anton-webern a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q190933> ;
+    foaf:familyName "Webern"^^xsd:string ;
+    foaf:firstName "Anton"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:antonio-coițe-de-porc a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1340> ;
+    foaf:familyName "Coițe de porc"^^xsd:string ;
+    foaf:firstName "Antonio"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:antonín-dvořák a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q7298> ;
+    foaf:familyName "Dvořák"^^xsd:string ;
+    foaf:firstName "Antonín"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:aram-khachatryan a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q152293> ;
+    foaf:familyName "Khachatryan"^^xsd:string ;
+    foaf:firstName "Aram"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:arnold-schoenberg a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q154770> ;
+    foaf:familyName "Schoenberg"^^xsd:string ;
+    foaf:firstName "Arnold"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:arvo-pärt a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q189534> ;
+    foaf:familyName "Pärt"^^xsd:string ;
+    foaf:firstName "Arvo"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:astor-piazzolla a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q172505> ;
+    foaf:familyName "Piazzolla"^^xsd:string ;
+    foaf:firstName "Astor"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:beatrice-price a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q520522> ;
+    foaf:familyName "Price"^^xsd:string ;
+    foaf:firstName "Beatrice"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:bedřich-smetana a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q48173> ;
+    foaf:familyName "Smetana"^^xsd:string ;
+    foaf:firstName "Bedřich"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:benjamin-britten a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q150767> ;
+    foaf:familyName "Britten"^^xsd:string ;
+    foaf:firstName "Benjamin"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:betsy-jolas a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q262420> ;
+    foaf:familyName "Jolas"^^xsd:string ;
+    foaf:firstName "Betsy"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:bruce-broughton a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q991563> ;
+    foaf:familyName "Broughton"^^xsd:string ;
+    foaf:firstName "Bruce"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:béla-bartók a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q83326> ;
+    foaf:familyName "Bartók"^^xsd:string ;
+    foaf:firstName "Béla"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:camille-saint-saëns a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q150445> ;
+    foaf:familyName "Saint-Saëns"^^xsd:string ;
+    foaf:firstName "Camille"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:charles-françois-gounod a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q180278> ;
+    foaf:familyName "Gounod"^^xsd:string ;
+    foaf:firstName "Charles-François"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:charles-ives a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q309648> ;
+    foaf:familyName "Ives"^^xsd:string ;
+    foaf:firstName "Charles"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:claude-debussy a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q4700> ;
+    foaf:familyName "Debussy"^^xsd:string ;
+    foaf:firstName "Claude"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:cristina-ortiz a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q3278093> ;
+    foaf:familyName "Ortiz"^^xsd:string ;
+    foaf:firstName "Cristina"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:cécile-chaminade a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q236438> ;
+    foaf:familyName "Chaminade"^^xsd:string ;
+    foaf:firstName "Cécile"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:césar-franck a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q50187> ;
+    foaf:familyName "Franck"^^xsd:string ;
+    foaf:firstName "César"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:dmitry-shostakovich a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q80135> ;
+    foaf:familyName "Shostakovich"^^xsd:string ;
+    foaf:firstName "Dmitry"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:domenico-scarlatti a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q167837> ;
+    foaf:familyName "Scarlatti"^^xsd:string ;
+    foaf:firstName "Domenico"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:edvard-grieg a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q80621> ;
+    foaf:familyName "Grieg"^^xsd:string ;
+    foaf:firstName "Edvard"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:edward-elgar a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q179631> ;
+    foaf:familyName "Elgar"^^xsd:string ;
+    foaf:firstName "Edward"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:erwin-schulhoff a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q89540> ;
+    foaf:familyName "Schulhoff"^^xsd:string ;
+    foaf:firstName "Erwin"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:fazıl-say a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q430941> ;
+    foaf:familyName "Say"^^xsd:string ;
+    foaf:firstName "Fazıl"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:francis-poulenc a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q191408> ;
+    foaf:familyName "Poulenc"^^xsd:string ;
+    foaf:firstName "Francis"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:friedrich-hollaender a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q213900> ;
+    foaf:familyName "Hollaender"^^xsd:string ;
+    foaf:firstName "Friedrich"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:fryderyk-chopin a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1268> ;
+    foaf:familyName "Chopin"^^xsd:string ;
+    foaf:firstName "Fryderyk"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:gene-koshinski a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q139045757> ;
+    foaf:familyName "Koshinski"^^xsd:string ;
+    foaf:firstName "Gene"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:georg-friedrich-handel a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q7302> ;
+    foaf:familyName "Händel"^^xsd:string ;
+    foaf:firstName "Georg Friedrich"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:georges-bizet a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q56158> ;
+    foaf:familyName "Bizet"^^xsd:string ;
+    foaf:firstName "Georges"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:georges-hüe a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q358965> ;
+    foaf:familyName "Hüe"^^xsd:string ;
+    foaf:firstName "Georges"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:grażyna-bacewicz a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q230978> ;
+    foaf:familyName "Bacewicz"^^xsd:string ;
+    foaf:firstName "Grażyna"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:gustav-holst a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q200867> ;
+    foaf:familyName "Holst"^^xsd:string ;
+    foaf:firstName "Gustav"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:gustav-mahler a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q7304> ;
+    foaf:familyName "Mahler"^^xsd:string ;
+    foaf:firstName "Gustav"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:györgy-kurtág a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q48184> ;
+    foaf:familyName "Kurtág"^^xsd:string ;
+    foaf:firstName "György"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:hamza-el-din a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q690474> ;
+    foaf:familyName "El Din"^^xsd:string ;
+    foaf:firstName "Hamza"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:hans-abrahamsen a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q937743> ;
+    foaf:familyName "Abrahamsen"^^xsd:string ;
+    foaf:firstName "Hans"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:hector-berlioz a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1151> ;
+    foaf:familyName "Berlioz"^^xsd:string ;
+    foaf:firstName "Hector"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:heitor-lobos a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q203514> ;
+    foaf:familyName "Lobos"^^xsd:string ;
+    foaf:firstName "Heitor"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:henri-content a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q137857467> ;
+    foaf:familyName "Content"^^xsd:string ;
+    foaf:firstName "Henri"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:henri-dutilleux a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q318829> ;
+    foaf:familyName "Dutilleux"^^xsd:string ;
+    foaf:firstName "Henri"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:henryk-wieniawski a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q272184> ;
+    foaf:familyName "Wieniawski"^^xsd:string ;
+    foaf:firstName "Henryk"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:holly-harrison a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q124746800> ;
+    foaf:familyName "Harrison"^^xsd:string ;
+    foaf:firstName "Holly"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:igor-stravinsky a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q7314> ;
+    foaf:familyName "Stravinsky"^^xsd:string ;
+    foaf:firstName "Igor"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:isaac-albéniz a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q185812> ;
+    foaf:familyName "Albéniz"^^xsd:string ;
+    foaf:firstName "Isaac"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:johannes-brahms a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q7294> ;
+    foaf:familyName "Brahms"^^xsd:string ;
+    foaf:firstName "Johannes"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:joseph-haydn a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q7349> ;
+    foaf:familyName "Haydn"^^xsd:string ;
+    foaf:firstName "Joseph"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:joseph-phibbs a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q27942122> ;
+    foaf:familyName "Phibbs"^^xsd:string ;
+    foaf:firstName "Joseph"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:julia-wolfe a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q6306853> ;
+    foaf:familyName "Wolfe"^^xsd:string ;
+    foaf:firstName "Julia"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:julian-weill a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q55004> ;
+    foaf:familyName "Weill"^^xsd:string ;
+    foaf:firstName "Julian"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:kaija-saariaho a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q241432> ;
+    foaf:familyName "Saariaho"^^xsd:string ;
+    foaf:firstName "Kaija"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:laura-shigihara a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q512791> ;
+    foaf:familyName "Shigihara"^^xsd:string ;
+    foaf:firstName "Laura"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:led-zeppelin a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2331> ;
+    foaf:familyName "Zeppelin"^^xsd:string ;
+    foaf:firstName "Led"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:leonard-bernstein a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q152505> ;
+    foaf:familyName "Bernstein"^^xsd:string ;
+    foaf:firstName "Leonard"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:louis-spohr a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q57226> ;
+    foaf:familyName "Spohr"^^xsd:string ;
+    foaf:firstName "Louis"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:louise-farrenc a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q442198> ;
+    foaf:familyName "Farrenc"^^xsd:string ;
+    foaf:firstName "Louise"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:ludwig-van-beethoven a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q255> ;
+    foaf:familyName "van Beethoven"^^xsd:string ;
+    foaf:firstName "Ludwig"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:marcel-bitsch a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q707071> ;
+    foaf:familyName "Bitsch"^^xsd:string ;
+    foaf:firstName "Marcel"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:mari-sainio a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q110166339> ;
+    foaf:familyName "Sainio"^^xsd:string ;
+    foaf:firstName "Mari"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:marie-boulanger a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q230412> ;
+    foaf:familyName "Boulanger"^^xsd:string ;
+    foaf:firstName "Marie"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:maurice-ravel a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1178> ;
+    foaf:familyName "Ravel"^^xsd:string ;
+    foaf:firstName "Maurice"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:max-raabe a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q62615> ;
+    foaf:familyName "Raabe"^^xsd:string ;
+    foaf:firstName "Max"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:missy-mazzoli a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q6879955> ;
+    foaf:familyName "Mazzoli"^^xsd:string ;
+    foaf:firstName "Missy"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:monica-zetterlund a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q254527> ;
+    foaf:familyName "Zetterlund"^^xsd:string ;
+    foaf:firstName "Monica"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:mélanie-bonis a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q467452> ;
+    foaf:familyName "Bonis"^^xsd:string ;
+    foaf:firstName "Mélanie"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:natalia-beridze a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1966104> ;
+    foaf:familyName "Beridze"^^xsd:string ;
+    foaf:firstName "Natalia"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:nathan-daughtrey a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q133590022> ;
+    foaf:familyName "Daughtrey"^^xsd:string ;
+    foaf:firstName "Nathan"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:norbert-glanzberg a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q213834> ;
+    foaf:familyName "Glanzberg"^^xsd:string ;
+    foaf:firstName "Norbert"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:pyotr-tchaikovsky a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q7315> ;
+    foaf:familyName "Tchaikovsky"^^xsd:string ;
+    foaf:firstName "Pyotr"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:richard-strauss a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q13894> ;
+    foaf:familyName "Strauss"^^xsd:string ;
+    foaf:firstName "Richard"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:richard-wagner a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1511> ;
+    foaf:familyName "Wagner"^^xsd:string ;
+    foaf:firstName "Richard"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:rob-zuidam a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q53097518> ;
+    foaf:familyName "Zuidam"^^xsd:string ;
+    foaf:firstName "Rob"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:robert-schumann a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q7351> ;
+    foaf:familyName "Schumann"^^xsd:string ;
+    foaf:firstName "Robert"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:rufus-wainwright a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q192402> ;
+    foaf:familyName "Wainwright"^^xsd:string ;
+    foaf:firstName "Rufus"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:sebastian-bach a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1339> ;
+    foaf:familyName "Bach"^^xsd:string ;
+    foaf:firstName "Sebastian"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:sergey-prokopievi a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q49481> ;
+    foaf:familyName "Prokopievi"^^xsd:string ;
+    foaf:firstName "Sergey"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:trad-traditional a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q56260622> ;
+    foaf:familyName "traditional"^^xsd:string ;
+    foaf:firstName "Trad."^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:urbain-fauré a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q104919> ;
+    foaf:familyName "Fauré"^^xsd:string ;
+    foaf:firstName "Urbain"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:vartan-adjemian a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q13054990> ;
+    foaf:familyName "Adjemian"^^xsd:string ;
+    foaf:firstName "Vartan"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:victor-herbert a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1275145> ;
+    foaf:familyName "Herbert"^^xsd:string ;
+    foaf:firstName "Victor"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:wolfgang-mozart a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q254> ;
+    foaf:familyName "Mozart"^^xsd:string ;
+    foaf:firstName "Wolfgang"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+
+cmk:óscar-navarro a foaf:Person ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1812908> ;
+    foaf:familyName "Navarro"^^xsd:string ;
+    foaf:firstName "Óscar"^^xsd:string ;
+    cmo:known-as-a cmk:composer .
+

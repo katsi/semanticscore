@@ -1,0 +1,23 @@
+# Don't copy stale generated files — Docker builds them fresh
+frontend/output/
+frontend/home.md
+
+# Pipeline tooling is never deployed
+xclam-pipeline/
+
+# Git and CI
+.git/
+.github/
+
+# Python runtime dirs
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+
+# Secrets and local config
+.env
+*.env
+
+# Nginx config (mounted at runtime, not baked in)
+nginx/

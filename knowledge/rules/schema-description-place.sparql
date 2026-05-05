@@ -1,0 +1,27 @@
+PREFIX cmo:    <https://knowledge.semanticscore.net/ontology/>
+PREFIX schema: <https://schema.org/>
+
+CONSTRUCT {
+    ?place schema:description ?desc .
+}
+WHERE {
+    { ?place a cmo:Venue . } UNION { ?place a cmo:ConcertHall . }
+    ?place schema:name ?name .
+    OPTIONAL {
+        ?place schema:addressLocality ?locality .
+        ?locality schema:name ?localityName .
+        OPTIONAL {
+            ?locality schema:containedInPlace+ ?country .
+            ?country a schema:Country ;
+                     schema:name ?countryName .
+        }
+    }
+    BIND(
+        IF(BOUND(?localityName) && BOUND(?countryName),
+           CONCAT(STR(?name), ", ", STR(?localityName), ", ", STR(?countryName)),
+           IF(BOUND(?localityName),
+              CONCAT(STR(?name), ", ", STR(?localityName)),
+              STR(?name))
+        )
+    AS ?desc)
+}

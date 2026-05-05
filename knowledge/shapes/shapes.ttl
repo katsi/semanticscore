@@ -1,0 +1,138 @@
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix mo:     <http://purl.org/ontology/mo/> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <https://schema.org/> .
+@prefix cmo:    <https://knowledge.semanticscore.net/ontology/> .
+@prefix cmk:    <https://knowledge.semanticscore.net/knowledge/> .
+@prefix ui:     <https://knowledge.semanticscore.net/ui-ontology/> .
+
+# =============================================================================
+# Facet widget type is inferred from sh:datatype / sh:nodeKind:
+#
+#   sh:datatype xsd:dateTime or xsd:date          → date-picker facet
+#   sh:datatype xsd:integer  or xsd:decimal       → range-slider facet
+#   sh:datatype xsd:string   or sh:nodeKind sh:IRI
+#   or no datatype constraint (object property)   → checkbox facet
+#
+# Use sh:inversePath inside sh:path to declare incoming links as facets.
+# sh:name sets the facet label; sh:order controls display order.
+#
+# UI annotations (from ui-ontology):
+#   ui:facet true/false       — whether this property drives a facet filter
+#   ui:cardPosition ui:primary   — shown prominently on instance cards
+#   ui:cardPosition ui:secondary — shown as a smaller detail on instance cards
+#
+# Properties without any ui: annotation are treated as facets (backwards compat)
+# and do not appear on cards.
+# =============================================================================
+
+cmk:PerformanceShape
+    a sh:NodeShape ;
+    sh:targetClass mo:Performance ;
+    sh:property [
+        sh:path schema:startDate ;
+        sh:name "Date" ;
+        sh:datatype xsd:dateTime ;
+        sh:order 2 ;
+        ui:facet true ;
+        ui:cardPosition ui:secondary ;
+        ui:displayFormat ui:dateTimeShort
+    ] ;
+    sh:property [
+        sh:path schema:name ;
+        sh:name "Name" ;
+        sh:datatype xsd:string ;
+        sh:order 1 ;
+        ui:facet false ;
+        ui:cardPosition ui:primary
+    ] ;
+    sh:property [
+        sh:path schema:organizer ;
+        sh:name "Organizer" ;
+        sh:nodeKind sh:IRI ;
+        sh:order 3 ;
+        ui:facet true ;
+        ui:cardPosition ui:secondary
+    ] ;
+    sh:property [
+        sh:path schema:location ;
+        sh:name "Location" ;
+        sh:nodeKind sh:IRI ;
+        sh:order 4 ;
+        ui:facet false ;
+        ui:cardPosition ui:secondary
+    ] ;
+    sh:property [
+        sh:path cmo:in-geo-location ;
+        sh:name "Location" ;
+        sh:nodeKind sh:IRI ;
+        sh:order 5 ;
+        ui:facet true ;
+        ui:facetConceptScheme cmk:geo-scheme
+    ];
+    sh:property [
+        sh:path [ sh:inversePath cmo:performs-in ] ;
+        sh:name "Performer" ;
+        sh:nodeKind sh:IRI ;
+        sh:order 6 ;
+        ui:facet true
+        # ui:cardPosition ui:secondary ;
+    ];
+    sh:property [
+        sh:path [ sh:inversePath cmo:featured-at ] ;
+        sh:name "Composer" ;
+        sh:nodeKind sh:IRI ;
+        sh:order 7 ;
+        ui:facet true
+        # ui:cardPosition ui:secondary ;
+    ]  .
+
+cmk:PersonShape
+    a sh:NodeShape ;
+    sh:targetClass foaf:Person ;
+    sh:property [
+        sh:path schema:name ;
+        sh:name "Name" ;
+        sh:datatype xsd:string ;
+        sh:order 1 ;
+        ui:facet false ;
+        ui:cardPosition ui:primary
+    ] ;
+    sh:property [
+        sh:path cmo:known-as-a ;
+        sh:name "Known as" ;
+        sh:nodeKind sh:IRI ;
+        sh:order 2 ;
+        ui:facet true ;
+        ui:facetConceptScheme cmk:musical-identity-scheme ;
+        ui:cardPosition ui:secondary
+    ] ;
+    sh:property [
+        sh:path cmo:performs-next ;
+        sh:name "Performs Next" ;
+        sh:nodeKind sh:IRI ;
+        sh:order 3 ;
+        ui:facet false ;
+        ui:cardPosition ui:secondary 
+    ] ;
+    sh:property [
+        sh:path cmo:performs-with ;
+        sh:name "Performs With" ;
+        sh:nodeKind sh:IRI ;
+        sh:order 4 ;
+        ui:facet true ;
+        ui:cardPosition ui:secondary 
+    ] ;
+    ;
+    sh:property [
+        sh:path cmo:featured-at ;
+        sh:name "Featured At" ;
+        sh:nodeKind sh:IRI ;
+        sh:order 5 ;
+        ui:facet false ;
+        ui:cardPosition ui:secondary 
+    ] .
