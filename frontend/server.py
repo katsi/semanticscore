@@ -379,9 +379,12 @@ def build_skos_tree(scheme_uri: str) -> list[dict]:
 app = Flask(__name__)
 
 
-@app.get("/sparql")
+@app.route("/sparql", methods=["GET", "POST"])
 def sparql_endpoint():
-    query = request.args.get("query", "").strip()
+    if request.method == "POST":
+        query = (request.form.get("query") or request.get_data(as_text=True) or "").strip()
+    else:
+        query = request.args.get("query", "").strip()
     if not query:
         return jsonify({"error": "Missing query parameter"}), 400
     try:

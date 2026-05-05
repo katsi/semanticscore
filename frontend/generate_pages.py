@@ -677,7 +677,10 @@ const _SKOS_TREES = {{}};
 // ---------------------------------------------------------------------------
 
 async function sparql(query) {{
-  const resp = await fetch('/sparql?query=' + encodeURIComponent(query));
+  const resp = await fetch('/sparql', {{
+    method: 'POST',
+    body: new URLSearchParams({{ query }}),
+  }});
   if (!resp.ok) throw new Error(await resp.text());
   return (await resp.json()).results;
 }}
