@@ -1828,6 +1828,8 @@ SPARQL_PAGE_TEMPLATE = """\
     a {{ color: #0066cc; text-decoration: none; }}
     a:hover {{ text-decoration: underline; }}
     .placeholder {{ color: #aaa; text-align: center; padding: 2rem 0; font-size: 0.9rem; margin: 0; }}
+    .service-notice {{ font-size: 0.75rem; color: #888; border-top: 1px solid #eee;
+                       padding-top: 0.6rem; margin: 0; line-height: 1.5; }}
   </style>
 </head>
 <body>
@@ -1859,6 +1861,10 @@ SPARQL_PAGE_TEMPLATE = """\
       <div class="examples-section" id="examples-section">
         <h3>Examples</h3>
       </div>
+
+      <p class="service-notice">
+        This is a free public endpoint. Queries time out after <strong>5 seconds</strong> — add a <code>LIMIT</code> clause for large result sets.
+      </p>
 
     </div>
 

@@ -12,7 +12,11 @@ Exposes:
 
 import json
 import re
+from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeoutError
 from pathlib import Path
+
+_SPARQL_TIMEOUT = 5  # seconds
+_executor = ThreadPoolExecutor(max_workers=4)
 
 # ---------------------------------------------------------------------------
 # Format-pattern tokeniser
@@ -387,27 +391,25 @@ def sparql_endpoint():
         query = request.args.get("query", "").strip()
     if not query:
         return jsonify({"error": "Missing query parameter"}), 400
-    try:
-        result  = g.query(query)
-        qtype   = (getattr(result, "type", None) or "SELECT").upper()
 
+    def _run():
+        result = g.query(query)
+        qtype  = (getattr(result, "type", None) or "SELECT").upper()
         if qtype == "ASK":
-            return jsonify({"type": "ask", "result": bool(result), "results": []})
-
+            return {"type": "ask", "result": bool(result), "results": []}
         if qtype in ("CONSTRUCT", "DESCRIBE"):
-            triples = [[str(s), str(p), str(o)] for s, p, o in result]
-            return jsonify({"type": qtype.lower(), "triples": triples, "results": []})
-
-        # SELECT (default)
+            return {"type": qtype.lower(), "triples": [[str(s), str(p), str(o)] for s, p, o in result], "results": []}
         vars_ = [str(v) for v in (result.vars or [])]
         rows  = []
         for row in result:
-            r = {}
-            for var in result.vars:
-                val = row[var]
-                r[str(var)] = str(val) if val is not None else None
-            rows.append(r)
-        return jsonify({"type": "select", "vars": vars_, "results": rows})
+            rows.append({str(var): (str(row[var]) if row[var] is not None else None) for var in result.vars})
+        return {"type": "select", "vars": vars_, "results": rows}
+
+    try:
+        future = _executor.submit(_run)
+        return jsonify(future.result(timeout=_SPARQL_TIMEOUT))
+    except FuturesTimeoutError:
+        return jsonify({"error": "Query timed out after 5 seconds. This is a free public endpoint — please add a LIMIT clause or simplify your query."}), 408
     except Exception as exc:
         return jsonify({"error": str(exc)}), 400
 
