@@ -209,6 +209,7 @@ INSTANCE_TEMPLATE = """\
     a:hover {{ text-decoration: underline; }}
   </style>
   {json_ld}
+  {map_extras}
 </head>
 <body>
   {top_nav}
@@ -216,6 +217,7 @@ INSTANCE_TEMPLATE = """\
   {type_badges}
   <h1>{title}</h1>
   <p class="uri">&lt;<a href="{uri}">{uri}</a>&gt;</p>
+  {map_section}
   <table>
     <thead><tr><th>Predicate</th><th>Value</th></tr></thead>
     <tbody>
@@ -365,6 +367,65 @@ def render_object(obj, subject_base: str, pred_uri: str = "") -> str:
     return text
 
 
+_CMO_GEO_LOC  = "https://knowledge.semanticscore.net/ontology/in-geo-location"
+_SCHEMA_LAT   = URIRef("https://schema.org/latitude")
+_SCHEMA_LON   = URIRef("https://schema.org/longitude")
+_SCHEMA_NAME  = URIRef("https://schema.org/name")
+_SKOS_LABEL   = URIRef("http://www.w3.org/2004/02/skos/core#prefLabel")
+
+
+def build_map_section(triples: list, g) -> tuple[str, str]:
+    """
+    Follow  Performance --cmo:in-geo-location--> concept --schema:lat/lon--> coords
+    and return (head_extras, map_html).  Both are empty strings when no map is needed.
+    """
+    if g is None:
+        return "", ""
+
+    geo_uri = next(
+        (str(o) for p, o in triples if str(p) == _CMO_GEO_LOC and isinstance(o, URIRef)),
+        None,
+    )
+    if not geo_uri:
+        return "", ""
+
+    geo_ref = URIRef(geo_uri)
+    lat = g.value(geo_ref, _SCHEMA_LAT)
+    lon = g.value(geo_ref, _SCHEMA_LON)
+    if lat is None or lon is None:
+        return "", ""
+
+    label = (
+        g.value(geo_ref, _SCHEMA_NAME)
+        or g.value(geo_ref, _SKOS_LABEL)
+        or geo_uri.rstrip("/").split("/")[-1]
+    )
+    label_escaped = _html.escape(str(label), quote=True)
+
+    head_extras = (
+        '  <link rel="stylesheet"'
+        ' href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">\n'
+        '  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>'
+    )
+
+    # Note: {{ }} escapes are needed because this string goes through .format() later.
+    map_html = (
+        f'  <div id="perf-map" style="height:220px;border-radius:8px;'
+        f'margin:1.25rem 0;border:1px solid #e0e0e0;"></div>\n'
+        f'  <script>\n'
+        f'    (function(){{\n'
+        f'      var m = L.map("perf-map",{{scrollWheelZoom:false}}).setView([{lat},{lon}],11);\n'
+        f'      L.tileLayer("https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png",{{\n'
+        f'        attribution:"© <a href=\'https://www.openstreetmap.org/copyright\'>OpenStreetMap</a>"\n'
+        f'      }}).addTo(m);\n'
+        f'      L.marker([{lat},{lon}]).addTo(m).bindPopup("{label_escaped}").openPopup();\n'
+        f'    }})();\n'
+        f'  </script>'
+    )
+
+    return head_extras, map_html
+
+
 def build_instance_html(subject_uri: str, triples: list, incoming: list,
                          subject_base: str, title: str, g=None,
                          top_nav: str = "") -> str:
@@ -413,6 +474,7 @@ def build_instance_html(subject_uri: str, triples: list, incoming: list,
         incoming_section = ""
 
     json_ld = build_json_ld(subject_uri, triples, g)
+    map_extras, map_section = build_map_section(triples, g)
 
     # ── Meta / OG tags ──────────────────────────────────────────────────────
     _SCHEMA_DESC_URI = f"{_SCHEMA_NS}description"
@@ -442,6 +504,8 @@ def build_instance_html(subject_uri: str, triples: list, incoming: list,
         json_ld=json_ld,
         meta_tags=meta_tags,
         top_nav=top_nav,
+        map_extras=map_extras,
+        map_section=map_section,
     )
 
 

@@ -1,0 +1,78 @@
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix mo:     <http://purl.org/ontology/mo/> .
+@prefix schema: <https://schema.org/> .
+@prefix cmo:    <https://knowledge.semanticscore.net/ontology/> .
+@prefix cmk:    <https://knowledge.semanticscore.net/knowledge/> .
+@prefix ui:     <https://knowledge.semanticscore.net/ui-ontology/> .
+
+# =============================================================================
+# Individual page layout for mo:Performance instances.
+#
+# ui:instanceWidget defines which component renders a property on the
+# single-instance page (distinct from ui:cardPosition, which drives cards
+# on the class listing page).
+#
+# Widget vocabulary:
+#   ui:Map      — small Leaflet map; geocodes via the linked concept's
+#                 schema:prefLabel / schema:name through Nominatim.
+#   ui:DateTime — formatted date/time string.
+#   ui:Link     — hyperlink to an internal or external resource.
+#   ui:Text     — plain text or literal value.
+#   ui:Chips    — list of linked concepts rendered as pills.
+# =============================================================================
+
+cmk:PerformanceInstanceShape
+    a sh:NodeShape ;
+    sh:targetClass mo:Performance ;
+
+    sh:property [
+        sh:path  cmo:in-geo-location ;
+        sh:name  "Location" ;
+        sh:order 1 ;
+        ui:instanceWidget ui:Map ;
+    ] .
+
+# sh:property [
+#     sh:path  schema:startDate ;
+#     sh:name  "Date & time" ;
+#     sh:order 2 ;
+#     ui:instanceWidget ui:DateTime ;
+# ] ;
+#
+# sh:property [
+#     sh:path  schema:name ;
+#     sh:name  "Name" ;
+#     sh:order 3 ;
+#     ui:instanceWidget ui:Text ;
+# ] ;
+#
+# sh:property [
+#     sh:path  schema:organizer ;
+#     sh:name  "Organizer" ;
+#     sh:order 4 ;
+#     ui:instanceWidget ui:Link ;
+# ] ;
+#
+# sh:property [
+#     sh:path  schema:location ;
+#     sh:name  "Venue" ;
+#     sh:order 5 ;
+#     ui:instanceWidget ui:Link ;
+# ] ;
+#
+# sh:property [
+#     sh:path     [ sh:inversePath cmo:performs-in ] ;
+#     sh:name     "Performers" ;
+#     sh:order    6 ;
+#     ui:instanceWidget ui:Chips ;
+# ] ;
+#
+# sh:property [
+#     sh:path  schema:url ;
+#     sh:name  "Tickets / programme" ;
+#     sh:order 7 ;
+#     ui:instanceWidget ui:Link ;
+# ] .
