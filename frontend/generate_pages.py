@@ -608,6 +608,35 @@ CLASS_TEMPLATE = """\
                        display: flex; gap: 0.3rem; flex-wrap: wrap; align-items: baseline; }}
     .card-prop-label {{ font-weight: 500; color: #bbb; text-transform: uppercase;
                         font-size: 0.65rem; letter-spacing: 0.05em; flex-shrink: 0; }}
+
+    /* ---- Mobile filter drawer ---- */
+    .filter-toggle-btn {{ display: none; }}
+    .facet-close-btn   {{ display: none; }}
+    .facet-backdrop    {{ display: none; }}
+    @media (max-width: 640px) {{
+      .layout {{ display: block; }}
+      .facets {{ position: fixed; top: 0; left: 0; bottom: 0;
+                 width: 85vw; max-width: 320px; z-index: 200;
+                 transform: translateX(-100%); transition: transform 0.25s ease;
+                 padding-top: 3rem; }}
+      .facets.open {{ transform: translateX(0); }}
+      .facet-close-btn {{ display: flex; align-items: center; gap: 0.3rem;
+                          position: absolute; top: 0.6rem; right: 0.75rem;
+                          font-size: 0.82rem; background: none; border: none;
+                          cursor: pointer; color: #555; padding: 0.25rem 0.5rem;
+                          border-radius: 4px; }}
+      .facet-close-btn:hover {{ background: #f0f0f0; }}
+      .facet-backdrop {{ position: fixed; inset: 0; background: rgba(0,0,0,0.4);
+                         z-index: 199; display: none; }}
+      .facet-backdrop.open {{ display: block; }}
+      .filter-toggle-btn {{ display: inline-flex; align-items: center; gap: 0.35rem;
+                            font-size: 0.82rem; padding: 0.35rem 0.75rem;
+                            border: 1px solid #ddd; border-radius: 4px;
+                            background: #f7f7f7; cursor: pointer; color: #444;
+                            margin-bottom: 0.75rem; }}
+      .filter-toggle-btn.has-filters {{ border-color: #0066cc; color: #0066cc;
+                                        background: #eff4ff; }}
+    }}
   </style>
 </head>
 <body>
@@ -623,13 +652,16 @@ CLASS_TEMPLATE = """\
     <ul class="dq-list" id="dq-list"></ul>
   </details>
 
+  <div id="facet-backdrop" class="facet-backdrop"></div>
   <div class="layout">
     <aside class="facets" id="facet-panel">
+      <button class="facet-close-btn" id="facet-close-btn" aria-label="Close filters">&#x2715; Close</button>
       <h2>Filter</h2>
       <p class="loading" id="facets-loading">Loading facets…</p>
     </aside>
 
     <section class="results">
+      <button class="filter-toggle-btn" id="filter-toggle-btn">&#9881; Filters</button>
       <p class="results-meta" id="meta"></p>
       <div class="sort-bar" id="sort-bar"></div>
       <p class="no-results" id="no-results">No results match the selected filters.</p>
@@ -1003,6 +1035,12 @@ function render(state) {{
   document.getElementById('meta').textContent =
     n + ' of ' + total + (total === 1 ? ' instance' : ' instances');
   document.getElementById('no-results').style.display = n === 0 ? 'block' : 'none';
+  var _filterBtn = document.getElementById('filter-toggle-btn');
+  if (_filterBtn) {{
+    var _ac = Object.values(activeFilters).filter(function(v) {{ return v && v.length; }}).length;
+    _filterBtn.textContent = _ac ? '⚙ Filters (' + _ac + ')' : '⚙ Filters';
+    _filterBtn.classList.toggle('has-filters', _ac > 0);
+  }}
 
   // Facets
   for (const facet of FACETS) {{
@@ -1446,6 +1484,19 @@ async function init() {{
 }}
 
 init().catch(console.error);
+
+(function() {{
+  var btn      = document.getElementById('filter-toggle-btn');
+  var panel    = document.getElementById('facet-panel');
+  var backdrop = document.getElementById('facet-backdrop');
+  var closeBtn = document.getElementById('facet-close-btn');
+  function openDrawer()  {{ panel.classList.add('open'); backdrop.classList.add('open'); document.body.style.overflow = 'hidden'; }}
+  function closeDrawer() {{ panel.classList.remove('open'); backdrop.classList.remove('open'); document.body.style.overflow = ''; }}
+  if (btn)      btn.addEventListener('click', openDrawer);
+  if (backdrop) backdrop.addEventListener('click', closeDrawer);
+  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', function(e) {{ if (e.key === 'Escape') closeDrawer(); }});
+}})();
 </script>
 </body>
 </html>
