@@ -161,6 +161,10 @@ def derive_title(subject_uri: str, triples: list, title_rules: list) -> str:
         if all(parts):
             return " ".join(parts)
 
+    name = pred_to_values.get("https://schema.org/name", [None])[0]
+    if name:
+        return name
+
     return shorten(subject_uri)
 
 
