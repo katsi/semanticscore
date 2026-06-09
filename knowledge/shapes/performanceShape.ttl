@@ -1,0 +1,124 @@
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix mo:     <http://purl.org/ontology/mo/> .
+@prefix schema: <https://schema.org/> .
+@prefix cmo:    <https://knowledge.semanticscore.net/ontology/> .
+@prefix cmk:    <https://knowledge.semanticscore.net/knowledge/> .
+@prefix ui:     <https://knowledge.semanticscore.net/ui-ontology/> .
+
+# =============================================================================
+# Shape for mo:Performance
+#
+# ui:facet true/false           — drives the facet filter panel
+# ui:cardPosition ui:primary    — shown prominently on listing cards
+# ui:cardPosition ui:secondary  — shown as a detail on listing cards
+# ui:instanceWidget             — component used on the individual instance page
+#
+#   ui:Map      — Leaflet map; reads schema:latitude / schema:longitude
+#                 materialised on the Performance by the performance-coordinates rule
+#   ui:DateTime — formatted date/time
+#   ui:Link     — hyperlink
+#   ui:Text     — plain literal
+#   ui:Chips    — list of linked concepts as pills
+# =============================================================================
+
+cmk:PerformanceShape
+    a sh:NodeShape ;
+    sh:targetClass mo:Performance ;
+
+    sh:property [
+        sh:path  schema:description ;
+        sh:name  "Description" ;
+        sh:datatype xsd:string ;
+        sh:order 0 ;
+        ui:facet false ;
+        ui:instanceWidget ui:Subtitle
+    ] ;
+
+    sh:property [
+        sh:path  schema:name ;
+        sh:name  "Name" ;
+        sh:datatype xsd:string ;
+        sh:order 1 ;
+        ui:facet false ;
+        ui:cardPosition ui:primary ;
+        ui:instanceWidget ui:Text
+    ] ;
+
+    sh:property [
+        sh:path  schema:startDate ;
+        sh:name  "Date" ;
+        sh:datatype xsd:dateTime ;
+        sh:order 2 ;
+        ui:facet true ;
+        ui:cardPosition ui:secondary ;
+        ui:displayFormat ui:dateTimeShort ;
+        ui:instanceWidget ui:DateTime
+    ] ;
+
+    sh:property [
+        sh:path  schema:organizer ;
+        sh:name  "Organizer" ;
+        sh:nodeKind sh:IRI ;
+        sh:order 3 ;
+        ui:facet true ;
+        ui:cardPosition ui:secondary ;
+        ui:instanceWidget ui:OrgCard
+    ] ;
+
+    sh:property [
+        sh:path  schema:location ;
+        sh:name  "Venue" ;
+        sh:nodeKind sh:IRI ;
+        sh:order 4 ;
+        ui:facet false ;
+        ui:cardPosition ui:secondary ;
+        ui:instanceWidget ui:Link
+    ] ;
+
+    sh:property [
+        sh:path  cmo:in-geo-location ;
+        sh:name  "Region" ;
+        sh:nodeKind sh:IRI ;
+        sh:order 5 ;
+        ui:facet true ;
+        ui:facetConceptScheme cmk:geo-scheme
+    ] ;
+
+    sh:property [
+        sh:path  schema:latitude ;
+        sh:name  "Latitude" ;
+        sh:datatype xsd:decimal ;
+        sh:order 6 ;
+        ui:facet false ;
+        ui:instanceWidget ui:Map
+    ] ;
+
+    sh:property [
+        sh:path  schema:longitude ;
+        sh:name  "Longitude" ;
+        sh:datatype xsd:decimal ;
+        sh:order 7 ;
+        ui:facet false ;
+        ui:instanceWidget ui:Map
+    ] ;
+
+    sh:property [
+        sh:path  [ sh:inversePath cmo:performs-in ] ;
+        sh:name  "Performer" ;
+        sh:nodeKind sh:IRI ;
+        sh:order 8 ;
+        ui:facet true ;
+        ui:instanceWidget ui:PersonCard
+    ] ;
+
+    sh:property [
+        sh:path  [ sh:inversePath cmo:featured-at ] ;
+        sh:name  "Composer" ;
+        sh:nodeKind sh:IRI ;
+        sh:order 9 ;
+        ui:facet true
+    ] .

@@ -7,170 +7,63 @@
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-cmk:augustin-hadelich a foaf:Person ;
-    foaf:familyName "Hadelich" ;
-    foaf:firstName "Augustin" ;
-    cmo:known-as-a cmk:violinist ;
-    cmo:plays-in cmk:the-helsinki-music-centre-concert-hall-1748368800,
-        cmk:the-helsinki-music-centre-concert-hall-1748455200 .
+cmk:baritone a cmo:voice-range .
 
-cmk:einari-jarvinen a foaf:Person ;
-    foaf:familyName "Järvinen" ;
-    foaf:firstName "Einari" ;
-    cmo:known-as-a cmk:tubist ;
-    cmo:plays-in cmk:the-helsinki-music-centre-concert-hall-1747159200 .
+cmk:conductor a cmo:musical-identity .
 
-cmk:else-lipasti a foaf:Person ;
-    foaf:familyName "Lipasti" ;
-    foaf:firstName "Else" ;
-    cmo:known-as-a cmk:violinist ;
-    cmo:plays-in cmk:the-helsinki-music-centre-concert-hall-1747159200 .
+cmk:mezzo-soprano a cmo:voice-range .
 
-cmk:emilia-hoving a foaf:Person ;
-    foaf:familyName "Hoving" ;
-    foaf:firstName "Emilia" ;
-    cmo:conducts-in cmk:the-helsinki-music-centre-concert-hall-1747159200 ;
-    cmo:known-as-a cmk:conductor .
+cmk:soprano a cmo:voice-range .
 
-cmk:fanny-soderstrom a foaf:Person ;
-    foaf:familyName "Söderström" ;
-    foaf:firstName "Fanny" ;
-    cmo:known-as-a cmk:pianist ;
-    cmo:plays-in cmk:the-helsinki-music-centre-paavo-hall-1748714400 .
-
-cmk:fatima-boix-canto a foaf:Person ;
-    foaf:familyName "Boix Cantó" ;
-    foaf:firstName "Fàtima" ;
-    cmo:known-as-a cmk:clarinetist ;
-    cmo:plays-in cmk:the-helsinki-music-centre-concert-hall-1747936800 .
-
-cmk:hanna-hasu a foaf:Person ;
-    foaf:familyName "Hasu" ;
-    foaf:firstName "Hanna" ;
-    cmo:known-as-a cmk:soprano ;
-    cmo:sings-in cmk:the-helsinki-music-centre-concert-hall-1747159200 .
-
-cmk:helmi-lilja-lindholm a foaf:Person ;
-    foaf:familyName "Lindholm" ;
-    foaf:firstName "Helmi-Lilja" ;
-    cmo:known-as-a cmk:violinist ;
-    cmo:plays-in cmk:the-helsinki-music-centre-concert-hall-1747159200 .
-
-cmk:jingjing-xu a foaf:Person ;
-    foaf:familyName "Xu" ;
-    foaf:firstName "Jingjing" ;
-    cmo:known-as-a cmk:mezzo-soprano ;
-    cmo:sings-in cmk:the-helsinki-music-centre-concert-hall-1747936800 .
-
-cmk:jino-pievilainen a foaf:Person ;
-    foaf:familyName "Pieviläinen" ;
-    foaf:firstName "Jino" ;
-    cmo:known-as-a cmk:clarinetist ;
-    cmo:plays-in cmk:the-helsinki-music-centre-concert-hall-1747159200 .
-
-cmk:joana-carneiro a foaf:Person ;
-    foaf:familyName "Carneiro" ;
-    foaf:firstName "Joana" ;
-    cmo:conducts-in cmk:the-helsinki-music-centre-concert-hall-1747936800 ;
-    cmo:known-as-a cmk:conductor .
-
-cmk:jouko-laivuori a foaf:Person ;
-    foaf:familyName "Laivuori" ;
-    foaf:firstName "Jouko" ;
-    cmo:known-as-a cmk:pianist ;
-    cmo:plays-in cmk:the-helsinki-music-centre-concert-hall-1747936800 .
-
-cmk:kaisa-kortelainen a foaf:Person ;
-    foaf:familyName "Kortelainen" ;
-    foaf:firstName "Kaisa" ;
-    cmo:known-as-a cmk:flautist ;
-    cmo:plays-in cmk:the-helsinki-music-centre-concert-hall-1747936800 .
-
-cmk:kristianna-woller a foaf:Person ;
-    foaf:familyName "Woller" ;
-    foaf:firstName "Kristianna" ;
-    cmo:known-as-a cmk:soprano ;
-    cmo:sings-in cmk:the-helsinki-music-centre-concert-hall-1747159200 .
-
-cmk:leigh-melrose a foaf:Person ;
-    foaf:familyName "Melrose" ;
-    foaf:firstName "Leigh" ;
-    cmo:known-as-a cmk:baritone ;
-    cmo:sings-in cmk:the-helsinki-music-centre-concert-hall-1747936800 .
-
-cmk:nicholas-collon a foaf:Person ;
-    foaf:familyName "Collon" ;
-    foaf:firstName "Nicholas" ;
-    cmo:conducts-in cmk:the-helsinki-music-centre-concert-hall-1748368800,
-        cmk:the-helsinki-music-centre-concert-hall-1748455200,
-        cmk:the-helsinki-music-centre-concert-hall-1749146400 ;
-    cmo:known-as-a cmk:conductor .
-
-cmk:olivia-mikkonen a foaf:Person ;
-    foaf:familyName "Mikkonen" ;
-    foaf:firstName "Olivia" ;
-    cmo:known-as-a cmk:flautist ;
-    cmo:plays-in cmk:the-helsinki-music-centre-concert-hall-1747159200 .
-
-cmk:pavel-cernoch a foaf:Person ;
-    foaf:familyName "Cernoch" ;
-    foaf:firstName "Pavel" ;
-    cmo:known-as-a cmk:tenor ;
-    cmo:sings-in cmk:the-helsinki-music-centre-concert-hall-1747936800 .
-
-cmk:pekko-aakko a foaf:Person ;
-    foaf:familyName "Aakko" ;
-    foaf:firstName "Pekko" ;
-    cmo:known-as-a cmk:bassoonist ;
-    cmo:plays-in cmk:the-helsinki-music-centre-concert-hall-1747159200 .
-
-cmk:stefan-dohr a foaf:Person ;
-    foaf:familyName "Dohr" ;
-    foaf:firstName "Stefan" ;
-    cmo:known-as-a cmk:horn-player ;
-    cmo:plays-in cmk:the-helsinki-music-centre-concert-hall-1749146400 .
+cmk:tenor a cmo:voice-range .
 
 cmk:the-helsinki-music-centre-concert-hall a cmo:ConcertHall ;
     rdfs:label "The Helsinki Music Centre, Concert Hall" .
 
+cmk:the-helsinki-music-centre-concert-hall-1747159200 a mo:Performance ;
+    schema:location cmk:concert-hall ;
+    schema:name "FRSO young soloists" ;
+    schema:organizer cmk:finnish-radio-symphony-orchestra ;
+    schema:startDate "2026-05-06T19:00:00"^^xsd:dateTime ;
+    schema:url "https://yle.fi/aihe/a/20-10008699"^^xsd:anyURI .
+
+cmk:the-helsinki-music-centre-concert-hall-1747936800 a mo:Performance ;
+    schema:location cmk:concert-hall ;
+    schema:name "FRSO & Joana Carneiro" ;
+    schema:organizer cmk:finnish-radio-symphony-orchestra ;
+    schema:startDate "2026-05-15T19:00:00"^^xsd:dateTime ;
+    schema:url "https://yle.fi/aihe/a/20-10008702"^^xsd:anyURI .
+
+cmk:the-helsinki-music-centre-concert-hall-1748368800 a mo:Performance ;
+    schema:location cmk:concert-hall ;
+    schema:name "Nicholas Collon & Augustin Hadelich" ;
+    schema:organizer cmk:finnish-radio-symphony-orchestra ;
+    schema:startDate "2026-05-20T19:00:00"^^xsd:dateTime ;
+    schema:url "https://yle.fi/aihe/a/20-10008703"^^xsd:anyURI .
+
+cmk:the-helsinki-music-centre-concert-hall-1748455200 a mo:Performance ;
+    schema:location cmk:concert-hall ;
+    schema:name "Nicholas Collon & Augustin Hadelich" ;
+    schema:organizer cmk:finnish-radio-symphony-orchestra ;
+    schema:startDate "2026-05-21T19:00:00"^^xsd:dateTime ;
+    schema:url "https://yle.fi/aihe/a/20-10008704"^^xsd:anyURI .
+
+cmk:the-helsinki-music-centre-concert-hall-1749146400 a mo:Performance ;
+    schema:location cmk:concert-hall ;
+    schema:name "Nicholas Collon & Stefan Dohr" ;
+    schema:organizer cmk:finnish-radio-symphony-orchestra ;
+    schema:startDate "2026-05-29T19:00:00"^^xsd:dateTime ;
+    schema:url "https://yle.fi/aihe/a/20-10008705"^^xsd:anyURI .
+
 cmk:the-helsinki-music-centre-paavo-hall a cmo:ConcertHall ;
     rdfs:label "The Helsinki Music Centre, Paavo Hall" .
 
-cmk:tomas-nunez a foaf:Person ;
-    foaf:familyName "Nuñez" ;
-    foaf:firstName "Tomas" ;
-    cmo:known-as-a cmk:cellist ;
-    cmo:plays-in cmk:the-helsinki-music-centre-paavo-hall-1748714400 .
-
-cmk:tommi-hyytinen a foaf:Person ;
-    foaf:familyName "Hyytinen" ;
-    foaf:firstName "Tommi" ;
-    cmo:known-as-a cmk:horn-player ;
-    cmo:plays-in cmk:the-helsinki-music-centre-concert-hall-1747936800 .
-
-cmk:tuukka-vihtkari a foaf:Person ;
-    foaf:familyName "Vihtkari" ;
-    foaf:firstName "Tuukka" ;
-    cmo:known-as-a cmk:bassoonist ;
-    cmo:plays-in cmk:the-helsinki-music-centre-concert-hall-1747936800 .
-
-cmk:tuuli-talvitie a foaf:Person ;
-    foaf:familyName "Talvitie" ;
-    foaf:firstName "Tuuli" ;
-    cmo:known-as-a cmk:violinist ;
-    cmo:plays-in cmk:the-helsinki-music-centre-paavo-hall-1748714400 .
-
-cmk:viggo-sundqvist a foaf:Person ;
-    foaf:familyName "Sundqvist" ;
-    foaf:firstName "Viggo" ;
-    cmo:known-as-a cmk:trumpeter ;
-    cmo:plays-in cmk:the-helsinki-music-centre-concert-hall-1747159200 .
-
-cmk:vilma-tikkanen a foaf:Person ;
-    foaf:familyName "Tikkanen" ;
-    foaf:firstName "Vilma" ;
-    cmo:known-as-a cmk:violinist ;
-    cmo:plays-in cmk:the-helsinki-music-centre-concert-hall-1747159200 .
+cmk:the-helsinki-music-centre-paavo-hall-1748714400 a mo:Performance ;
+    schema:location cmk:paavo-hall ;
+    schema:name "Chamber Music Concert: Primitive Force" ;
+    schema:organizer cmk:finnish-radio-symphony-orchestra ;
+    schema:startDate "2026-05-24T15:00:00"^^xsd:dateTime ;
+    schema:url "https://yle.fi/aihe/a/20-10008701"^^xsd:anyURI .
 
 <https://knowledge.semanticscore.net/ontology> a owl:Ontology ;
     owl:imports mo:,
@@ -229,52 +122,14 @@ cmo:sings-in a owl:ObjectProperty ;
     rdfs:comment "Connects a singer to a performance in which they sing."@en ;
     rdfs:subPropertyOf cmo:performs-in .
 
-cmk:baritone a cmo:voice-range .
-
-cmk:mezzo-soprano a cmo:voice-range .
-
-cmk:tenor a cmo:voice-range .
-
 cmo:Programme a owl:Class ;
     rdfs:label "Programme"@en ;
     rdfs:comment "A concert programme listing the musical works to be performed at a performance."@en .
-
-cmk:soprano a cmo:voice-range .
-
-cmk:the-helsinki-music-centre-concert-hall-1748368800 a mo:Performance ;
-    schema:location cmk:concert-hall ;
-    schema:name "Nicholas Collon & Augustin Hadelich" ;
-    schema:organizer cmk:finnish-radio-symphony-orchestra ;
-    schema:startDate "2026-05-20T19:00:00"^^xsd:dateTime ;
-    schema:url "https://yle.fi/aihe/a/20-10008703"^^xsd:anyURI .
-
-cmk:the-helsinki-music-centre-concert-hall-1748455200 a mo:Performance ;
-    schema:location cmk:concert-hall ;
-    schema:name "Nicholas Collon & Augustin Hadelich" ;
-    schema:organizer cmk:finnish-radio-symphony-orchestra ;
-    schema:startDate "2026-05-21T19:00:00"^^xsd:dateTime ;
-    schema:url "https://yle.fi/aihe/a/20-10008704"^^xsd:anyURI .
-
-cmk:the-helsinki-music-centre-concert-hall-1749146400 a mo:Performance ;
-    schema:location cmk:concert-hall ;
-    schema:name "Nicholas Collon & Stefan Dohr" ;
-    schema:organizer cmk:finnish-radio-symphony-orchestra ;
-    schema:startDate "2026-05-29T19:00:00"^^xsd:dateTime ;
-    schema:url "https://yle.fi/aihe/a/20-10008705"^^xsd:anyURI .
 
 cmo:ConcertHall a owl:Class ;
     rdfs:label "Concert hall"@en ;
     rdfs:comment "A specific auditorium or performance space, typically contained within a venue. Address is inherited from the containing venue."@en ;
     rdfs:subClassOf schema:Place .
-
-cmk:conductor a cmo:musical-identity .
-
-cmk:the-helsinki-music-centre-paavo-hall-1748714400 a mo:Performance ;
-    schema:location cmk:paavo-hall ;
-    schema:name "Chamber Music Concert: Primitive Force" ;
-    schema:organizer cmk:finnish-radio-symphony-orchestra ;
-    schema:startDate "2026-05-24T15:00:00"^^xsd:dateTime ;
-    schema:url "https://yle.fi/aihe/a/20-10008701"^^xsd:anyURI .
 
 cmo:performs-in a owl:ObjectProperty ;
     rdfs:label "performs in"@en ;
@@ -288,18 +143,4 @@ cmo:voice-range a owl:Class ;
 cmo:musical-identity a owl:Class ;
     rdfs:label "Musical identity"@en ;
     rdfs:comment "The musical role or identity of a person, such as conductor, singer, or instrumentalist."@en .
-
-cmk:the-helsinki-music-centre-concert-hall-1747936800 a mo:Performance ;
-    schema:location cmk:concert-hall ;
-    schema:name "FRSO & Joana Carneiro" ;
-    schema:organizer cmk:finnish-radio-symphony-orchestra ;
-    schema:startDate "2026-05-15T19:00:00"^^xsd:dateTime ;
-    schema:url "https://yle.fi/aihe/a/20-10008702"^^xsd:anyURI .
-
-cmk:the-helsinki-music-centre-concert-hall-1747159200 a mo:Performance ;
-    schema:location cmk:concert-hall ;
-    schema:name "FRSO young soloists" ;
-    schema:organizer cmk:finnish-radio-symphony-orchestra ;
-    schema:startDate "2026-05-06T19:00:00"^^xsd:dateTime ;
-    schema:url "https://yle.fi/aihe/a/20-10008699"^^xsd:anyURI .
 

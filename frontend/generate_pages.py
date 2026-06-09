@@ -17,10 +17,11 @@ Then start the server:
 import html as _html
 import json
 from collections import defaultdict
+from datetime import datetime
 from pathlib import Path
 
 from rdflib import Graph, Literal, URIRef
-from rdflib.namespace import RDF
+from rdflib.namespace import RDF, SH
 
 # ---------------------------------------------------------------------------
 # Paths
@@ -36,7 +37,7 @@ NS_FILE        = ROOT / "namespaces.jsonld"
 TITLE_RULES_FILE = SCRIPT_DIR / "title_rules.json"
 DEFAULT_OUT    = SCRIPT_DIR / "output" / "knowledge"
 RULES_DIR      = KNOWLEDGE / "rules"
-SHAPES_FILE    = KNOWLEDGE / "shapes" / "shapes.ttl"
+SHAPES_DIR     = KNOWLEDGE / "shapes"
 
 SUBJECT_BASE = "https://knowledge.semanticscore.net/knowledge/"
 SITE_BASE    = "https://knowledge.semanticscore.net"
@@ -50,6 +51,8 @@ PREFIX_TO_URI: dict[str, str] = _ctx
 URI_TO_PREFIX: dict[str, str] = {v: k for k, v in _ctx.items()}
 
 CMO_NS = PREFIX_TO_URI.get("cmo", "")
+_UI_NS = PREFIX_TO_URI.get("ui", "")
+_UI_INSTANCE_WIDGET = URIRef(_UI_NS + "instanceWidget") if _UI_NS else None
 
 
 def class_url(type_uri: str) -> str:
@@ -107,10 +110,12 @@ def type_page_filename(type_uri: str) -> str:
 def build_nav_items() -> list[dict]:
     from rdflib.namespace import Namespace
     SH = Namespace("http://www.w3.org/ns/shacl#")
-    if not SHAPES_FILE.exists():
+    shape_files = sorted(SHAPES_DIR.glob("*.ttl"))
+    if not shape_files:
         return []
     sg = Graph()
-    sg.parse(str(SHAPES_FILE), format="turtle")
+    for f in shape_files:
+        sg.parse(str(f), format="turtle")
     items = []
     for shape in sg.subjects(RDF.type, SH.NodeShape):
         cls = sg.value(shape, SH.targetClass)
@@ -204,8 +209,42 @@ INSTANCE_TEMPLATE = """\
     .types a {{ color: #666; text-decoration: none; border-bottom: 1px dotted #aaa; }}
     .types a:hover {{ color: #0066cc; border-color: #0066cc; }}
     h1   {{ font-size: 1.4rem; word-break: break-all; margin-top: 0.25rem; }}
-    .uri  {{ font-size: 0.85rem; color: #555; word-break: break-all; }}
-    table {{ border-collapse: collapse; width: 100%; margin-top: 1.5rem; }}
+    .subtitle {{ font-size: 1rem; color: #555; margin: 0.3rem 0 0; line-height: 1.5; }}
+    .datetime-widget {{ display: flex; flex-direction: column;
+                        background: #f5f5f5; border-radius: 8px;
+                        padding: 0.75rem 1.25rem; margin: 1rem 0; gap: 0.1rem; }}
+    .datetime-weekday {{ font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+                         letter-spacing: .08em; color: #888; }}
+    .datetime-date    {{ font-size: 1.25rem; font-weight: 600; color: #1a1a2e; }}
+    .datetime-time    {{ font-size: 1rem; color: #555; }}
+    .org-widget {{ display: flex; flex-direction: column; gap: 0.15rem; margin: 1rem 0; }}
+    .org-label  {{ font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
+                   letter-spacing: .08em; color: #888; }}
+    .org-name   {{ font-size: 1.1rem; font-weight: 600; color: #1a1a2e; text-decoration: none; }}
+    .org-name:hover {{ text-decoration: underline; }}
+    .performers-section {{ margin: 1.25rem 0; }}
+    .performers-heading {{ font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
+                           letter-spacing: .08em; color: #888; margin-bottom: 0.6rem; }}
+    .performers-grid {{ display: flex; flex-wrap: wrap; gap: 0.5rem; }}
+    .person-card {{ display: flex; flex-direction: column; gap: 0.1rem;
+                    background: #f5f5f5; border-radius: 6px; padding: 0.5rem 0.75rem;
+                    min-width: 130px; }}
+    .person-name {{ font-size: 0.88rem; font-weight: 600; color: #1a1a2e;
+                    text-decoration: none; }}
+    .person-name:hover {{ text-decoration: underline; }}
+    .person-known-as {{ font-size: 0.72rem; color: #888; }}
+    /* ---- Tabs ---- */
+    .tabs {{ display: flex; border-bottom: 2px solid #e0e0e0; margin: 1.5rem 0 0; gap: 0; }}
+    .tab-btn {{ padding: 0.5rem 1.1rem; border: none; background: none; cursor: pointer;
+                font-size: 0.85rem; color: #666; border-bottom: 2px solid transparent;
+                margin-bottom: -2px; font-family: inherit; }}
+    .tab-btn:hover {{ color: #222; }}
+    .tab-btn.active {{ color: #0066cc; border-bottom-color: #0066cc; font-weight: 600; }}
+    .tab-panel {{ display: none; padding: 1.25rem 0; }}
+    .tab-panel.active {{ display: block; }}
+    /* ---- Raw data ---- */
+    .uri {{ font-size: 0.85rem; color: #555; word-break: break-all; margin-bottom: 0.5rem; }}
+    table {{ border-collapse: collapse; width: 100%; margin-top: 1rem; }}
     th, td {{ text-align: left; padding: 0.45rem 0.75rem; border: 1px solid #ddd; vertical-align: top; }}
     th   {{ background: #f5f5f5; }}
     h2   {{ font-size: 1rem; margin-top: 2rem; color: #444; }}
@@ -220,16 +259,42 @@ INSTANCE_TEMPLATE = """\
   <div class="page-content">
   {type_badges}
   <h1>{title}</h1>
-  <p class="uri">&lt;<a href="{uri}">{uri}</a>&gt;</p>
-  {map_section}
-  <table>
-    <thead><tr><th>Predicate</th><th>Value</th></tr></thead>
-    <tbody>
+  {subtitle}
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="overview" onclick="switchTab('overview')">Overview</button>
+    <button class="tab-btn"        data-tab="raw"      onclick="switchTab('raw')">Raw data</button>
+  </div>
+
+  <div id="tab-overview" class="tab-panel active">
+    {organizer_section}
+    {datetime_section}
+    {performers_section}
+    {map_section}
+  </div>
+
+  <div id="tab-raw" class="tab-panel">
+    <p class="uri">&lt;<a href="{uri}">{uri}</a>&gt;</p>
+    <table>
+      <thead><tr><th>Predicate</th><th>Value</th></tr></thead>
+      <tbody>
 {rows}
-    </tbody>
-  </table>
+      </tbody>
+    </table>
 {incoming_section}
   </div>
+
+  </div>
+  <script>
+    function switchTab(name) {{
+      document.querySelectorAll('.tab-btn').forEach(function(b) {{
+        b.classList.toggle('active', b.dataset.tab === name);
+      }});
+      document.querySelectorAll('.tab-panel').forEach(function(p) {{
+        p.classList.toggle('active', p.id === 'tab-' + name);
+      }});
+    }}
+  </script>
 </body>
 </html>
 """
@@ -371,40 +436,21 @@ def render_object(obj, subject_base: str, pred_uri: str = "") -> str:
     return text
 
 
-_CMO_GEO_LOC  = "https://knowledge.semanticscore.net/ontology/in-geo-location"
-_SCHEMA_LAT   = URIRef("https://schema.org/latitude")
-_SCHEMA_LON   = URIRef("https://schema.org/longitude")
-_SCHEMA_NAME  = URIRef("https://schema.org/name")
-_SKOS_LABEL   = URIRef("http://www.w3.org/2004/02/skos/core#prefLabel")
+_SCHEMA_LAT = "https://schema.org/latitude"
+_SCHEMA_LON = "https://schema.org/longitude"
 
 
-def build_map_section(triples: list, g) -> tuple[str, str]:
+def build_map_section(triples: list, g=None) -> tuple[str, str]:
     """
-    Follow  Performance --cmo:in-geo-location--> concept --schema:lat/lon--> coords
-    and return (head_extras, map_html).  Both are empty strings when no map is needed.
+    Read schema:latitude / schema:longitude from the subject's own triples
+    (materialised by the performance-coordinates SPARQL rule) and return
+    (head_extras, map_html). Both are empty strings when no coordinates exist.
     """
-    if g is None:
-        return "", ""
-
-    geo_uri = next(
-        (str(o) for p, o in triples if str(p) == _CMO_GEO_LOC and isinstance(o, URIRef)),
-        None,
-    )
-    if not geo_uri:
-        return "", ""
-
-    geo_ref = URIRef(geo_uri)
-    lat = g.value(geo_ref, _SCHEMA_LAT)
-    lon = g.value(geo_ref, _SCHEMA_LON)
+    pred_map = {str(p): str(o) for p, o in triples}
+    lat = pred_map.get(_SCHEMA_LAT)
+    lon = pred_map.get(_SCHEMA_LON)
     if lat is None or lon is None:
         return "", ""
-
-    label = (
-        g.value(geo_ref, _SCHEMA_NAME)
-        or g.value(geo_ref, _SKOS_LABEL)
-        or geo_uri.rstrip("/").split("/")[-1]
-    )
-    label_escaped = _html.escape(str(label), quote=True)
 
     head_extras = (
         '  <link rel="stylesheet"'
@@ -412,7 +458,7 @@ def build_map_section(triples: list, g) -> tuple[str, str]:
         '  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>'
     )
 
-    # Note: {{ }} escapes are needed because this string goes through .format() later.
+    # {{ }} escapes are required because this string goes through .format() later.
     map_html = (
         f'  <div id="perf-map" style="height:220px;border-radius:8px;'
         f'margin:1.25rem 0;border:1px solid #e0e0e0;"></div>\n'
@@ -422,12 +468,127 @@ def build_map_section(triples: list, g) -> tuple[str, str]:
         f'      L.tileLayer("https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png",{{\n'
         f'        attribution:"© <a href=\'https://www.openstreetmap.org/copyright\'>OpenStreetMap</a>"\n'
         f'      }}).addTo(m);\n'
-        f'      L.marker([{lat},{lon}]).addTo(m).bindPopup("{label_escaped}").openPopup();\n'
+        f'      L.marker([{lat},{lon}]).addTo(m);\n'
         f'    }})();\n'
         f'  </script>'
     )
 
     return head_extras, map_html
+
+
+_SCHEMA_START_DATE = "https://schema.org/startDate"
+
+
+def build_datetime_section(triples: list) -> str:
+    raw = next((str(o) for p, o in triples if str(p) == _SCHEMA_START_DATE), None)
+    if not raw:
+        return ""
+    try:
+        dt = datetime.fromisoformat(raw)
+    except ValueError:
+        return ""
+    return (
+        f'  <div class="datetime-widget">'
+        f'<span class="datetime-weekday">{dt.strftime("%A")}</span>'
+        f'<span class="datetime-date">{dt.strftime("%-d %B %Y")}</span>'
+        f'<span class="datetime-time">{dt.strftime("%H:%M")}</span>'
+        f'</div>'
+    )
+
+
+_CMO_NS           = "https://knowledge.semanticscore.net/ontology/"
+_CMO_PERFORMS_IN  = _CMO_NS + "performs-in"
+_CMO_CONDUCTS_IN  = _CMO_NS + "conducts-in"
+_CMO_PLAYS_IN     = _CMO_NS + "plays-in"
+_CMO_SINGS_IN     = _CMO_NS + "sings-in"
+_CMO_KNOWN_AS     = URIRef(_CMO_NS + "known-as-a")
+_PERFORMER_PREDS  = {_CMO_PERFORMS_IN, _CMO_CONDUCTS_IN, _CMO_PLAYS_IN, _CMO_SINGS_IN}
+_FOAF_FIRST       = URIRef("http://xmlns.com/foaf/0.1/firstName")
+_FOAF_FAMILY      = URIRef("http://xmlns.com/foaf/0.1/familyName")
+_SKOS_PREF_LABEL  = URIRef("http://www.w3.org/2004/02/skos/core#prefLabel")
+
+
+def build_performers_section(incoming: list, g) -> str:
+    if not incoming or g is None:
+        return ""
+
+    seen: set[str] = set()
+    performers: list[tuple[str, str, str]] = []  # (name, known_as, page_name)
+
+    for subj, pred in incoming:
+        if str(pred) not in _PERFORMER_PREDS:
+            continue
+        page = local_name(str(subj))
+        if page in seen:
+            continue
+        seen.add(page)
+
+        person = URIRef(str(subj))
+
+        # Name: prefer schema:name (materialised by full_name rule), else construct
+        name_lit = g.value(person, URIRef(_SCHEMA_NAME_URI))
+        if not name_lit:
+            first  = g.value(person, _FOAF_FIRST)
+            family = g.value(person, _FOAF_FAMILY)
+            name_lit = f"{first} {family}".strip() if (first or family) else page
+        name = str(name_lit)
+
+        # Known as: follow cmo:known-as-a → schema:name on the concept
+        identities = []
+        for _, _, concept in g.triples((person, _CMO_KNOWN_AS, None)):
+            label = (g.value(concept, URIRef(_SCHEMA_NAME_URI))
+                     or g.value(concept, _SKOS_PREF_LABEL))
+            if label:
+                identities.append(str(label))
+        known_as = " · ".join(sorted(identities))
+
+        performers.append((name, known_as, page))
+
+    if not performers:
+        return ""
+
+    performers.sort(key=lambda x: x[0])
+    cards = ""
+    for name, known_as, page in performers:
+        cards += (
+            f'<div class="person-card">'
+            f'<a class="person-name" href="/knowledge/{page}.html">{_html.escape(name)}</a>'
+            + (f'<span class="person-known-as">{_html.escape(known_as)}</span>' if known_as else "")
+            + "</div>"
+        )
+
+    return (
+        f'<div class="performers-section">'
+        f'<p class="performers-heading">Performers</p>'
+        f'<div class="performers-grid">{cards}</div>'
+        f'</div>'
+    )
+
+
+_SCHEMA_ORGANIZER = "https://schema.org/organizer"
+_SCHEMA_NAME_URI  = "https://schema.org/name"
+
+
+def build_organizer_section(triples: list, g) -> str:
+    if g is None:
+        return ""
+    org_uri = next(
+        (str(o) for p, o in triples if str(p) == _SCHEMA_ORGANIZER and isinstance(o, URIRef)),
+        None,
+    )
+    if not org_uri:
+        return ""
+    org_ref = URIRef(org_uri)
+    name = g.value(org_ref, URIRef(_SCHEMA_NAME_URI))
+    if not name:
+        return ""
+    page_link = f"/knowledge/{local_name(org_uri)}.html"
+    return (
+        f'<div class="org-widget">'
+        f'<span class="org-label">Organised by</span>'
+        f'<a class="org-name" href="{page_link}">{_html.escape(str(name))}</a>'
+        f'</div>'
+    )
 
 
 def build_instance_html(subject_uri: str, triples: list, incoming: list,
@@ -448,9 +609,28 @@ def build_instance_html(subject_uri: str, triples: list, incoming: list,
     else:
         type_badges = ""
 
+    # Collect predicates owned by an instance widget — rendered by the widget,
+    # not by the raw property table or incoming section.
+    widget_preds: set[str] = set()          # outgoing
+    widget_inverse_preds: set[str] = set()  # incoming (sh:inversePath)
+    if g is not None and _UI_INSTANCE_WIDGET is not None:
+        for shape in g.subjects(SH.targetClass, None):
+            for prop_node in g.objects(shape, SH.property):
+                if g.value(prop_node, _UI_INSTANCE_WIDGET) is None:
+                    continue
+                path = g.value(prop_node, SH.path)
+                if isinstance(path, URIRef):
+                    widget_preds.add(str(path))
+                else:
+                    inv = g.value(path, SH.inversePath)
+                    if isinstance(inv, URIRef):
+                        widget_inverse_preds.add(str(inv))
+
     rows_html = ""
     for pred, obj in sorted(triples, key=lambda t: str(t[0])):
         if str(pred) == RDF_TYPE:
+            continue
+        if str(pred) in widget_preds:
             continue
         rows_html += (
             f"      <tr><td>{shorten(str(pred))}</td>"
@@ -479,6 +659,9 @@ def build_instance_html(subject_uri: str, triples: list, incoming: list,
 
     json_ld = build_json_ld(subject_uri, triples, g)
     map_extras, map_section = build_map_section(triples, g)
+    datetime_section = build_datetime_section(triples)
+    organizer_section = build_organizer_section(triples, g)
+    performers_section = build_performers_section(incoming, g)
 
     # ── Meta / OG tags ──────────────────────────────────────────────────────
     _SCHEMA_DESC_URI = f"{_SCHEMA_NS}description"
@@ -500,16 +683,21 @@ def build_instance_html(subject_uri: str, triples: list, incoming: list,
         meta_lines.insert(1, f'<meta name="description" content="{esc_desc}">')
         meta_lines.insert(3, f'<meta property="og:description" content="{esc_desc}">')
     meta_tags = "\n  ".join(meta_lines)
+    subtitle  = f'<p class="subtitle">{_html.escape(desc)}</p>' if desc else ""
 
     return INSTANCE_TEMPLATE.format(
         title=title, uri=subject_uri,
         type_badges=type_badges, rows=rows_html,
+        subtitle=subtitle,
         incoming_section=incoming_section,
         json_ld=json_ld,
         meta_tags=meta_tags,
         top_nav=top_nav,
         map_extras=map_extras,
         map_section=map_section,
+        datetime_section=datetime_section,
+        organizer_section=organizer_section,
+        performers_section=performers_section,
     )
 
 

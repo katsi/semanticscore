@@ -7,40 +7,35 @@
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-cmk:anna-han a foaf:Person ;
-    foaf:familyName "Han" ;
-    foaf:firstName "Anna" ;
-    cmo:known-as-a cmk:pianist ;
-    cmo:performs-in cmk:kleiner-saal-1714068000 .
-
-cmk:florian-gross a foaf:Person ;
-    foaf:familyName "Groß" ;
-    foaf:firstName "Florian" ;
-    cmo:known-as-a cmk:conductor ;
-    cmo:performs-in cmk:grosser-saal-1714089600 .
+cmk:conductor a cmo:musical-identity ;
+    rdfs:label "Conductor" .
 
 cmk:grosser-saal a cmo:ConcertHall ;
     rdfs:label "Großer Saal" .
 
-cmk:joana-mallwitz a foaf:Person ;
-    foaf:familyName "Mallwitz" ;
-    foaf:firstName "Joana" ;
-    cmo:conducts-in cmk:grosser-saal-1714089600 ;
-    cmo:known-as-a cmk:conductor .
+cmk:grosser-saal-1714089600 a mo:Performance ;
+    schema:name "Konzerthausorchester Berlin, Joana Mallwitz mit der Berliner Singakademie" ;
+    schema:organizer cmk:konzerthaus-berlin ;
+    schema:startDate "2025-04-25T20:00:00"^^xsd:dateTime .
 
 cmk:kleiner-saal a cmo:ConcertHall ;
     rdfs:label "Kleiner Saal" .
+
+cmk:kleiner-saal-1714068000 a mo:Performance ;
+    schema:name "Espresso-Konzert - Koffein für die Ohren – mit Ruslan Talas und Anna Han" ;
+    schema:organizer cmk:konzerthaus-berlin ;
+    schema:startDate "2025-04-25T14:00:00"^^xsd:dateTime .
 
 cmk:konzerthaus-berlin-1714114800 a mo:Performance ;
     schema:name "Führung durch das Konzerthaus Berlin" ;
     schema:organizer cmk:konzerthaus-berlin ;
     schema:startDate "2025-04-26T13:00:00"^^xsd:dateTime .
 
-cmk:ruslan-talas a foaf:Person ;
-    foaf:familyName "Talas" ;
-    foaf:firstName "Ruslan" ;
-    cmo:known-as-a cmk:violinist ;
-    cmo:performs-in cmk:kleiner-saal-1714068000 .
+cmk:pianist a cmo:instrumentalist-identity ;
+    rdfs:label "Pianist" .
+
+cmk:violinist a cmo:instrumentalist-identity ;
+    rdfs:label "Violinist" .
 
 <https://knowledge.semanticscore.net/ontology> a owl:Ontology ;
     owl:imports mo:,
@@ -110,25 +105,6 @@ cmo:voice-range a owl:Class ;
     rdfs:label "Voice range"@en ;
     rdfs:comment "A vocal musical identity categorised by voice type, such as soprano, tenor, or bass."@en ;
     rdfs:subClassOf cmo:musical-identity .
-
-cmk:pianist a cmo:instrumentalist-identity ;
-    rdfs:label "Pianist" .
-
-cmk:violinist a cmo:instrumentalist-identity ;
-    rdfs:label "Violinist" .
-
-cmk:conductor a cmo:musical-identity ;
-    rdfs:label "Conductor" .
-
-cmk:grosser-saal-1714089600 a mo:Performance ;
-    schema:name "Konzerthausorchester Berlin, Joana Mallwitz mit der Berliner Singakademie" ;
-    schema:organizer cmk:konzerthaus-berlin ;
-    schema:startDate "2025-04-25T20:00:00"^^xsd:dateTime .
-
-cmk:kleiner-saal-1714068000 a mo:Performance ;
-    schema:name "Espresso-Konzert - Koffein für die Ohren – mit Ruslan Talas und Anna Han" ;
-    schema:organizer cmk:konzerthaus-berlin ;
-    schema:startDate "2025-04-25T14:00:00"^^xsd:dateTime .
 
 cmo:Programme a owl:Class ;
     rdfs:label "Programme"@en ;

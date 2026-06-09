@@ -1,0 +1,32 @@
+PREFIX cmo:    <https://knowledge.semanticscore.net/ontology/>
+PREFIX mo:     <http://purl.org/ontology/mo/>
+PREFIX schema: <https://schema.org/>
+
+# Attach lat/lon directly to a Performance.
+# Priority 1: coordinates from the schema:location venue (building-level precision).
+# Fallback:   coordinates from cmo:in-geo-location concept (city-level precision).
+
+CONSTRUCT {
+    ?performance schema:latitude  ?lat .
+    ?performance schema:longitude ?lon .
+}
+WHERE {
+    ?performance a mo:Performance .
+
+    OPTIONAL {
+        ?performance schema:location ?venue .
+        ?venue schema:latitude  ?venueLat ;
+               schema:longitude ?venueLon .
+    }
+
+    OPTIONAL {
+        ?performance cmo:in-geo-location ?geo .
+        ?geo schema:latitude  ?geoLat ;
+             schema:longitude ?geoLon .
+    }
+
+    BIND(COALESCE(?venueLat, ?geoLat) AS ?lat)
+    BIND(COALESCE(?venueLon, ?geoLon) AS ?lon)
+
+    FILTER(BOUND(?lat))
+}
