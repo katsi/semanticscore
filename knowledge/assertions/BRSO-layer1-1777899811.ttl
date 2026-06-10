@@ -7,57 +7,33 @@
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-cmk:albrecht-maurer a foaf:Person ;
-    foaf:familyName "Maurer" ;
-    foaf:firstName "Albrecht" ;
-    cmo:known-as-a cmk:instrumentalist ;
-    cmo:performs-in cmk:germanisches-nationalmuseum-aufseßsaal-1746489600 .
+cmk:conductor a cmo:musical-identity .
 
-cmk:joško-ćaleta a foaf:Person ;
-    foaf:familyName "Ćaleta" ;
-    foaf:firstName "Joško" ;
-    cmo:known-as-a cmk:conductor,
-        cmk:vocalist ;
-    cmo:performs-in cmk:germanisches-nationalmuseum-aufseßsaal-1746489600 .
+cmk:germanisches-nationalmuseum-aufseßsaal-1746489600 a mo:Performance ;
+    cmo:venue cmk:germanisches-nationalmuseum-aufseßsaal ;
+    schema:name "Heretical Angels" ;
+    schema:organizer cmk:symphonieorchester-des-bayerischen-rundfunks ;
+    schema:startDate "2026-05-06T19:00:00"^^xsd:dateTime .
 
-cmk:jure-miloš a foaf:Person ;
-    foaf:familyName "Miloš" ;
-    foaf:firstName "Jure" ;
-    cmo:known-as-a cmk:vocalist ;
-    cmo:performs-in cmk:germanisches-nationalmuseum-aufseßsaal-1746489600 .
+cmk:instrumentalist a cmo:musical-identity .
 
-cmk:katarina-livljanić a foaf:Person ;
-    foaf:familyName "Livljanić" ;
-    foaf:firstName "Katarina" ;
-    cmo:known-as-a cmk:conductor,
-        cmk:vocalist ;
-    cmo:performs-in cmk:germanisches-nationalmuseum-aufseßsaal-1746489600 .
+cmk:isarphilharmonie-1746577200 a mo:Performance ;
+    cmo:venue cmk:isarphilharmonie ;
+    schema:name "Sir Simon Rattle & Magdalena Kožená" ;
+    schema:organizer cmk:symphonieorchester-des-bayerischen-rundfunks ;
+    schema:startDate "2026-05-07T20:00:00"^^xsd:dateTime .
 
-cmk:magdalena-kožená a foaf:Person ;
-    foaf:familyName "Kožená" ;
-    foaf:firstName "Magdalena" ;
-    cmo:known-as-a cmk:vocalist ;
-    cmo:sings-in cmk:isarphilharmonie-1746577200,
-        cmk:isarphilharmonie-1746663600,
-        cmk:isarphilharmonie-1746746400 .
+cmk:isarphilharmonie-1746663600 a mo:Performance ;
+    cmo:venue cmk:isarphilharmonie ;
+    schema:name "Sir Simon Rattle & Magdalena Kožená" ;
+    schema:organizer cmk:symphonieorchester-des-bayerischen-rundfunks ;
+    schema:startDate "2026-05-08T20:00:00"^^xsd:dateTime .
 
-cmk:milivoj-rilov a foaf:Person ;
-    foaf:familyName "Rilov" ;
-    foaf:firstName "Milivoj" ;
-    cmo:known-as-a cmk:vocalist ;
-    cmo:performs-in cmk:germanisches-nationalmuseum-aufseßsaal-1746489600 .
-
-cmk:nikola-damjanović a foaf:Person ;
-    foaf:familyName "Damjanović" ;
-    foaf:firstName "Nikola" ;
-    cmo:known-as-a cmk:vocalist ;
-    cmo:performs-in cmk:germanisches-nationalmuseum-aufseßsaal-1746489600 .
-
-cmk:norbert-rodenkirchen a foaf:Person ;
-    foaf:familyName "Rodenkirchen" ;
-    foaf:firstName "Norbert" ;
-    cmo:known-as-a cmk:flautist ;
-    cmo:performs-in cmk:germanisches-nationalmuseum-aufseßsaal-1746489600 .
+cmk:isarphilharmonie-1746746400 a mo:Performance ;
+    cmo:venue cmk:isarphilharmonie ;
+    schema:name "Sir Simon Rattle & Magdalena Kožená" ;
+    schema:organizer cmk:symphonieorchester-des-bayerischen-rundfunks ;
+    schema:startDate "2026-05-09T19:00:00"^^xsd:dateTime .
 
 cmk:orlandosaal-1746626400 a mo:Performance ;
     cmo:venue cmk:orlandosaal ;
@@ -82,20 +58,6 @@ cmk:orlandosaal-1746723600 a mo:Performance ;
     schema:name "Musik-Express" ;
     schema:organizer cmk:symphonieorchester-des-bayerischen-rundfunks ;
     schema:startDate "2026-05-09T14:00:00"^^xsd:dateTime .
-
-cmk:simon-rattle a foaf:Person ;
-    foaf:familyName "Rattle" ;
-    foaf:firstName "Simon" ;
-    cmo:conducts-in cmk:isarphilharmonie-1746577200,
-        cmk:isarphilharmonie-1746663600,
-        cmk:isarphilharmonie-1746746400 ;
-    cmo:known-as-a cmk:conductor .
-
-cmk:srecko-damjanović a foaf:Person ;
-    foaf:familyName "Damjanović" ;
-    foaf:firstName "Srecko" ;
-    cmo:known-as-a cmk:vocalist ;
-    cmo:performs-in cmk:germanisches-nationalmuseum-aufseßsaal-1746489600 .
 
 <https://knowledge.semanticscore.net/ontology> a owl:Ontology ;
     owl:imports mo:,
@@ -174,31 +136,9 @@ cmo:voice-range a owl:Class ;
 cmk:germanisches-nationalmuseum-aufseßsaal a cmo:Venue ;
     schema:name "Germanisches Nationalmuseum, Aufseßsaal" .
 
-cmk:instrumentalist a cmo:musical-identity .
-
-cmk:isarphilharmonie-1746577200 a mo:Performance ;
-    cmo:venue cmk:isarphilharmonie ;
-    schema:name "Sir Simon Rattle & Magdalena Kožená" ;
-    schema:organizer cmk:symphonieorchester-des-bayerischen-rundfunks ;
-    schema:startDate "2026-05-07T20:00:00"^^xsd:dateTime .
-
-cmk:isarphilharmonie-1746663600 a mo:Performance ;
-    cmo:venue cmk:isarphilharmonie ;
-    schema:name "Sir Simon Rattle & Magdalena Kožená" ;
-    schema:organizer cmk:symphonieorchester-des-bayerischen-rundfunks ;
-    schema:startDate "2026-05-08T20:00:00"^^xsd:dateTime .
-
-cmk:isarphilharmonie-1746746400 a mo:Performance ;
-    cmo:venue cmk:isarphilharmonie ;
-    schema:name "Sir Simon Rattle & Magdalena Kožená" ;
-    schema:organizer cmk:symphonieorchester-des-bayerischen-rundfunks ;
-    schema:startDate "2026-05-09T19:00:00"^^xsd:dateTime .
-
 cmo:Programme a owl:Class ;
     rdfs:label "Programme"@en ;
     rdfs:comment "A concert programme listing the musical works to be performed at a performance."@en .
-
-cmk:conductor a cmo:musical-identity .
 
 cmk:isarphilharmonie a cmo:Venue ;
     schema:name "Isarphilharmonie" .
@@ -218,10 +158,4 @@ cmo:performs-in a owl:ObjectProperty ;
 cmo:musical-identity a owl:Class ;
     rdfs:label "Musical identity"@en ;
     rdfs:comment "The musical role or identity of a person, such as conductor, singer, or instrumentalist."@en .
-
-cmk:germanisches-nationalmuseum-aufseßsaal-1746489600 a mo:Performance ;
-    cmo:venue cmk:germanisches-nationalmuseum-aufseßsaal ;
-    schema:name "Heretical Angels" ;
-    schema:organizer cmk:symphonieorchester-des-bayerischen-rundfunks ;
-    schema:startDate "2026-05-06T19:00:00"^^xsd:dateTime .
 

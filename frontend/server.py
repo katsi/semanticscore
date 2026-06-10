@@ -102,6 +102,7 @@ UI_PRIMARY            = URIRef(_ui_ns + "primary")
 UI_SECONDARY          = URIRef(_ui_ns + "secondary")
 UI_DISPLAY_FORMAT     = URIRef(_ui_ns + "displayFormat")
 UI_FACET_CONCEPT_SCH  = URIRef(_ui_ns + "facetConceptScheme")
+UI_INSTANCE_WIDGET    = URIRef(_ui_ns + "instanceWidget")
 
 _schema_ns = PREFIX_TO_URI["schema"]
 SCHEMA_NAME = URIRef(_schema_ns + "name")
@@ -311,6 +312,10 @@ def get_facets_for_class(type_uri: str) -> list[dict]:
 
     for shape in shape_uris:
         for prop_node in g.objects(shape, SH.property):
+            # Skip properties owned by an instance widget — those are rendered
+            # on the individual page, not as facet filters.
+            if g.value(prop_node, UI_INSTANCE_WIDGET) is not None:
+                continue
             # Respect ui:facet false — skip if explicitly opted out
             facet_flag = g.value(prop_node, UI_FACET)
             if facet_flag is not None and not bool(facet_flag):

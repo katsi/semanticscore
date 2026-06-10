@@ -20,6 +20,9 @@ __pycache__/
 knowledge/agents/
 .claude/
 
+# --- Private: MCP experiment ---
+mcp-experiment/
+
 # --- IDE / OS ---
 .DS_Store
 .vscode/

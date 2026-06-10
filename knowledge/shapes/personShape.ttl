@@ -1,0 +1,64 @@
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <https://schema.org/> .
+@prefix cmo:    <https://knowledge.semanticscore.net/ontology/> .
+@prefix cmk:    <https://knowledge.semanticscore.net/knowledge/> .
+@prefix ui:     <https://knowledge.semanticscore.net/ui-ontology/> .
+
+# =============================================================================
+# Shape for foaf:Person
+# =============================================================================
+
+cmk:PersonShape
+    a sh:NodeShape ;
+    sh:targetClass foaf:Person ;
+
+    sh:property [
+        sh:path  schema:name ;
+        sh:name  "Name" ;
+        sh:datatype xsd:string ;
+        sh:order 1 ;
+        ui:facet false ;
+        ui:cardPosition ui:primary
+    ] ;
+
+    sh:property [
+        sh:path  cmo:known-as-a ;
+        sh:name  "Known as" ;
+        sh:nodeKind sh:IRI ;
+        sh:order 2 ;
+        ui:facet true ;
+        ui:facetConceptScheme cmk:musical-identity-scheme ;
+        ui:cardPosition ui:secondary
+    ] ;
+
+    sh:property [
+        sh:path  cmo:performs-next ;
+        sh:name  "Performs Next" ;
+        sh:nodeKind sh:IRI ;
+        sh:order 3 ;
+        ui:facet false ;
+        ui:cardPosition ui:secondary
+    ] ;
+
+    sh:property [
+        sh:path  cmo:performs-with ;
+        sh:name  "Performs With" ;
+        sh:nodeKind sh:IRI ;
+        sh:order 4 ;
+        ui:facet true ;
+        ui:cardPosition ui:secondary
+    ] ;
+
+    sh:property [
+        sh:path  cmo:featured-at ;
+        sh:name  "Featured At" ;
+        sh:nodeKind sh:IRI ;
+        sh:order 5 ;
+        ui:facet false ;
+        ui:cardPosition ui:secondary
+    ] .

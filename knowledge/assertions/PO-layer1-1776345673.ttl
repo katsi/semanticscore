@@ -7,24 +7,14 @@
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-cmk:alison-mosshart a foaf:Person ;
-    foaf:familyName "Mosshart"^^xsd:string ;
-    foaf:firstName "Alison"^^xsd:string ;
-    cmo:known-as-a cmk:vocalist ;
-    cmo:sings-in cmk:royal-festival-hall-1776906600 .
-
-cmk:angie-newman a foaf:Person ;
-    foaf:familyName "Newman"^^xsd:string ;
-    foaf:firstName "Angie"^^xsd:string ;
-    cmo:known-as-a cmk:interpreter ;
-    cmo:performs-in cmk:de-montfort-hall-1778368800 .
-
 cmk:basingstoke-multiple-venues-1776614400 a mo:Performance ;
     schema:location cmk:the-anvil ;
     schema:name "Philharmonia Festival in Basingstoke" ;
     schema:organizer cmk:philharmonia-orchestra ;
     schema:startDate "2026-04-18T10:00:00"^^xsd:dateTime ;
     schema:url "https://philharmonia.co.uk/whats-on/philharmonia-festival-in-basingstoke/"^^xsd:anyURI .
+
+cmk:bassist a cmo:musical-identity .
 
 cmk:canterbury-multiple-venues-1779343200 a mo:Performance ;
     schema:location cmk:marlowe-theatre ;
@@ -33,106 +23,40 @@ cmk:canterbury-multiple-venues-1779343200 a mo:Performance ;
     schema:startDate "2026-05-17T10:00:00"^^xsd:dateTime ;
     schema:url "https://philharmonia.co.uk/whats-on/philharmonia-festival-in-canterbury/"^^xsd:anyURI .
 
-cmk:cristian-macelaru a foaf:Person ;
-    foaf:familyName "Măcelaru"^^xsd:string ;
-    foaf:firstName "Cristian"^^xsd:string ;
-    cmo:conducts-in cmk:royal-festival-hall-1776689400,
-        cmk:royal-festival-hall-1776707400,
-        cmk:the-anvil-1776647800 ;
-    cmo:known-as-a cmk:conductor .
+cmk:cellist a cmo:musical-identity .
 
-cmk:diana-salazar a foaf:Person ;
-    foaf:familyName "Salazar"^^xsd:string ;
-    foaf:firstName "Diana"^^xsd:string ;
-    cmo:known-as-a cmk:host ;
-    cmo:performs-in cmk:royal-festival-hall-1778475000 .
+cmk:conductor a cmo:musical-identity .
 
-cmk:hayley-cramer a foaf:Person ;
-    foaf:familyName "Cramer"^^xsd:string ;
-    foaf:firstName "Hayley"^^xsd:string ;
-    cmo:known-as-a cmk:drummer ;
-    cmo:plays-in cmk:royal-festival-hall-1776906600 .
+cmk:de-montfort-hall-1778368800 a mo:Performance ;
+    schema:location cmk:de-montfort-hall ;
+    schema:name "Leicester: Orchestra Unwrapped" ;
+    schema:organizer cmk:philharmonia-orchestra ;
+    schema:startDate "2026-05-06T13:00:00"^^xsd:dateTime ;
+    schema:url "https://philharmonia.co.uk/whats-on/leicester-orchestra-unwrapped-2025-26/"^^xsd:anyURI .
 
-cmk:jonathan-noyce a foaf:Person ;
-    foaf:familyName "Noyce"^^xsd:string ;
-    foaf:firstName "Jonathan"^^xsd:string ;
-    cmo:known-as-a cmk:bassist ;
-    cmo:plays-in cmk:royal-festival-hall-1776906600 .
+cmk:de-montfort-hall-1778389200 a mo:Performance ;
+    schema:location cmk:de-montfort-hall ;
+    schema:name "Leicester: Leonidas Kavakos and Kian Soltani" ;
+    schema:organizer cmk:philharmonia-orchestra ;
+    schema:startDate "2026-05-06T19:00:00"^^xsd:dateTime ;
+    schema:url "https://philharmonia.co.uk/whats-on/leicester-leonidas-kavakos-and-kian-soltani/"^^xsd:anyURI .
 
-cmk:judith-webster a foaf:Person ;
-    foaf:familyName "Webster"^^xsd:string ;
-    foaf:firstName "Judith"^^xsd:string ;
-    cmo:known-as-a cmk:host ;
-    cmo:performs-in cmk:royal-festival-hall-1778475000 .
+cmk:drummer a cmo:musical-identity .
 
-cmk:kian-soltani a foaf:Person ;
-    foaf:familyName "Soltani"^^xsd:string ;
-    foaf:firstName "Kian"^^xsd:string ;
-    cmo:known-as-a cmk:cellist ;
-    cmo:plays-in cmk:de-montfort-hall-1778389200,
-        cmk:megaron-athens-concert-hall-1778648200,
-        cmk:royal-festival-hall-1778453400,
-        cmk:royal-festival-hall-1778481400 .
+cmk:guitarist a cmo:musical-identity .
 
-cmk:kira-doherty a foaf:Person ;
-    foaf:familyName "Doherty"^^xsd:string ;
-    foaf:firstName "Kira"^^xsd:string ;
-    cmo:known-as-a cmk:host ;
-    cmo:performs-in cmk:royal-festival-hall-1778475000 .
+cmk:host a cmo:musical-identity .
 
-cmk:leonidas-kavakos a foaf:Person ;
-    foaf:familyName "Kavakos"^^xsd:string ;
-    foaf:firstName "Leonidas"^^xsd:string ;
-    cmo:conducts-in cmk:de-montfort-hall-1778389200,
-        cmk:megaron-athens-concert-hall-1778648200,
-        cmk:royal-festival-hall-1778453400,
-        cmk:royal-festival-hall-1778481400 ;
-    cmo:known-as-a cmk:conductor,
-        cmk:violinist .
+cmk:interpreter a cmo:musical-identity .
 
-cmk:lucy-drever a foaf:Person ;
-    foaf:familyName "Drever"^^xsd:string ;
-    foaf:firstName "Lucy"^^xsd:string ;
-    cmo:known-as-a cmk:presenter ;
-    cmo:performs-in cmk:de-montfort-hall-1778368800 .
+cmk:megaron-athens-concert-hall-1778648200 a mo:Performance ;
+    schema:location cmk:megaron-athens-concert-hall ;
+    schema:name "Athens: Leonidas Kavakos and Kian Soltani" ;
+    schema:organizer cmk:philharmonia-orchestra ;
+    schema:startDate "2026-05-09T20:30:00"^^xsd:dateTime ;
+    schema:url "https://philharmonia.co.uk/whats-on/athens-leonidas-kavakos-and-kian-soltani/"^^xsd:anyURI .
 
-cmk:marzi-nyman a foaf:Person ;
-    foaf:familyName "Nyman"^^xsd:string ;
-    foaf:firstName "Marzi"^^xsd:string ;
-    cmo:known-as-a cmk:guitarist ;
-    cmo:plays-in cmk:royal-festival-hall-1776906600 .
-
-cmk:mert-yalniz a foaf:Person ;
-    foaf:familyName "Yalniz"^^xsd:string ;
-    foaf:firstName "Mert"^^xsd:string ;
-    cmo:conducts-in cmk:de-montfort-hall-1778368800 ;
-    cmo:known-as-a cmk:conductor .
-
-cmk:mica-sefia a foaf:Person ;
-    foaf:familyName "Sefia"^^xsd:string ;
-    foaf:firstName "Mica"^^xsd:string ;
-    cmo:known-as-a cmk:host ;
-    cmo:performs-in cmk:royal-festival-hall-1778475000 .
-
-cmk:mr-lordi a foaf:Person ;
-    foaf:familyName "Lordi"^^xsd:string ;
-    foaf:firstName "Mr"^^xsd:string ;
-    cmo:known-as-a cmk:vocalist ;
-    cmo:sings-in cmk:royal-festival-hall-1776906600 .
-
-cmk:nicola-benedetti a foaf:Person ;
-    foaf:familyName "Benedetti"^^xsd:string ;
-    foaf:firstName "Nicola"^^xsd:string ;
-    cmo:known-as-a cmk:violinist ;
-    cmo:plays-in cmk:royal-festival-hall-1776689400,
-        cmk:royal-festival-hall-1776707400,
-        cmk:the-anvil-1776647800 .
-
-cmk:pete-friesen a foaf:Person ;
-    foaf:familyName "Friesen"^^xsd:string ;
-    foaf:firstName "Pete"^^xsd:string ;
-    cmo:known-as-a cmk:guitarist ;
-    cmo:plays-in cmk:royal-festival-hall-1776906600 .
+cmk:presenter a cmo:musical-identity .
 
 cmk:royal-festival-hall-1776546000 a mo:Performance ;
     schema:location cmk:royal-festival-hall ;
@@ -141,12 +65,47 @@ cmk:royal-festival-hall-1776546000 a mo:Performance ;
     schema:startDate "2026-04-17T13:30:00"^^xsd:dateTime ;
     schema:url "https://philharmonia.co.uk/whats-on/southbank-april-backstage-tour/"^^xsd:anyURI .
 
+cmk:royal-festival-hall-1776689400 a mo:Performance ;
+    schema:location cmk:royal-festival-hall ;
+    schema:name "Open Rehearsal: Nicola Benedetti plays Elgar" ;
+    schema:organizer cmk:philharmonia-orchestra ;
+    schema:startDate "2026-04-19T10:30:00"^^xsd:dateTime ;
+    schema:url "https://philharmonia.co.uk/whats-on/open-rehearsal-nicola-benedet/"^^xsd:anyURI .
+
+cmk:royal-festival-hall-1776707400 a mo:Performance ;
+    schema:location cmk:royal-festival-hall ;
+    schema:name "Nicola Benedetti plays Elgar" ;
+    schema:organizer cmk:philharmonia-orchestra ;
+    schema:startDate "2026-04-19T15:00:00"^^xsd:dateTime ;
+    schema:url "https://philharmonia.co.uk/whats-on/nicola-benedetti-plays-elgar/"^^xsd:anyURI .
+
+cmk:royal-festival-hall-1776906600 a mo:Performance ;
+    schema:location cmk:royal-festival-hall ;
+    schema:name "Forged in Sound: Heavy Metal Orchestrated" ;
+    schema:organizer cmk:philharmonia-orchestra ;
+    schema:startDate "2026-04-22T19:30:00"^^xsd:dateTime ;
+    schema:url "https://philharmonia.co.uk/whats-on/forged-in-sound-heavy-metal-orchestrated/"^^xsd:anyURI .
+
+cmk:royal-festival-hall-1778453400 a mo:Performance ;
+    schema:location cmk:royal-festival-hall ;
+    schema:name "Open Rehearsal: Kavakos conducts Dvořák, Schumann & Brahms" ;
+    schema:organizer cmk:philharmonia-orchestra ;
+    schema:startDate "2026-05-07T10:30:00"^^xsd:dateTime ;
+    schema:url "https://philharmonia.co.uk/whats-on/open-rehearsal-kavakos-2/"^^xsd:anyURI .
+
 cmk:royal-festival-hall-1778471400 a mo:Performance ;
     schema:location cmk:royal-festival-hall ;
     schema:name "Southbank Centre - behind the scenes tour" ;
     schema:organizer cmk:philharmonia-orchestra ;
     schema:startDate "2026-05-07T15:30:00"^^xsd:dateTime ;
     schema:url "https://philharmonia.co.uk/whats-on/southbank-may-backstage-tour/"^^xsd:anyURI .
+
+cmk:royal-festival-hall-1778475000 a mo:Performance ;
+    schema:location cmk:royal-festival-hall ;
+    schema:name "Philharmonia debates... Music & Mentoring" ;
+    schema:organizer cmk:philharmonia-orchestra ;
+    schema:startDate "2026-05-07T18:00:00"^^xsd:dateTime ;
+    schema:url "https://philharmonia.co.uk/whats-on/philharmonia-debates-music-mentoring/"^^xsd:anyURI .
 
 cmk:royal-festival-hall-1778475001 a mo:Performance ;
     schema:location cmk:royal-festival-hall ;
@@ -155,19 +114,23 @@ cmk:royal-festival-hall-1778475001 a mo:Performance ;
     schema:startDate "2026-05-07T18:00:00"^^xsd:dateTime ;
     schema:url "https://philharmonia.co.uk/whats-on/music-of-today-composers-academy-2026/"^^xsd:anyURI .
 
-cmk:santtu-matias-rouvali a foaf:Person ;
-    foaf:familyName "Rouvali"^^xsd:string ;
-    foaf:firstName "Santtu-Matias"^^xsd:string ;
-    cmo:conducts-in cmk:royal-festival-hall-1776906600 ;
-    cmo:known-as-a cmk:conductor .
+cmk:royal-festival-hall-1778481400 a mo:Performance ;
+    schema:location cmk:royal-festival-hall ;
+    schema:name "Kavakos conducts Dvořák, Schumann & Brahms" ;
+    schema:organizer cmk:philharmonia-orchestra ;
+    schema:startDate "2026-05-07T19:30:00"^^xsd:dateTime ;
+    schema:url "https://philharmonia.co.uk/whats-on/kavakos-conducts-dvorak-schumann-brahms/"^^xsd:anyURI .
 
-cmk:suzi-quatro a foaf:Person ;
-    foaf:familyName "Quatro"^^xsd:string ;
-    foaf:firstName "Suzi"^^xsd:string ;
-    cmo:known-as-a cmk:bassist,
-        cmk:vocalist ;
-    cmo:plays-in cmk:royal-festival-hall-1776906600 ;
-    cmo:sings-in cmk:royal-festival-hall-1776906600 .
+cmk:the-anvil-1776647800 a mo:Performance ;
+    schema:location cmk:the-anvil ;
+    schema:name "Basingstoke: Nicola Benedetti plays Elgar" ;
+    schema:organizer cmk:philharmonia-orchestra ;
+    schema:startDate "2026-04-18T19:30:00"^^xsd:dateTime ;
+    schema:url "https://philharmonia.co.uk/whats-on/basingstoke-nicola-benedetti-plays-elgar/"^^xsd:anyURI .
+
+cmk:violinist a cmo:musical-identity .
+
+cmk:vocalist a cmo:musical-identity .
 
 <https://knowledge.semanticscore.net/ontology> a owl:Ontology ;
     owl:imports mo:,
@@ -226,103 +189,13 @@ cmo:voice-range a owl:Class ;
     rdfs:comment "A vocal musical identity categorised by voice type, such as soprano, tenor, or bass."@en ;
     rdfs:subClassOf cmo:musical-identity .
 
-cmk:cellist a cmo:musical-identity .
-
-cmk:drummer a cmo:musical-identity .
-
-cmk:interpreter a cmo:musical-identity .
-
-cmk:presenter a cmo:musical-identity .
-
 cmo:Programme a owl:Class ;
     rdfs:label "Programme"@en ;
     rdfs:comment "A concert programme listing the musical works to be performed at a performance."@en .
 
-cmk:bassist a cmo:musical-identity .
-
-cmk:de-montfort-hall-1778389200 a mo:Performance ;
-    schema:location cmk:de-montfort-hall ;
-    schema:name "Leicester: Leonidas Kavakos and Kian Soltani" ;
-    schema:organizer cmk:philharmonia-orchestra ;
-    schema:startDate "2026-05-06T19:00:00"^^xsd:dateTime ;
-    schema:url "https://philharmonia.co.uk/whats-on/leicester-leonidas-kavakos-and-kian-soltani/"^^xsd:anyURI .
-
-cmk:guitarist a cmo:musical-identity .
-
-cmk:megaron-athens-concert-hall-1778648200 a mo:Performance ;
-    schema:location cmk:megaron-athens-concert-hall ;
-    schema:name "Athens: Leonidas Kavakos and Kian Soltani" ;
-    schema:organizer cmk:philharmonia-orchestra ;
-    schema:startDate "2026-05-09T20:30:00"^^xsd:dateTime ;
-    schema:url "https://philharmonia.co.uk/whats-on/athens-leonidas-kavakos-and-kian-soltani/"^^xsd:anyURI .
-
-cmk:royal-festival-hall-1776689400 a mo:Performance ;
-    schema:location cmk:royal-festival-hall ;
-    schema:name "Open Rehearsal: Nicola Benedetti plays Elgar" ;
-    schema:organizer cmk:philharmonia-orchestra ;
-    schema:startDate "2026-04-19T10:30:00"^^xsd:dateTime ;
-    schema:url "https://philharmonia.co.uk/whats-on/open-rehearsal-nicola-benedet/"^^xsd:anyURI .
-
-cmk:royal-festival-hall-1776707400 a mo:Performance ;
-    schema:location cmk:royal-festival-hall ;
-    schema:name "Nicola Benedetti plays Elgar" ;
-    schema:organizer cmk:philharmonia-orchestra ;
-    schema:startDate "2026-04-19T15:00:00"^^xsd:dateTime ;
-    schema:url "https://philharmonia.co.uk/whats-on/nicola-benedetti-plays-elgar/"^^xsd:anyURI .
-
-cmk:royal-festival-hall-1778453400 a mo:Performance ;
-    schema:location cmk:royal-festival-hall ;
-    schema:name "Open Rehearsal: Kavakos conducts Dvořák, Schumann & Brahms" ;
-    schema:organizer cmk:philharmonia-orchestra ;
-    schema:startDate "2026-05-07T10:30:00"^^xsd:dateTime ;
-    schema:url "https://philharmonia.co.uk/whats-on/open-rehearsal-kavakos-2/"^^xsd:anyURI .
-
-cmk:royal-festival-hall-1778481400 a mo:Performance ;
-    schema:location cmk:royal-festival-hall ;
-    schema:name "Kavakos conducts Dvořák, Schumann & Brahms" ;
-    schema:organizer cmk:philharmonia-orchestra ;
-    schema:startDate "2026-05-07T19:30:00"^^xsd:dateTime ;
-    schema:url "https://philharmonia.co.uk/whats-on/kavakos-conducts-dvorak-schumann-brahms/"^^xsd:anyURI .
-
-cmk:the-anvil-1776647800 a mo:Performance ;
-    schema:location cmk:the-anvil ;
-    schema:name "Basingstoke: Nicola Benedetti plays Elgar" ;
-    schema:organizer cmk:philharmonia-orchestra ;
-    schema:startDate "2026-04-18T19:30:00"^^xsd:dateTime ;
-    schema:url "https://philharmonia.co.uk/whats-on/basingstoke-nicola-benedetti-plays-elgar/"^^xsd:anyURI .
-
-cmk:violinist a cmo:musical-identity .
-
-cmk:de-montfort-hall-1778368800 a mo:Performance ;
-    schema:location cmk:de-montfort-hall ;
-    schema:name "Leicester: Orchestra Unwrapped" ;
-    schema:organizer cmk:philharmonia-orchestra ;
-    schema:startDate "2026-05-06T13:00:00"^^xsd:dateTime ;
-    schema:url "https://philharmonia.co.uk/whats-on/leicester-orchestra-unwrapped-2025-26/"^^xsd:anyURI .
-
-cmk:vocalist a cmo:musical-identity .
-
-cmk:conductor a cmo:musical-identity .
-
-cmk:host a cmo:musical-identity .
-
-cmk:royal-festival-hall-1778475000 a mo:Performance ;
-    schema:location cmk:royal-festival-hall ;
-    schema:name "Philharmonia debates... Music & Mentoring" ;
-    schema:organizer cmk:philharmonia-orchestra ;
-    schema:startDate "2026-05-07T18:00:00"^^xsd:dateTime ;
-    schema:url "https://philharmonia.co.uk/whats-on/philharmonia-debates-music-mentoring/"^^xsd:anyURI .
-
 cmo:performs-in a owl:ObjectProperty ;
     rdfs:label "performs in"@en ;
     rdfs:comment "Connects a person to a performance in which they participate in any musical role. Super-property of all role-specific participation properties."@en .
-
-cmk:royal-festival-hall-1776906600 a mo:Performance ;
-    schema:location cmk:royal-festival-hall ;
-    schema:name "Forged in Sound: Heavy Metal Orchestrated" ;
-    schema:organizer cmk:philharmonia-orchestra ;
-    schema:startDate "2026-04-22T19:30:00"^^xsd:dateTime ;
-    schema:url "https://philharmonia.co.uk/whats-on/forged-in-sound-heavy-metal-orchestrated/"^^xsd:anyURI .
 
 cmo:musical-identity a owl:Class ;
     rdfs:label "Musical identity"@en ;

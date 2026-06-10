@@ -10,12 +10,18 @@
 cmk:großer-saal a cmo:ConcertHall ;
     schema:name "Großer Saal"^^xsd:string .
 
-cmk:michael-schönheit a foaf:Person ;
-    foaf:familyName "Schönheit"^^xsd:string ;
-    foaf:firstName "Michael"^^xsd:string ;
-    cmo:known-as-a cmk:organist ;
-    cmo:plays-in cmk:großer-saal-1746097200,
-        cmk:großer-saal-1746104400 .
+cmk:großer-saal-1746097200 a mo:Performance ;
+    schema:name "Orgel-Zwergenkonzert - Bilder einer Ausstellung"^^xsd:string ;
+    schema:organizer cmk:leipzig-gewandhaus-orchestra ;
+    schema:startDate "2026-05-05T09:00:00"^^xsd:dateTime .
+
+cmk:großer-saal-1746104400 a mo:Performance ;
+    schema:name "Orgel-Zwergenkonzert - Bilder einer Ausstellung"^^xsd:string ;
+    schema:organizer cmk:leipzig-gewandhaus-orchestra ;
+    schema:startDate "2026-05-05T11:00:00"^^xsd:dateTime .
+
+cmk:organist a cmo:instrumentalist-identity ;
+    schema:name "Organist"^^xsd:string .
 
 <https://knowledge.semanticscore.net/ontology> a owl:Ontology ;
     owl:imports mo:,
@@ -85,19 +91,6 @@ cmo:voice-range a owl:Class ;
     rdfs:label "Voice range"@en ;
     rdfs:comment "A vocal musical identity categorised by voice type, such as soprano, tenor, or bass."@en ;
     rdfs:subClassOf cmo:musical-identity .
-
-cmk:großer-saal-1746097200 a mo:Performance ;
-    schema:name "Orgel-Zwergenkonzert - Bilder einer Ausstellung"^^xsd:string ;
-    schema:organizer cmk:leipzig-gewandhaus-orchestra ;
-    schema:startDate "2026-05-05T09:00:00"^^xsd:dateTime .
-
-cmk:großer-saal-1746104400 a mo:Performance ;
-    schema:name "Orgel-Zwergenkonzert - Bilder einer Ausstellung"^^xsd:string ;
-    schema:organizer cmk:leipzig-gewandhaus-orchestra ;
-    schema:startDate "2026-05-05T11:00:00"^^xsd:dateTime .
-
-cmk:organist a cmo:instrumentalist-identity ;
-    schema:name "Organist"^^xsd:string .
 
 cmo:ConcertHall a owl:Class ;
     rdfs:label "Concert hall"@en ;

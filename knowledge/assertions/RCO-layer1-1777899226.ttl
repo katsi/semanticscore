@@ -7,19 +7,41 @@
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-cmk:augustin-hadelich a foaf:Person ;
-    foaf:familyName "Hadelich" ;
-    foaf:firstName "Augustin" ;
-    cmo:known-as-a cmk:violinist ;
-    cmo:performs-in cmk:concertgebouw-amsterdam-1777737300,
-        cmk:concertgebouw-amsterdam-1778000100 .
+cmk:cellist a cmo:instrumentalist-identity ;
+    schema:name "Cellist" .
 
-cmk:fabio-luisi a foaf:Person ;
-    foaf:familyName "Luisi" ;
-    foaf:firstName "Fabio" ;
-    cmo:conducts-in cmk:nationale-opera-ballet-amsterdam-1780149000,
-        cmk:nationale-opera-ballet-amsterdam-1780408800 ;
-    cmo:known-as-a cmk:conductor .
+cmk:concertgebouw-amsterdam-1777737300 a mo:Performance ;
+    schema:location cmk:concertgebouw ;
+    schema:name "Augustin Hadelich plays Tchaikovsky's Violin Concerto" ;
+    schema:organizer cmk:royal-concertgebouw-orchestra ;
+    schema:startDate "2026-05-07T20:15:00"^^xsd:dateTime .
+
+cmk:concertgebouw-amsterdam-1777824000 a mo:Performance ;
+    schema:location cmk:concertgebouw ;
+    schema:name "Essentials: Brahms' Symphony No. 4" ;
+    schema:organizer cmk:royal-concertgebouw-orchestra ;
+    schema:startDate "2026-05-08T21:00:00"^^xsd:dateTime .
+
+cmk:concertgebouw-amsterdam-1778000100 a mo:Performance ;
+    schema:location cmk:concertgebouw ;
+    schema:name "Augustin Hadelich plays Tchaikovsky's Violin Concerto" ;
+    schema:organizer cmk:royal-concertgebouw-orchestra ;
+    schema:startDate "2026-05-10T14:15:00"^^xsd:dateTime .
+
+cmk:concertgebouw-amsterdam-1778296500 a mo:Performance ;
+    schema:location cmk:concertgebouw ;
+    schema:name "Sol Gabetta plays Martinů's Cello Concerto No. 1" ;
+    schema:organizer cmk:royal-concertgebouw-orchestra ;
+    schema:startDate "2026-05-13T20:15:00"^^xsd:dateTime .
+
+cmk:concertgebouw-amsterdam-1778469300 a mo:Performance ;
+    schema:location cmk:concertgebouw ;
+    schema:name "Sol Gabetta plays Martinů's Cello Concerto No. 1" ;
+    schema:organizer cmk:royal-concertgebouw-orchestra ;
+    schema:startDate "2026-05-15T20:15:00"^^xsd:dateTime .
+
+cmk:conductor a cmo:musical-identity ;
+    schema:name "Conductor" .
 
 cmk:kleine-zaal-het-concertgebouw-amsterdam-1780581300 a mo:Performance ;
     schema:location cmk:kleine-zaal-het-concertgebouw-amsterdam ;
@@ -27,13 +49,23 @@ cmk:kleine-zaal-het-concertgebouw-amsterdam-1780581300 a mo:Performance ;
     schema:organizer cmk:royal-concertgebouw-orchestra ;
     schema:startDate "2026-06-09T20:15:00"^^xsd:dateTime .
 
-cmk:nathalie-stutzmann a foaf:Person ;
-    foaf:familyName "Stutzmann" ;
-    foaf:firstName "Nathalie" ;
-    cmo:conducts-in cmk:concertgebouw-amsterdam-1777737300,
-        cmk:concertgebouw-amsterdam-1777824000,
-        cmk:concertgebouw-amsterdam-1778000100 ;
-    cmo:known-as-a cmk:conductor .
+cmk:nationale-opera-ballet-amsterdam-1780149000 a mo:Performance ;
+    schema:location cmk:nationale-opera-ballet-amsterdam ;
+    schema:name "Verdi's Simon Boccanegra" ;
+    schema:organizer cmk:royal-concertgebouw-orchestra ;
+    schema:startDate "2026-06-04T19:30:00"^^xsd:dateTime .
+
+cmk:nationale-opera-ballet-amsterdam-1780408800 a mo:Performance ;
+    schema:location cmk:nationale-opera-ballet-amsterdam ;
+    schema:name "Verdi's Simon Boccanegra" ;
+    schema:organizer cmk:royal-concertgebouw-orchestra ;
+    schema:startDate "2026-06-07T14:00:00"^^xsd:dateTime .
+
+cmk:palais-des-beaux-arts-brussels-1778547600 a mo:Performance ;
+    schema:location cmk:palais-des-beaux-arts-brussels ;
+    schema:name "On tour: Sol Gabetta plays Martinů's Cello Concerto No. 1" ;
+    schema:organizer cmk:royal-concertgebouw-orchestra ;
+    schema:startDate "2026-05-16T20:00:00"^^xsd:dateTime .
 
 cmk:rijksmuseum-1778620200 a mo:Performance ;
     schema:location cmk:rijksmuseum ;
@@ -41,21 +73,8 @@ cmk:rijksmuseum-1778620200 a mo:Performance ;
     schema:organizer cmk:royal-concertgebouw-orchestra ;
     schema:startDate "2026-05-17T15:30:00"^^xsd:dateTime .
 
-cmk:santtu-matias-rouvali a foaf:Person ;
-    foaf:familyName "Rouvali" ;
-    foaf:firstName "Santtu-Matias" ;
-    cmo:conducts-in cmk:concertgebouw-amsterdam-1778296500,
-        cmk:concertgebouw-amsterdam-1778469300,
-        cmk:palais-des-beaux-arts-brussels-1778547600 ;
-    cmo:known-as-a cmk:conductor .
-
-cmk:sol-gabetta a foaf:Person ;
-    foaf:familyName "Gabetta" ;
-    foaf:firstName "Sol" ;
-    cmo:known-as-a cmk:cellist ;
-    cmo:performs-in cmk:concertgebouw-amsterdam-1778296500,
-        cmk:concertgebouw-amsterdam-1778469300,
-        cmk:palais-des-beaux-arts-brussels-1778547600 .
+cmk:violinist a cmo:instrumentalist-identity ;
+    schema:name "Violinist" .
 
 <https://knowledge.semanticscore.net/ontology> a owl:Ontology ;
     owl:imports mo:,
@@ -121,29 +140,8 @@ cmo:voice-range a owl:Class ;
     rdfs:comment "A vocal musical identity categorised by voice type, such as soprano, tenor, or bass."@en ;
     rdfs:subClassOf cmo:musical-identity .
 
-cmk:cellist a cmo:instrumentalist-identity ;
-    schema:name "Cellist" .
-
-cmk:concertgebouw-amsterdam-1777824000 a mo:Performance ;
-    schema:location cmk:concertgebouw ;
-    schema:name "Essentials: Brahms' Symphony No. 4" ;
-    schema:organizer cmk:royal-concertgebouw-orchestra ;
-    schema:startDate "2026-05-08T21:00:00"^^xsd:dateTime .
-
 cmk:kleine-zaal-het-concertgebouw-amsterdam a cmo:ConcertHall ;
     schema:name "Kleine Zaal - Het Concertgebouw" .
-
-cmk:nationale-opera-ballet-amsterdam-1780149000 a mo:Performance ;
-    schema:location cmk:nationale-opera-ballet-amsterdam ;
-    schema:name "Verdi's Simon Boccanegra" ;
-    schema:organizer cmk:royal-concertgebouw-orchestra ;
-    schema:startDate "2026-06-04T19:30:00"^^xsd:dateTime .
-
-cmk:nationale-opera-ballet-amsterdam-1780408800 a mo:Performance ;
-    schema:location cmk:nationale-opera-ballet-amsterdam ;
-    schema:name "Verdi's Simon Boccanegra" ;
-    schema:organizer cmk:royal-concertgebouw-orchestra ;
-    schema:startDate "2026-06-07T14:00:00"^^xsd:dateTime .
 
 cmk:palais-des-beaux-arts-brussels a cmo:ConcertHall ;
     schema:name "Palais des Beaux-Arts" .
@@ -151,41 +149,8 @@ cmk:palais-des-beaux-arts-brussels a cmo:ConcertHall ;
 cmk:rijksmuseum a cmo:Venue ;
     schema:name "Rijksmuseum" .
 
-cmk:violinist a cmo:instrumentalist-identity ;
-    schema:name "Violinist" .
-
-cmk:concertgebouw-amsterdam-1777737300 a mo:Performance ;
-    schema:location cmk:concertgebouw ;
-    schema:name "Augustin Hadelich plays Tchaikovsky's Violin Concerto" ;
-    schema:organizer cmk:royal-concertgebouw-orchestra ;
-    schema:startDate "2026-05-07T20:15:00"^^xsd:dateTime .
-
-cmk:concertgebouw-amsterdam-1778000100 a mo:Performance ;
-    schema:location cmk:concertgebouw ;
-    schema:name "Augustin Hadelich plays Tchaikovsky's Violin Concerto" ;
-    schema:organizer cmk:royal-concertgebouw-orchestra ;
-    schema:startDate "2026-05-10T14:15:00"^^xsd:dateTime .
-
-cmk:concertgebouw-amsterdam-1778296500 a mo:Performance ;
-    schema:location cmk:concertgebouw ;
-    schema:name "Sol Gabetta plays Martinů's Cello Concerto No. 1" ;
-    schema:organizer cmk:royal-concertgebouw-orchestra ;
-    schema:startDate "2026-05-13T20:15:00"^^xsd:dateTime .
-
-cmk:concertgebouw-amsterdam-1778469300 a mo:Performance ;
-    schema:location cmk:concertgebouw ;
-    schema:name "Sol Gabetta plays Martinů's Cello Concerto No. 1" ;
-    schema:organizer cmk:royal-concertgebouw-orchestra ;
-    schema:startDate "2026-05-15T20:15:00"^^xsd:dateTime .
-
 cmk:nationale-opera-ballet-amsterdam a cmo:Venue ;
     schema:name "Nationale Opera & Ballet" .
-
-cmk:palais-des-beaux-arts-brussels-1778547600 a mo:Performance ;
-    schema:location cmk:palais-des-beaux-arts-brussels ;
-    schema:name "On tour: Sol Gabetta plays Martinů's Cello Concerto No. 1" ;
-    schema:organizer cmk:royal-concertgebouw-orchestra ;
-    schema:startDate "2026-05-16T20:00:00"^^xsd:dateTime .
 
 cmo:ConcertHall a owl:Class ;
     rdfs:label "Concert hall"@en ;
@@ -205,9 +170,6 @@ cmo:instrumentalist-identity a owl:Class ;
     rdfs:label "Instrumentalist identity"@en ;
     rdfs:comment "A musical identity of a person who plays an instrument, such as pianist or violinist."@en ;
     rdfs:subClassOf cmo:musical-identity .
-
-cmk:conductor a cmo:musical-identity ;
-    schema:name "Conductor" .
 
 cmo:performs-in a owl:ObjectProperty ;
     rdfs:label "performs in"@en ;
